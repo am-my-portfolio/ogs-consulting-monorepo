@@ -21,11 +21,11 @@
             :class="[
               item.current
                 ? 'bg-primary text-pop-secondary'
-                : 'text-pop-secondary hover:bg-secondary hover:text-white',
+                : 'text-pop-secondary hover:bg-pop-secondary hover:text-primary',
               userHasAnyRoles(item.roles)
                 ? ''
                 : 'pointer-events-none text-secondary',
-              'group flex gap-x-3 rounded-md py-2 text-sm font-semibold leading-6',
+              'group flex gap-x-3 rounded-md py-2 text-base leading-6',
             ]"
           >
             <div class="flex group">
@@ -35,7 +35,6 @@
                 aria-hidden="true"
               ></i>
               {{ item.name }} 
-              <!-- needs {{  item.roles }} -->
             </div>
           </a>
         </div>

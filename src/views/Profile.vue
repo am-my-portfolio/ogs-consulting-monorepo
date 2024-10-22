@@ -4,7 +4,7 @@
     <template #divisionContent>
       <div v-if="!isLoading">
         <pre
-          class="mt-10 p-5 text-pop-primary bg-pop-secondary/10 rounded-md overflow-x-auto"
+          class="mt-10 p-5 text-pop-primary bg-pop-secondary rounded-md overflow-x-auto"
           >{{ user }}</pre
         >
       </div>

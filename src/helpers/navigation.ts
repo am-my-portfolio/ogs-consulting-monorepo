@@ -6,7 +6,7 @@ export const navigation: Item[] = [
     target: "/users",
     icon: "fa-solid fa-users",
     current: false,
-    roles: [AllRoles.TEAM_ADMIN],
+    roles: [AllRoles.NAVIGATOR],
     items: [
       { name: "Overview", target: "/", current: true, icon: "", items: [] },
       { name: "Roles", target: "/", current: false, icon: "", items: [] },
@@ -29,7 +29,7 @@ export const navigation: Item[] = [
     target: "/dashboard",
     icon: "fa-solid fa-chart-line", // chart-line, chart-pie, chart-area
     current: false,
-    roles: [AllRoles.TEAM_ADMIN],
+    roles: [AllRoles.NAVIGATOR],
     items: [
       {
         name: "Overview",
@@ -78,7 +78,7 @@ export const navigation: Item[] = [
     target: "/integrations",
     icon: "fa-solid fa-plug",
     current: false,
-    roles: [AllRoles.TEAM_ADMIN],
+    roles: [AllRoles.NAVIGATOR],
     items: [
       { name: "Overview", target: "/", current: true, icon: "", items: [] },
       { name: "Featured", target: "/", current: false, icon: "", items: [] },
@@ -91,7 +91,7 @@ export const navigation: Item[] = [
     target: "/compliance",
     icon: "fa-solid fa-gavel", // clipboard-check, gavel
     current: false,
-    roles: [AllRoles.TEAM_ADMIN],
+    roles: [AllRoles.NAVIGATOR],
     items: [
       { name: "Overview", target: "/", current: true, icon: "", items: [] },
       { name: "Data Policy", target: "/", current: false, icon: "", items: [] },
@@ -112,7 +112,7 @@ export const navigation: Item[] = [
     target: "/notifications",
     icon: "fa-solid fa-bell",
     current: false,
-    roles: [AllRoles.TEAM_ADMIN],
+    roles: [AllRoles.NAVIGATOR],
     items: [
       { name: "Overview", target: "/", current: true, icon: "", items: [] },
       { name: "Incidents", target: "/", current: false, icon: "", items: [] },
@@ -132,7 +132,7 @@ export const navigation: Item[] = [
     target: "/settings",
     icon: "fa-solid fa-gear",
     current: false,
-    roles: [AllRoles.TEAM_ADMIN, AllRoles.CLIENT],
+    roles: [AllRoles.NAVIGATOR, AllRoles.CLIENT],
     items: [],
   },
   {
@@ -140,7 +140,7 @@ export const navigation: Item[] = [
     target: "/settings",
     icon: "fa-solid fa-gear",
     current: false,
-    roles: [AllRoles.TEAM_ADMIN, AllRoles.CLIENT],
+    roles: [AllRoles.NAVIGATOR, AllRoles.CLIENT],
     items: [],
   },
   {
@@ -148,7 +148,7 @@ export const navigation: Item[] = [
     target: "/support",
     icon: "fa-solid fa-headphones-simple", // headphones too
     current: false,
-    roles: [AllRoles.TEAM_ADMIN, AllRoles.TEAM_MEMBER],
+    roles: [AllRoles.NAVIGATOR, AllRoles.PROFESSIONAL],
     items: [],
   },
   {
@@ -156,7 +156,7 @@ export const navigation: Item[] = [
     target: "/data-management",
     icon: "fa-solid fa-database",
     current: false,
-    roles: [AllRoles.TEAM_ADMIN],
+    roles: [AllRoles.NAVIGATOR],
     items: [],
   },
 

@@ -36,7 +36,7 @@ const { isAuthenticated, logout } = useAuth0();
 const router = useRouter();
 onMounted(() => {
   const condition =
-    !userHasAllRoles([AllRoles.TEAM_ADMIN, AllRoles.TEAM_MEMBER]) &&
+    !userHasAllRoles([AllRoles.NAVIGATOR, AllRoles.PROFESSIONAL]) &&
     userHasAnyRoles([AllRoles.CLIENT]);
   if (condition) {
     router.push("/profile");

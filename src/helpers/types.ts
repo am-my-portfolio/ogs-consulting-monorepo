@@ -8,8 +8,8 @@ export enum SpecialRoles {
 }
 
 export enum GeneralRoles {
-  TEAM_ADMIN = "Team Admin",
-  TEAM_MEMBER = "Team Member",
+  NAVIGATOR = "Navigator",
+  PROFESSIONAL = "Professional",
   CLIENT = "Client",
 }
 
@@ -21,9 +21,9 @@ export const AllRoles = {
 };
 
 export enum RoleIds {
-  TEAM_ADMIN = "rol_LSeHE4MuAfZlutXg",
-  TEAM_MEMBER = "rol_3RmEpEgOS8onPsXt",
-  CLIENT = "rol_ahDgtPUuFL1yvnfv",
+  NAVIGATOR = "rol_hirVx22Zj98EeNwv",
+  PROFESSIONAL = "rol_9w8jnzrL4cMqVSrq",
+  CLIENT = "rol_Zwu3V1obnMymWZFF",
 }
 
 export interface ICreateUser {

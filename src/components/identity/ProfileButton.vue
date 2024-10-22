@@ -1,7 +1,7 @@
 <template>
   <Menu as="div" class="relative">
     <MenuButton
-      class="hidden sm:inline-flex justify-center gap-x-3 rounded-md p-4 text-sm text-pop-secondary hover:bg-secondary"
+      class="hidden sm:inline-flex justify-center gap-x-3 rounded-md p-4 text-sm bg-primary hover:bg-pop-secondary text-pop-secondary hover:text-primary"
     >
       <img
         class="inline-block h-6 w-6 rounded-full"
@@ -36,7 +36,7 @@
         <MenuItem v-for="item in user_navigation" :key="item.name">
           <a
             :href="item.target"
-            class="block w-full p-3 rounded-md bg-primary hover:bg-secondary text-pop-secondary hover:text-primary text-xs"
+            class="block w-full p-3 rounded-md bg-primary hover:bg-pop-secondary text-pop-secondary hover:text-primary text-sm"
           >
             <div class="flow-root">
               <p class="float-left">
@@ -53,7 +53,7 @@
 
         <MenuItem>
           <span
-            class="block w-full p-3 rounded-md cursor-pointer bg-primary hover:bg-secondary text-pop-secondary hover:text-primary text-xs"
+            class="block w-full p-3 rounded-md cursor-pointer bg-primary hover:bg-pop-secondary text-pop-secondary hover:text-primary text-sm"
           >
             <ThemeToggle />
           </span>
@@ -62,7 +62,7 @@
         <MenuItem>
           <button
             @click="handleLogout"
-            class="block w-full p-3 rounded-md bg-primary hover:bg-secondary text-pop-secondary hover:text-primary text-sm"
+            class="block w-full p-3 rounded-md bg-primary hover:bg-pop-secondary text-pop-secondary hover:text-primary text-sm"
           >
             <div class="flow-root">
               <p class="float-left">

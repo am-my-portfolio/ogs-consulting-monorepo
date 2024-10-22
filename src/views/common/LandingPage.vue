@@ -1,9 +1,9 @@
 <template>
   <div v-if="!isAuthenticated" class="flex flex-col h-fit items-center">
-    <img src="/landing.png" alt="logo" class="mt-44" />
+    <img src="/landing.png" alt="logo" class="mt-[25%] mb-10 w-2/3" />
     <LoginButton />
 
-    <div class="my-8">
+    <div class="my-10">
       <ThemeToggle />
     </div>
   </div>
