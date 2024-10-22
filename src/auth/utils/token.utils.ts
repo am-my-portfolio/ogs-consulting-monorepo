@@ -38,13 +38,13 @@ export const getRoles = () => {
   if (!user_profile) {
     return undefined;
   }
-  const roles = user_profile["lazer.io/roles"];
+  const roles = user_profile["sam.co/roles"];
   return roles;
 };
 
 export const isSecurityTeamMember = () => {
   const { user_profile } = getUserProfile();
-  const condition = user_profile?.email.split("@")[1] === "lazertec.io";
+  const condition = user_profile?.email.split("@")[1] === "sam.co";
   return condition;
 };
 

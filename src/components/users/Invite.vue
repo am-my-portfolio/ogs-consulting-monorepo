@@ -7,7 +7,7 @@
           <h2
             class="mt-10 text-center text-xl font-bold leading-9 tracking-tight text-pop-primary"
           >
-            Invite new user to your LAZER.io organization
+            Invite new user to your organization
           </h2>
         </div>
 
