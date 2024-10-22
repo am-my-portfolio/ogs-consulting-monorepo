@@ -7,7 +7,7 @@
         v-for="item in items"
         :key="item.name"
         :class="item.roles.includes(AllRoles.SUPER_ADMIN) ? 'mt-auto mb-8' : ''"
-      > 
+      >
         <div
           :class="[
             userHasAnyRoles(item.roles)
@@ -34,7 +34,7 @@
                 class="text-lg mx-2 w-10 shring-0"
                 aria-hidden="true"
               ></i>
-              {{ item.name }} 
+              {{ item.name }}
             </div>
           </a>
         </div>

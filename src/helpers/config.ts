@@ -7,9 +7,14 @@
 
 const CONFIGS = {
   [import.meta.env.VITE_LOCAL_DOMAIN]: {
-    AUTH0_DOMAIN: import.meta.env.VITE_AUTH0_DOMAIN ?? 'afshan-aman.us.auth0.com',
-    AUTH0_CLIENT_ID: import.meta.env.VITE_AUTH0_CLIENT_ID ?? '6imryd5j8VhLVlQhf3aH1fjMqFHM33Z7',
-    AUTH0_AUDIENCE: import.meta.env.VITE_AUTH0_AUDIENCE ?? 'https://issuer.afshan-aman.com/api',
+    AUTH0_DOMAIN:
+      import.meta.env.VITE_AUTH0_DOMAIN ?? "afshan-aman.us.auth0.com",
+    AUTH0_CLIENT_ID:
+      import.meta.env.VITE_AUTH0_CLIENT_ID ??
+      "6imryd5j8VhLVlQhf3aH1fjMqFHM33Z7",
+    AUTH0_AUDIENCE:
+      import.meta.env.VITE_AUTH0_AUDIENCE ??
+      "https://issuer.afshan-aman.com/api",
     AUTH0_CLIENT_ID_MGNT_API: import.meta.env.VITE_AUTH0_CLIENT_ID_MGNT_API,
     AUTH0_CLIENT_SECRET_MGNT_API: import.meta.env
       .VITE_AUTH0_CLIENT_SECRET_MGNT_API,
