@@ -30,7 +30,7 @@ module.exports = {
           primary: twColors.orange["50"], // '#e6ddda'
           secondary: twColors.zinc["500"],
           "pop-primary": twColors.rose["500"],
-          "pop-secondary": "#233319", // closest twColors.lime["900"],
+          "pop-secondary": twColors.lime["900"], // "#233319"
         },
         dark: {
           primary: twColors.slate["800"],
