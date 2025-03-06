@@ -6,5 +6,5 @@
 </template>
 
 <script setup lang="ts">
-import PageDivisionLayout from "@components/layout/PageDivisionLayout.vue";
+import PageDivisionLayout from "@/components/layout/PageDivisionLayout.vue";
 </script>

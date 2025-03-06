@@ -1,20 +1,22 @@
 <template>
   <div @click="toggleDark()" class="flow-root">
-    <p class="float-left">
+    <p class="float-left mr-4">
       <component
         v-if="is_dark"
         :is="MoonIcon"
-        class="w-6 h-auto shrink-0"
+        class="w-6 shrink-0 text-pop-secondary"
         aria-hidden="true"
       />
       <component
         v-if="!is_dark"
         :is="SunIcon"
-        class="w-6 h-auto shrink-0"
+        class="w-6 shrink-0 text-pop-secondary"
         aria-hidden="true"
       />
     </p>
-    <p class="float-right pt-1">{{ is_dark ? "Go Light" : "Go Dark" }} Theme</p>
+    <p class="float-right pt-1 text-pop-secondary">
+      {{ is_dark ? "Go Light" : "Go Dark" }} Theme
+    </p>
   </div>
 </template>
 

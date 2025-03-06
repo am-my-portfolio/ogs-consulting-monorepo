@@ -1,6 +1,5 @@
-const { createThemes } = require("tw-colors"); // https://www.npmjs.com/package/tw-colors
+const { createThemes } = require("tw-colors");
 const esmRequire = require("esm")(module);
-// const vfSlider = require("@vueform/slider/tailwind"); // https://www.npmjs.com/package/@vueform/slider
 const twColors = require("tailwindcss/colors");
 const twForms = require("@tailwindcss/forms")({
   strategy: "class",
@@ -27,16 +26,16 @@ module.exports = {
     createThemes(
       {
         light: {
-          primary: twColors.orange["50"], // '#e6ddda'
-          secondary: twColors.zinc["500"],
-          "pop-primary": twColors.rose["500"],
-          "pop-secondary": twColors.lime["900"], // "#233319"
+          primary: twColors.slate["100"],
+          secondary: twColors.slate["500"],
+          "pop-primary": twColors.red["600"],
+          "pop-secondary": twColors.teal["700"],
         },
         dark: {
-          primary: twColors.slate["800"],
-          secondary: twColors.zinc["600"],
-          "pop-primary": twColors.rose["500"],
-          "pop-secondary": twColors.emerald["400"],
+          primary: twColors.black[""],
+          secondary: twColors.slate["300"],
+          "pop-primary": twColors.red["500"],
+          "pop-secondary": twColors.cyan["300"],
         },
       },
       { defaultTheme: "light" },

@@ -2,22 +2,20 @@
   <!-- https://iriscompanyio.medium.com/how-to-build-recursive-side-navbar-menu-component-with-vue-3-e87878fb94b6 -->
 
   <nav class="flex flex-1 flex-col">
-    <ul role="list" class="flex flex-1 flex-col gap-y-4">
-      <li
-        v-for="item in items"
-        :key="item.name"
-        :class="item.roles.includes(AllRoles.SUPER_ADMIN) ? 'mt-auto mb-8' : ''"
-      >
+    <ul role="list" class="flex flex-1 flex-col mt-2">
+      <li v-for="(item, index) in primary_items" :key="index">
         <div
           :class="[
             userHasAnyRoles(item.roles)
               ? 'cursor-pointer'
-              : 'cursor-not-allowed',
-            'w-full rounded-md',
+              : 'cursor-not-allowed hidden',
+            'w-full rounded-md my-2',
           ]"
         >
           <a
-            :href="userHasAnyRoles(item.roles) ? item.target : ''"
+            :href="
+              userHasAnyRoles(item.roles) ? `/${kebabCase(item.name)}` : ''
+            "
             :class="[
               item.current
                 ? 'bg-primary text-pop-secondary'
@@ -31,7 +29,44 @@
             <div class="flex group">
               <i
                 :class="item.icon"
-                class="text-lg mx-2 w-10 shring-0"
+                class="text-lg mx-2 w-10 shrink-0"
+                aria-hidden="true"
+              ></i>
+              {{ item.name }}
+            </div>
+          </a>
+        </div>
+      </li>
+    </ul>
+
+    <ul role="list" class="flex flex-col mt-auto mb-10">
+      <li v-for="(item, index) in secondary_items" :key="index">
+        <div
+          :class="[
+            userHasAnyRoles(item.roles)
+              ? 'cursor-pointer'
+              : 'cursor-not-allowed hidden',
+            'w-full rounded-md my-2',
+          ]"
+        >
+          <a
+            :href="
+              userHasAnyRoles(item.roles) ? `/${kebabCase(item.name)}` : ''
+            "
+            :class="[
+              item.current
+                ? 'bg-primary text-pop-secondary'
+                : 'text-pop-secondary hover:bg-pop-secondary hover:text-primary',
+              userHasAnyRoles(item.roles)
+                ? ''
+                : 'pointer-events-none text-secondary',
+              'group flex gap-x-3 rounded-md py-2 text-base leading-6',
+            ]"
+          >
+            <div class="flex group">
+              <i
+                :class="item.icon"
+                class="text-lg mx-2 w-10 shrink-0"
                 aria-hidden="true"
               ></i>
               {{ item.name }}
@@ -44,11 +79,12 @@
 </template>
 
 <script setup lang="ts">
-import { Item, AllRoles } from "@helpers/index";
-import { userHasAnyRoles } from "@auth/index";
+import { kebabCase } from "lodash";
+import { Item, userHasAnyRoles } from "@/helpers";
 
-const { items } = defineProps<{
+const { primary_items, secondary_items } = defineProps<{
   level: number;
-  items: Item[];
+  primary_items: Item[];
+  secondary_items: Item[];
 }>();
 </script>

@@ -1,4 +1,4 @@
-import { RoleIds, AllRoles } from "./types";
+import { AllRoles, RoleIds } from "@/helpers";
 
 export const getRoleId = (role: AllRoles) => {
   const key = Object.keys(AllRoles)[Object.values(AllRoles).indexOf(role)];

@@ -5,14 +5,9 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "useDefineForClassFields": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@assets/*": ["assets/*"],
-      "@auth/*": ["auth/*"],
-      "@components/*": ["components/*"],
-      "@helpers/*": ["helpers/*"],
-      "@views/*": ["views/*"]
+      "@/*": ["src/*", "dist/*"]
     },
     // Required in Vue projects
     "jsx": "preserve",

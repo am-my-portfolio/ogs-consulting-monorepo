@@ -68,7 +68,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import ProfileButton from "@components/identity/ProfileButton.vue";
+import ProfileButton from "@/components/identity/ProfileButton.vue";
 
 const sidebarOpen = ref(false);
 </script>

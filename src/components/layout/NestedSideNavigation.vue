@@ -12,7 +12,7 @@
               :class="item.items.length === 0 ? 'w-full' : 'w-[90%]'"
             >
               <a
-                :href="item.target"
+                :href="item.name.toLowerCase()"
                 :class="[
                   item.current
                     ? 'bg-primary text-pop-secondary'
@@ -23,7 +23,7 @@
                 <div class="flex group">
                   <i
                     :class="item.icon"
-                    class="text-lg mx-3 shring-0"
+                    class="text-lg mx-3 shrink-0"
                     aria-hidden="true"
                   ></i>
 
@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import { Item } from "@helpers/index";
+import { Item } from "@/helpers/index";
 import RecursiveSidebar from "./SideNavigation.vue";
 
 const { items } = defineProps<{

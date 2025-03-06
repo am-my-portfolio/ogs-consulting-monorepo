@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { Events } from "@helpers/index";
+import { Events } from "@/helpers/index";
 
 const props = defineProps({
   label: {

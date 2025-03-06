@@ -1,202 +1,363 @@
-import { Item, AllRoles } from "@helpers/index";
+import { Item, AllRoles, NavType } from "@/helpers";
 
-export const navigation: Item[] = [
+export const primary_navigation: Item[] = [
   {
-    name: "User Management",
-    target: "/users",
-    icon: "fa-solid fa-users",
+    name: "Chat",
+    description: "Manage users, check their roles and connections",
+    icon: "fa-solid fa-comment-dots",
     current: false,
-    roles: [AllRoles.NAVIGATOR],
-    items: [
-      { name: "Overview", target: "/", current: true, icon: "", items: [] },
-      { name: "Roles", target: "/", current: false, icon: "", items: [] },
-      { name: "Groups", target: "/", current: false, icon: "", items: [] },
-      { name: "Api Keys", target: "/", current: false, icon: "", items: [] },
-      { name: "Policies", target: "/", current: false, icon: "", items: [] },
-      {
-        name: "Activity Logs",
-        target: "/",
-        current: false,
-
-        icon: "",
-        items: [],
-      },
-      { name: "Invite", target: "/", current: false, icon: "", items: [] },
-    ],
-  },
-  {
-    name: "Booking & Scheduling",
-    target: "/dashboard",
-    icon: "fa-solid fa-chart-line", // chart-line, chart-pie, chart-area
-    current: false,
-    roles: [AllRoles.NAVIGATOR],
+    roles: [AllRoles.SUPER_ADMIN],
     items: [
       {
+        tab: "Tab1",
         name: "Overview",
-        target: "/",
         current: true,
-
         icon: "",
         items: [],
       },
       {
+        tab: "Tab2",
+        name: "Q & A",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab3",
+        name: "Summarize",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab4",
+        name: "Draft",
+        current: false,
+        icon: "",
+        items: [],
+      },
+    ],
+  },
+  {
+    name: "Assistant",
+    description:
+      "Manage vendors, check their expertise and product/service list",
+    icon: "fa-solid fa-robot",
+    current: false,
+    roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR],
+    items: [
+      {
+        tab: "Tab1",
+        name: "Overview",
+        current: true,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab2",
+        name: "Booking & Scheduling", // https://schedule-x.dev/docs/frameworks/vue
+        description:
+          "<Book appointments according to yours and your clients availability check https://schedule-x.dev/docs/frameworks/vue>",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab3",
+        name: "Communication",
+        description:
+          "<Draft and send emails (e.g welcome emails, acknoledgements, confirmations, reminders, reports, FAQs>",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab4",
+        name: "Marketing",
+        description:
+          "Draft and post social media content, advertisement emails",
+        current: false,
+        icon: "",
+        items: [],
+      },
+    ],
+  },
+  {
+    name: "Integrations",
+    description:
+      "Integrate Calendar, Email, Storage (Dropbox, Google Drive), Bank",
+    icon: "fa fa-plug",
+    current: false,
+    roles: [AllRoles.SUPER_ADMIN],
+    items: [
+      {
+        tab: "Tab1",
+        name: "Overview",
+        description: "<Your Integrations>",
+        current: true,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab2",
+        name: "Inbox",
+        description: "<Available Email providers>",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab3",
+        name: "Calendar",
+        description: "<Available Calendar providers>",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab4",
+        name: "Listing Site",
+        description: "<Property Listing providers>",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab5",
+        name: "Payment",
+        current: false,
+        icon: "",
+        items: [],
+      },
+    ],
+  },
+  {
+    name: "Listing Agent",
+    description: "Manage users, check their roles and connections",
+    icon: "fa-solid fa-house-laptop",
+    current: false,
+    roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR, AllRoles.CONSUMER],
+    items: [
+      {
+        tab: "Tab1",
+        name: "Overview",
+        current: true,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab2",
         name: "Model",
-        target: "/",
         current: false,
-
-        icon: "",
-        items: [],
-      },
-      {
-        name: "Training",
-        target: "/",
-        current: false,
-
-        icon: "",
-        items: [],
-      },
-      {
-        name: "Inference",
-        target: "/",
-        current: false,
-
-        icon: "",
-        items: [],
-      },
-      {
-        name: "Evaluation",
-        target: "/",
-        current: false,
-
         icon: "",
         items: [],
       },
     ],
   },
   {
-    name: "Navigator Management",
-    target: "/integrations",
-    icon: "fa-solid fa-plug",
+    name: "Leasing Agent",
+    description: "Manage your community, find people to chat with or mentor",
+    icon: "fa-solid fa-building-user",
     current: false,
-    roles: [AllRoles.NAVIGATOR],
+    roles: [AllRoles.SUPER_ADMIN, AllRoles.CONSUMER],
     items: [
-      { name: "Overview", target: "/", current: true, icon: "", items: [] },
-      { name: "Featured", target: "/", current: false, icon: "", items: [] },
-      { name: "Popular", target: "/", current: false, icon: "", items: [] },
-      { name: "New", target: "/", current: false, icon: "", items: [] },
-    ],
-  },
-  {
-    name: "Community Management",
-    target: "/compliance",
-    icon: "fa-solid fa-gavel", // clipboard-check, gavel
-    current: false,
-    roles: [AllRoles.NAVIGATOR],
-    items: [
-      { name: "Overview", target: "/", current: true, icon: "", items: [] },
-      { name: "Data Policy", target: "/", current: false, icon: "", items: [] },
       {
-        name: "Model Policy",
-        target: "/",
-        current: false,
-
+        tab: "Tab1",
+        name: "Overview",
+        current: true,
         icon: "",
         items: [],
       },
-      { name: "Compliance", target: "/", current: false, icon: "", items: [] },
-      { name: "Requests", target: "/", current: false, icon: "", items: [] },
-    ],
-  },
-  {
-    name: "Events Management",
-    target: "/notifications",
-    icon: "fa-solid fa-bell",
-    current: false,
-    roles: [AllRoles.NAVIGATOR],
-    items: [
-      { name: "Overview", target: "/", current: true, icon: "", items: [] },
-      { name: "Incidents", target: "/", current: false, icon: "", items: [] },
-      { name: "Alerts", target: "/", current: false, icon: "", items: [] },
       {
-        name: "Notifications",
-        target: "/",
+        tab: "Tab2",
+        name: "Roles",
         current: false,
-
         icon: "",
         items: [],
       },
     ],
   },
   {
-    name: "Subscription History",
-    target: "/settings",
-    icon: "fa-solid fa-gear",
+    name: "Move-in/Move-out Agent",
+    description: "Manage events, schedule and invite people",
+    icon: "fa-solid fa-dolly", // truck-ramp-box, dolly, people-carry-box
     current: false,
-    roles: [AllRoles.NAVIGATOR, AllRoles.CLIENT],
-    items: [],
+    roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR],
+    items: [
+      {
+        tab: "Tab1",
+        name: "Overview",
+        current: true,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab2",
+        name: "Roles",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab3",
+        name: "Groups",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab4",
+        name: "Api Keys",
+        current: false,
+        icon: "",
+        items: [],
+      },
+    ],
   },
   {
-    name: "Payment Processing",
-    target: "/settings",
-    icon: "fa-solid fa-gear",
+    name: "Maintenance Agent",
+    description: "Manage users, check their roles and connections",
+    icon: "fa-solid fa-screwdriver-wrench",
     current: false,
-    roles: [AllRoles.NAVIGATOR, AllRoles.CLIENT],
-    items: [],
+    roles: [AllRoles.SUPER_ADMIN, AllRoles.ADMIN, AllRoles.VENDOR],
+    items: [
+      {
+        tab: "Tab1",
+        name: "Overview",
+        current: true,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab2",
+        name: "Roles",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab3",
+        name: "Groups",
+        current: false,
+        icon: "",
+        items: [],
+      },
+    ],
   },
+
   {
+    name: "Billing & Payments",
+    description: "Manage users, check their roles and connections",
+    icon: "fa-solid fa-circle-dollar-to-slot", // regular fa-money-bill-1, solid: money-check-dollar, dollar-sign, hand-holdinig-dollar
+    current: false,
+    roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR, AllRoles.CONSUMER],
+    items: [
+      {
+        tab: "Tab1",
+        name: "Overview",
+        current: true,
+        icon: "",
+        items: [],
+      },
+    ],
+  },
+];
+
+export const secondary_navigation = [
+  {
+    type: NavType.SECONDARY,
     name: "Support Hub",
-    target: "/support",
-    icon: "fa-solid fa-headphones-simple", // headphones too
+    description: "Manage users, check their roles and connections",
+    icon: "fa-solid fa-headphones-simple",
     current: false,
-    roles: [AllRoles.NAVIGATOR, AllRoles.PROFESSIONAL],
-    items: [],
+    roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR, AllRoles.CONSUMER],
+    items: [
+      {
+        tab: "Tab1",
+        name: "Overview",
+        current: true,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab2",
+        name: "Model",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab3",
+        name: "Training",
+        current: false,
+        icon: "",
+        items: [],
+      },
+    ],
   },
   {
-    name: "Category Management",
-    target: "/data-management",
-    icon: "fa-solid fa-database",
+    type: NavType.SECONDARY,
+    name: "Subscription History",
+    description: "Manage users, check their roles and connections",
+    icon: "fa-solid fa-money-bill-trend-up",
     current: false,
-    roles: [AllRoles.NAVIGATOR],
-    items: [],
+    roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR, AllRoles.CONSUMER],
+    items: [
+      {
+        tab: "Tab1",
+        name: "Overview",
+        current: true,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab2",
+        name: "Model",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab3",
+        name: "Training",
+        current: false,
+        icon: "",
+        items: [],
+      },
+      {
+        tab: "Tab4",
+        name: "Inference",
+        current: false,
+        icon: "",
+        items: [],
+      },
+    ],
   },
-
-  // {
-  //   name: "Tenants",
-  //   target: "/tenants",
-  //   icon: "fa-solid fa-house-user", // house-user, building-user, users-gear, users-rectangle, users-viewfinder, users-between-line
-  //   current: false,
-  //   roles: [AllRoles.SUPER_ADMIN],
-  //   items: [
-  //     { name: "Overview", target: "/", current: true, icon: "", items: [] },
-  //     { name: "Onboard", target: "/", current: true, icon: "", items: [] },
-  //   ],
-  // },
-  // {
-  //   name: "Calendar",
-  //   target: "/calendar",
-  //   icon: "fa-regular fa-calendar", // https://fontawesome.com/search?q=calendar&o=a&m=free
-  //   current: false,
-  //   items: [
-  //     {
-  //       name: "Team 1",
-  //       target: "/team",
-  //       icon: "fa-solid fa-chart-line",
-  //       current: true,
-  //       items: [],
-  //     },
-  //   ],
-  // },
+  {
+    name: "Reported Users",
+    description: "Manage navigators, check their expertise and client list",
+    icon: "fa-solid fa-user-slash", // user-xmark, user-minus, user-lock, user-slash
+    current: false,
+    roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR],
+    items: [
+      {
+        tab: "Tab1",
+        name: "Overview",
+        current: true,
+        icon: "",
+        items: [],
+      },
+    ],
+  },
 ];
 
 export const user_navigation = [
   {
     name: "Profile",
-    target: "/profile",
     icon: "fa-regular fa-user",
   },
   {
     name: "Preferences",
-    target: "/preferences",
     icon: "fa-solid fa-sliders",
   },
 ];

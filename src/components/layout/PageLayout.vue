@@ -7,7 +7,7 @@
           <h1 class="text-3xl font-bold tracking-tight text-pop-secondary">
             <slot name="pageTitle" />
           </h1>
-          <p class="max-w-2xl text-sm text-secondary pt-2">
+          <p class="max-w-2xl text-sm text-secondary pt-2 italic">
             <slot name="description" />
           </p>
         </div>

@@ -2,23 +2,25 @@
   <div
     class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-pop-secondary bg-primary px-2"
   >
-    <div class="flex m-2 shrink-0 justify-center">
-      <img
-        src="/logo.png"
-        alt="logo"
-        class="w-36 bg-pop-secondary rounded-md"
-      />
+    <div class="flex ml-2 mt-4 shrink-0 justify-left">
+      <img src="/logo.png" alt="logo" class="h-20 rounded-md" />
 
-      <!-- <span class="border-b border-pop-secondary text-pop-secondary ml-4">
-        We Are SAM
-      </span> -->
+      <span
+        class="ml-4 mt-8 mb-5 italic font-mono text-pop-secondary border-b border-pop-primary"
+      >
+        My Briefcase
+      </span>
     </div>
 
-    <SideNavigation :level="1" :items="navigation" />
+    <SideNavigation
+      :level="1"
+      :primary_items="primary_navigation"
+      :secondary_items="secondary_navigation"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { navigation } from "@helpers/navigation";
+import { primary_navigation, secondary_navigation } from "@/helpers/navigation";
 import SideNavigation from "./SideNavigation.vue";
 </script>

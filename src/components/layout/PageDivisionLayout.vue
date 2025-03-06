@@ -4,7 +4,7 @@
       <h3 class="text-lg font-medium leading-6 text-pop-secondary">
         <slot name="divisionTitle" />
       </h3>
-      <p class="max-w-2xl text-sm text-secondary">
+      <p class="max-w-5xl text-sm text-secondary italic">
         <slot name="divisionDescription" />
       </p>
     </div>
