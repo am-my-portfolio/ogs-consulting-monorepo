@@ -14,6 +14,7 @@
         aria-hidden="true"
       ></i>
     </MenuButton>
+    
     <MenuButton class="sm:hidden">
       <!-- Other options https://fontawesome.com/search?q=profile&o=a&m=free -->
       <i

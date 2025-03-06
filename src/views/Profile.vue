@@ -9,10 +9,10 @@
         > -->
 
         <div
-          class="flex flex-col m-24 px-12 items-center text-secondary bg-pop-secondary/60 rounded-md"
+          class="flex flex-col mt-20 mx-4 px-4 md:m-24 md:px-12 items-center justify-center text-secondary bg-pop-secondary/60 rounded-md"
         >
           <div
-            class="w-36 h-36 -mt-20 border-8 rounded-full overflow-hidden border-pop-secondary/60"
+            class="w-24 md:w-36 h-24 md:h-36 -mt-12 md:-mt-20 border-8 rounded-full overflow-hidden border-pop-secondary/60"
           >
             <img
               v-if="user.picture"
@@ -31,7 +31,7 @@
             {{ user.email }}
           </p>
           <div
-            class="w-3/4 mt-4 mb-12 text-center space-y-1 border-pop-primary border-t-2"
+            class="w-full md:w-3/4 mt-4 mb-12 text-center space-y-1 border-pop-primary border-t-2"
           >
             <p class="mt-12 text-primary">@{{ user.nickname }} | 29 | Fr</p>
             <p class="text-primary">WCIF friendly</p>
@@ -42,19 +42,19 @@
           </div>
 
           <div
-            class="flex w-full mt-4 p-4 justify-around text-pop-primary border-pop-primary border-t-2"
+            class="flex w-full mt-4 p-4 justify-around text-pop-primary border-pop-primary border-t-2  text-xl md:text-4xl"
           >
             <button class="hover:text-primary/70">
-              <i class="fas fa-home text-4xl"></i>
+              <i class="fas fa-home"></i>
             </button>
             <button class="hover:text-pop-primary/70">
-              <i class="fas fa-envelope text-4xl"></i>
+              <i class="fas fa-envelope"></i>
             </button>
             <button class="hover:text-pop-primary/70">
-              <i class="fab fa-linkedin text-4xl"></i>
+              <i class="fab fa-linkedin"></i>
             </button>
             <button class="hover:text-pop-primary/70">
-              <i class="fas fa-phone text-4xl"></i>
+              <i class="fas fa-phone"></i>
             </button>
           </div>
         </div>
