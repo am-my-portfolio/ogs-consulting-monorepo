@@ -11,4 +11,6 @@ export const enum Events {
 
   // Select events
   SELECT = "select",
+
+  SCROLL_TO = "scroll_to",
 }

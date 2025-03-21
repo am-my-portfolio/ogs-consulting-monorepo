@@ -42,7 +42,7 @@
           </div>
 
           <div
-            class="flex w-full mt-4 p-4 justify-around text-pop-primary border-pop-primary border-t-2  text-xl md:text-4xl"
+            class="flex w-full mt-4 p-4 justify-around text-pop-primary border-pop-primary border-t-2 text-xl md:text-4xl"
           >
             <button class="hover:text-primary/70">
               <i class="fas fa-home"></i>
@@ -65,7 +65,7 @@
 
 <script setup lang="ts">
 import { useAuth0 } from "@auth0/auth0-vue";
-import PageDivisionLayout from "@/components/layout/PageDivisionLayout.vue";
+import PageDivisionLayout from "@/components/layout/division/PageDivisionLayout.vue";
 
 const { user, isLoading } = useAuth0();
 </script>

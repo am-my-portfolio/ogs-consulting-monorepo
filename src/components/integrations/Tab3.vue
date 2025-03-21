@@ -97,7 +97,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { Icon } from "@iconify/vue"; // https://iconify.design/docs/icon-components/vue/
-import PageDivisionLayout from "@/components/layout/PageDivisionLayout.vue";
+import PageDivisionLayout from "@/components/layout/division/PageDivisionLayout.vue";
 
 defineProps<{
   title: string;

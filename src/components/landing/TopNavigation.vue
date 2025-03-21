@@ -10,10 +10,16 @@
 
     <!-- Navigation Links (Hidden on Small Screens) -->
     <div class="hidden md:flex space-x-8 text-pop-secondary font-medium">
-      <a href="#" class="hover:text-pop-primary transition">Home</a>
-      <a href="#" class="hover:text-pop-primary transition">Shop</a>
-      <a href="#" class="hover:text-pop-primary transition">About</a>
-      <a href="#" class="hover:text-pop-primary transition">Contact</a>
+      <div v-for="item in navigation" :key="item.name">
+        <a
+          href="#"
+          @click="emitAction(item.action)"
+          class="hover:text-pop-primary transition"
+        >
+          {{ item.name }}
+        </a>
+      </div>
+
       <ThemeToggle class="ml-24" />
     </div>
 
@@ -22,6 +28,21 @@
 </template>
 
 <script setup lang="ts">
+import { Events } from "@/helpers/index";
 import LoginButton from "@/components/identity/LoginButton.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
+
+const emit = defineEmits([Events.SCROLL_TO]);
+const emitAction = (value: string) => {
+  console.log("emiting", value);
+  emit(Events.SCROLL_TO, value);
+};
+
+const navigation = [
+  { name: "About", action: "about" },
+  { name: "Team", action: "team" },
+  { name: "Problem", action: "problem" },
+  { name: "Solution", action: "solution" },
+  { name: "Contact", action: "contact" },
+];
 </script>
