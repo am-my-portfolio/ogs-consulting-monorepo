@@ -4,13 +4,18 @@
       <template #titleRight> The Solution </template>
 
       <template #subTitleRight>
-        SiloLabs: Empowering Cancer Patients to Monetize Their Data
+        The Briefcase: Empowering Solopreneurs and SMEs to Monetize their Data
       </template>
 
       <template #description>
-        SiloLabs bridges traditional and decentralized finance, creating a fair,
-        patient-first data economy leveraging blockchain technology so those in
-        need finally benefit from the data they create.
+        The Briefcase brings a suite of AI agents to automate the business
+        processes of a solopreneur or small business, allowing them to focus on
+        what they do best - running their business. Instead of using a single AI
+        agent, The Briefcase uses a team of AI agents to handle different
+        aspects of the business, from sales to marketing to scheduling. This
+        allows for a more efficient and effective way to run a business, as each
+        agent can specialize in a specific task and work together to achieve the
+        business's goals.
       </template>
 
       <template #content>
@@ -36,25 +41,25 @@ import RowLayout from "@/components/layout/widget/RowLayout.vue";
 
 const items = [
   {
-    title: "Patients Get Paid",
+    title: "Sales Agent",
     description:
       "Cancer patients receive direct payments for their anonymized health data.",
     icon: "fa-solid fa-piggy-bank",
   },
   {
-    title: "Seamless Payments",
+    title: "Scheduling Agent",
     description:
       "Life Sciences companies pay traditionally; SiloLabs converts funds into stablecoins (USDC) for secure, automated micropayments.",
     icon: "fa-solid fa-building-columns",
   },
   {
-    title: "Ethical & Transparent",
+    title: "Marketing Agent",
     description:
       "Blockchain ensures patient consent, security, and full traceability.",
     icon: "fa-solid fa-cubes",
   },
   {
-    title: "Better Data for Research",
+    title: "Maintenance Agent",
     description:
       "Life Sciences companies access verified, high-quality patient data to accelerate new treatments.",
     icon: "fa-solid fa-clipboard-list",

@@ -4,8 +4,8 @@
       <template #titleLeft> The Problem </template>
 
       <template #subTitleLeft>
-        Cancer Patients Are the Backbone of a $50 Billion Data Market - But They
-        Get Nothing.
+        Solopreneurs and small businesses are the backbone of a $50 Billion
+        Market - But they lack the resources to compete
       </template>
 
       <template #content>
@@ -16,11 +16,12 @@
 
           <template #leftContent>
             <p class="text-secondary text-xl">
-              Every cancer patient's journey produces an enormous amount of
-              valuable data - scans, lab results, genetic profiles, and
-              treatment outcomes. This data fuels a $50+ billion global health
-              data market, driving pharmaceutical breakthroughs and clinical
-              advancements.
+              Solopreneurs and small businesses cannot afford to hire a team of
+              experts in every area of their business, nor can they use existing
+              SaaS tools that are often expensive and not tailored to their
+              specific needs. With The Briefcase, solopreneurs and small
+              businesses can have access to the same level of expertise and
+              efficiency as a large corporation, without the high cost.
             </p>
           </template>
 
