@@ -7,7 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import PageDivisionLayout from "@/components/layout/division/PageDivisionLayout.vue";
+import { PageDivisionLayout } from "@am-ogs/vue-ui";
+
 defineProps<{
   title: string;
   description: string;

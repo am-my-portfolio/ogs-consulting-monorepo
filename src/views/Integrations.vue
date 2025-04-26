@@ -18,7 +18,7 @@
         </select>
       </div>
       <div class="hidden lg:block">
-        <div class="border-b border-secondary">
+        <div class="border-b border-dull-secondary">
           <nav class="-mb-px flex space-x-8">
             <a
               v-for="tab in tabs"
@@ -28,7 +28,7 @@
               :class="[
                 current_tab === tab.name
                   ? 'border-pop-primary text-pop-primary'
-                  : 'border-transparent text-secondary hover:border-secondary hover:text-secondary',
+                  : 'border-transparent text-dull-secondary hover:border-dull-secondary hover:text-dull-secondary',
                 'whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium',
               ]"
               >{{ tab.name }}
@@ -60,8 +60,8 @@
 
 <script setup lang="ts">
 import { defineAsyncComponent, ref } from "vue";
+import { PageLayout } from "@am-ogs/vue-ui";
 import { primary_navigation } from "@/helpers/navigation";
-import PageLayout from "@/components/layout/page/PageLayout.vue";
 
 const page = primary_navigation.find((n) => n.name === "Integrations");
 const tabs = page.items;

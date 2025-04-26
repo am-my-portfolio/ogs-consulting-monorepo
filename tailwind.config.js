@@ -1,12 +1,15 @@
 const { createThemes } = require("tw-colors");
-const esmRequire = require("esm")(module);
 const twColors = require("tailwindcss/colors");
 const twForms = require("@tailwindcss/forms")({
   strategy: "class",
 });
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    "node_modules/@am-ogs/vue-ui/**/*.js", // <<-- this is important
+  ],
   darkMode: "class",
   theme: {
     extend: {
@@ -26,16 +29,36 @@ module.exports = {
     createThemes(
       {
         light: {
-          primary: twColors.slate["100"],
-          secondary: twColors.slate["500"],
-          "pop-primary": twColors.red["600"],
-          "pop-secondary": twColors.teal["700"],
+          dull: {
+            primary: twColors.slate["100"],
+            secondary: twColors.slate["700"],
+          },
+          pop: {
+            primary: twColors.red["600"],
+            secondary: twColors.teal["700"],
+          },
+          btn: {
+            primary: twColors.red["600"],
+            hover: twColors.teal["700"],
+            disabled: twColors.gray["400"],
+            txt: twColors.white,
+          },
         },
         dark: {
-          primary: twColors.black[""],
-          secondary: twColors.slate["300"],
-          "pop-primary": twColors.red["500"],
-          "pop-secondary": twColors.cyan["300"],
+          dull: {
+            primary: twColors.black,
+            secondary: twColors.slate["300"],
+          },
+          pop: {
+            primary: twColors.red["500"],
+            secondary: twColors.cyan["300"],
+          },
+          btn: {
+            primary: twColors.red["600"],
+            hover: twColors.cyan["500"],
+            disabled: twColors.gray["400"],
+            txt: twColors.white,
+          },
         },
       },
       { defaultTheme: "light" },

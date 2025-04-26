@@ -26,14 +26,14 @@
                 class="font-medium text-pop-primary/80 hover:text-pop-primary"
                 >{{ integration.name }}
               </a>
-              <p class="mt-1 text-primary/80 text-sm">
+              <p class="mt-1 text-dull-secondary/80 text-sm">
                 Type: {{ integration.type }}
               </p>
             </div>
             <div class="flex-shrink-0 pr-2">
               <button
                 type="button"
-                class="inline-flex p-1 m-1 items-center justify-center rounded-full bg-transparent text-primary hover:text-pop-primary focus:outline-none focus:ring-2 focus:ring-pop-primary focus:ring-offset-2"
+                class="inline-flex p-1 m-1 items-center justify-center rounded-full bg-transparent text-dull-secondary hover:text-pop-primary focus:outline-none focus:ring-2 focus:ring-pop-primary focus:ring-offset-2"
               >
                 <span class="sr-only">Open options</span>
                 <i class="fa fa-plug-circle-minus text-3xl"></i>
@@ -48,7 +48,7 @@
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue"; // https://iconify.design/docs/icon-components/vue/
-import PageDivisionLayout from "@/components/layout/division/PageDivisionLayout.vue";
+import { PageDivisionLayout } from "@am-ogs/vue-ui";
 defineProps<{
   title: string;
   description: string;

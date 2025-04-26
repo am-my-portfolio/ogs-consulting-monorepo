@@ -1,13 +1,14 @@
 {
-  "name": "@afshan/template-app",
+  "name": "@am/my-briefcase",
   "version": "0.0.1",
   "type": "module",
   "engines": {
-    "node": "20.x",
-    "npm": "10.x"
+    "node": "23.9.0",
+    "pnpm": "10.0.0"
   },
+  "packageManager": "pnpm@10.0.0",
   "scripts": {
-    "fresh:start": "rm -rf node_modules package-lock.json && npm i",
+    "fresh:start": "rm -rf node_modules package-lock.json pnpm-lock.yaml && pnpm i",
     "start": "vite --port 4000",
     "build": "vite build",
     "preview": "vite preview",
@@ -17,6 +18,7 @@
     "lint:fix": "eslint --fix \"**/*.js\" \"**/*.ts\" \"**/*.vue\" \"**/*.mjs\""
   },
   "dependencies": {
+    "@am-ogs/vue-ui": "0.0.12",
     "@auth0/auth0-vue": "^2.3.3",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
@@ -25,28 +27,37 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@headlessui/vue": "^1.7.22",
     "@heroicons/vue": "^2.1.5",
+    "@primeuix/themes": "^1.0.3",
+    "@langchain/anthropic": "^0.3.15",
+    "@langchain/core": "^0.3.42",
+    "@langchain/google-vertexai": "^0.2.2",
+    "@langchain/langgraph": "^0.2.57",
+    "@langchain/openai": "^0.4.7",
     "@vueform/slider": "^2.1.10",
     "@vueuse/core": "^11.1.0",
     "axios": "^1.7.7",
     "chart.js": "^3.9.1",
     "esm": "^3.2.25",
     "jwt-decode": "^4.0.0",
+    "langchain": "^0.3.19",
     "lodash": "^4.17.21",
     "path": "^0.12.7",
     "pinia": "^2.2.4",
     "primevue": "^4.1.0",
     "tailwindcss": "^3.4.8",
     "tailwindcss-primeui": "^0.3.4",
+    "uuid": "^11.1.0",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.4.36",
     "vue-chart-3": "^3.1.8",
     "vue-router": "^4.4.3",
-    "vue3-charts": "^1.1.33"
+    "vue3-charts": "^1.1.33",
+    "tw-colors": "^3.3.2",
+    "@iconify/vue": "^4.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
-    "@iconify/vue": "^4.3.0",
     "@tailwindcss/forms": "^0.5.7",
     "@types/node": "^22.1.0",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
@@ -59,7 +70,6 @@
     "eslint-plugin-tailwindcss": "^3.17.4",
     "eslint-plugin-vue": "^9.27.0",
     "postcss": "^8.4.41",
-    "tw-colors": "^3.3.2",
     "typescript": "^5.5.4",
     "vite": "^5.4.0"
   }

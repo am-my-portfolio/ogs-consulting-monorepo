@@ -11,6 +11,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab1",
         name: "Overview",
+        description: "",
         current: true,
         icon: "",
         items: [],
@@ -18,6 +19,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab2",
         name: "Q & A",
+        description: "",
         current: false,
         icon: "",
         items: [],
@@ -25,6 +27,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab3",
         name: "Summarize",
+        description: "",
         current: false,
         icon: "",
         items: [],
@@ -32,6 +35,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab4",
         name: "Draft",
+        description: "",
         current: false,
         icon: "",
         items: [],
@@ -49,6 +53,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab1",
         name: "Overview",
+        description: "",
         current: true,
         icon: "",
         items: [],
@@ -125,6 +130,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab5",
         name: "Payment",
+        description: "",
         current: false,
         icon: "",
         items: [],
@@ -141,6 +147,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab1",
         name: "Overview",
+        description: "",
         current: true,
         icon: "",
         items: [],
@@ -148,6 +155,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab2",
         name: "Model",
+        description: "",
         current: false,
         icon: "",
         items: [],
@@ -164,6 +172,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab1",
         name: "Overview",
+        description: "",
         current: true,
         icon: "",
         items: [],
@@ -171,6 +180,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab2",
         name: "Roles",
+        description: "",
         current: false,
         icon: "",
         items: [],
@@ -187,6 +197,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab1",
         name: "Overview",
+        description: "",
         current: true,
         icon: "",
         items: [],
@@ -194,6 +205,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab2",
         name: "Roles",
+        description: "",
         current: false,
         icon: "",
         items: [],
@@ -201,6 +213,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab3",
         name: "Groups",
+        description: "",
         current: false,
         icon: "",
         items: [],
@@ -208,6 +221,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab4",
         name: "Api Keys",
+        description: "",
         current: false,
         icon: "",
         items: [],
@@ -224,6 +238,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab1",
         name: "Overview",
+        description: "",
         current: true,
         icon: "",
         items: [],
@@ -231,6 +246,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab2",
         name: "Roles",
+        description: "",
         current: false,
         icon: "",
         items: [],
@@ -238,6 +254,7 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab3",
         name: "Groups",
+        description: "",
         current: false,
         icon: "",
         items: [],
@@ -255,109 +272,11 @@ export const primary_navigation: Item[] = [
       {
         tab: "Tab1",
         name: "Overview",
+        description: "",
         current: true,
         icon: "",
         items: [],
       },
     ],
-  },
-];
-
-export const secondary_navigation = [
-  {
-    type: NavType.SECONDARY,
-    name: "Support Hub",
-    description: "Manage users, check their roles and connections",
-    icon: "fa-solid fa-headphones-simple",
-    current: false,
-    roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR, AllRoles.CONSUMER],
-    items: [
-      {
-        tab: "Tab1",
-        name: "Overview",
-        current: true,
-        icon: "",
-        items: [],
-      },
-      {
-        tab: "Tab2",
-        name: "Model",
-        current: false,
-        icon: "",
-        items: [],
-      },
-      {
-        tab: "Tab3",
-        name: "Training",
-        current: false,
-        icon: "",
-        items: [],
-      },
-    ],
-  },
-  {
-    type: NavType.SECONDARY,
-    name: "Subscription History",
-    description: "Manage users, check their roles and connections",
-    icon: "fa-solid fa-money-bill-trend-up",
-    current: false,
-    roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR, AllRoles.CONSUMER],
-    items: [
-      {
-        tab: "Tab1",
-        name: "Overview",
-        current: true,
-        icon: "",
-        items: [],
-      },
-      {
-        tab: "Tab2",
-        name: "Model",
-        current: false,
-        icon: "",
-        items: [],
-      },
-      {
-        tab: "Tab3",
-        name: "Training",
-        current: false,
-        icon: "",
-        items: [],
-      },
-      {
-        tab: "Tab4",
-        name: "Inference",
-        current: false,
-        icon: "",
-        items: [],
-      },
-    ],
-  },
-  {
-    name: "Reported Users",
-    description: "Manage navigators, check their expertise and client list",
-    icon: "fa-solid fa-user-slash", // user-xmark, user-minus, user-lock, user-slash
-    current: false,
-    roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR],
-    items: [
-      {
-        tab: "Tab1",
-        name: "Overview",
-        current: true,
-        icon: "",
-        items: [],
-      },
-    ],
-  },
-];
-
-export const user_navigation = [
-  {
-    name: "Profile",
-    icon: "fa-regular fa-user",
-  },
-  {
-    name: "Preferences",
-    icon: "fa-solid fa-sliders",
   },
 ];

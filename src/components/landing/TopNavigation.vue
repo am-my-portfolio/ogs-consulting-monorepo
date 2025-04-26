@@ -1,16 +1,23 @@
 <template>
   <!-- Navigation Bar -->
   <nav
-    class="w-full p-2 flex items-center justify-between border-b border-pop-secondary"
+    :class="[
+      'flex w-full',
+      'bg-dull-primary',
+      'items-center justify-between',
+      'border-b border-pop-secondary shadow-lg',
+    ]"
   >
     <!-- Logo -->
     <div class="flex items-center">
-      <img src="/3.png" alt="logo" class="shadow-md w-20 object-cover" />
+      <img src="/landing.png" alt="logo" class="w-20 object-cover" />
     </div>
 
     <!-- Navigation Links (Hidden on Small Screens) -->
-    <div class="hidden md:flex space-x-8 text-pop-secondary font-medium">
-      <div v-for="item in navigation" :key="item.name">
+    <div
+      class="hidden md:flex space-x-4 md:space-x-8 pt-8 text-pop-secondary font-medium"
+    >
+      <div v-for="item in landing_page_navigation" :key="item.name">
         <a
           href="#"
           @click="emitAction(item.action)"
@@ -20,29 +27,21 @@
         </a>
       </div>
 
-      <ThemeToggle class="ml-24" />
+      <ThemeToggle />
     </div>
 
-    <LoginButton class="rounded-md" />
+    <LoginButton />
   </nav>
 </template>
 
 <script setup lang="ts">
-import { Events } from "@/helpers/index";
+import { ThemeToggle } from "@am-ogs/vue-ui";
+import { Events, landing_page_navigation } from "@/helpers";
 import LoginButton from "@/components/identity/LoginButton.vue";
-import ThemeToggle from "@/components/ThemeToggle.vue";
 
 const emit = defineEmits([Events.SCROLL_TO]);
 const emitAction = (value: string) => {
   console.log("emiting", value);
   emit(Events.SCROLL_TO, value);
 };
-
-const navigation = [
-  { name: "About", action: "about" },
-  { name: "Team", action: "team" },
-  { name: "Problem", action: "problem" },
-  { name: "Solution", action: "solution" },
-  { name: "Contact", action: "contact" },
-];
 </script>

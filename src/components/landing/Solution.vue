@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-24">
+  <div class="my-12 scroll-mt-12">
     <RowLayout>
       <template #titleRight> The Solution </template>
 
@@ -12,20 +12,17 @@
         processes of a solopreneur or small business, allowing them to focus on
         what they do best - running their business. Instead of using a single AI
         agent, The Briefcase uses a team of AI agents to handle different
-        aspects of the business, from sales to marketing to scheduling. This
-        allows for a more efficient and effective way to run a business, as each
-        agent can specialize in a specific task and work together to achieve the
-        business's goals.
+        aspects of the business, from sales to marketing to scheduling.
       </template>
 
       <template #content>
         <ul
           role="list"
-          class="grid grid-cols-1 md:grid-cols-4 gap-x-2 rounded-md"
+          class="grid grid-cols-1 md:grid-cols-4 gap-2 rounded-md"
         >
           <li
             v-for="item in items"
-            class="flex flex-col p-2 divide-y divide-secondary rounded-md shadow bg-pop-secondary"
+            class="flex flex-col p-2 divide-y divide-dull-secondary rounded-md shadow bg-pop-secondary"
           >
             <SolutionCard :item="item" />
           </li>
@@ -37,31 +34,33 @@
 
 <script setup lang="ts">
 import SolutionCard from "./SolutionCard.vue";
-import RowLayout from "@/components/layout/widget/RowLayout.vue";
+import { RowLayout } from "@am-ogs/vue-ui";
 
 const items = [
   {
-    title: "Sales Agent",
+    title: "Leasing Agent",
     description:
-      "Cancer patients receive direct payments for their anonymized health data.",
+      "An AI Leasing Agent is a virtual assistant that automates leasing tasks like answering tenant inquiries, scheduling tours, and processing rental applications, offering 24/7 support.",
     icon: "fa-solid fa-piggy-bank",
   },
   {
     title: "Scheduling Agent",
-    description:
-      "Life Sciences companies pay traditionally; SiloLabs converts funds into stablecoins (USDC) for secure, automated micropayments.",
+    description: `An AI Scheduling Agent automates tasks like tenant communication, scheduling showings, 
+    and managing maintenance requests. This allows property managers to focus on more strategic tasks and improves overall efficiency.`,
     icon: "fa-solid fa-building-columns",
   },
   {
     title: "Marketing Agent",
-    description:
-      "Blockchain ensures patient consent, security, and full traceability.",
+    description: `An AI Marketing Agent that increases engagement rates and conversions through dynamic content 
+      based on customer behavior and preferences, utilizing customer data to personalize interactions,.
+     `,
     icon: "fa-solid fa-cubes",
   },
   {
     title: "Maintenance Agent",
-    description:
-      "Life Sciences companies access verified, high-quality patient data to accelerate new treatments.",
+    description: `An AI Maintenance Agent that streamlines and automates tenant inquiry handling, 
+    work order management, and vendor communication. It also assist with tasks like damage assessment 
+    and automated responses to tenant inquiries.`,
     icon: "fa-solid fa-clipboard-list",
   },
 ];

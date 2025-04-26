@@ -18,7 +18,7 @@
         </select>
       </div>
       <div class="hidden lg:block">
-        <div class="border-b border-secondary">
+        <div class="border-b border-dull-secondary">
           <nav class="-mb-px flex space-x-8">
             <a
               v-for="tab in tabs"
@@ -28,7 +28,7 @@
               :class="[
                 current_tab === tab.name
                   ? 'border-pop-primary text-pop-primary'
-                  : 'border-transparent text-secondary hover:border-secondary hover:text-secondary',
+                  : 'border-transparent text-dull-secondary hover:border-dull-secondary hover:text-dull-secondary',
                 'whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium',
               ]"
               >{{ tab.name }}
@@ -41,7 +41,7 @@
 
     <!-- Search  -->
     <template #search>
-      <div class="mt-10 divide-y divide-secondary">
+      <div class="mt-10 divide-y divide-dull-secondary">
         <!-- Search  -->
         <form class="relative flex flex-1 m-1 h-12" action="#" method="GET">
           <label for="search-field" class="sr-only">Search</label>
@@ -51,7 +51,7 @@
           ></i>
           <input
             id="search-field"
-            class="block h-full w-full pl-10 text-pop-secondary placeholder:text-pop-secondary focus:ring-0 sm:text-sm bg-primary border-2 border-secondary rounded-md"
+            class="block h-full w-full pl-10 text-pop-secondary placeholder:text-pop-secondary focus:ring-0 sm:text-sm bg-dull-secondary border-2 border-dull-secondary rounded-md"
             placeholder="search team ..."
             type="search"
             name="search"
@@ -83,8 +83,8 @@
 
 <script setup lang="ts">
 import { defineAsyncComponent, ref } from "vue";
+import { PageLayout } from "@am-ogs/vue-ui";
 import { primary_navigation } from "@/helpers/navigation";
-import PageLayout from "@/components/layout/page/PageLayout.vue";
 
 const page = primary_navigation.find((n) => n.name === "Assistant");
 const tabs = page.items;

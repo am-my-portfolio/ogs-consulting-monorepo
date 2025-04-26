@@ -13,6 +13,8 @@ const CONFIGS = {
     AUTH0_CLIENT_ID_MGNT_API: import.meta.env.VITE_AUTH0_CLIENT_ID_MGNT_API,
     AUTH0_CLIENT_SECRET_MGNT_API: import.meta.env
       .VITE_AUTH0_CLIENT_SECRET_MGNT_API,
+    OPENAI_API_KEY: import.meta.env.VITE_OPENAI_API_KEY,
+    ANTHROPIC_API_KEY: import.meta.env.VITE_ANTHROPIC_API_KEY,
   },
 };
 

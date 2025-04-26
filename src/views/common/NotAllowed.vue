@@ -1,7 +1,7 @@
 <template>
   <main
     v-if="isAuthenticated"
-    class="grid min-h-full place-items-center bg-primary px-6 py-24 sm:py-32 lg:px-8"
+    class="grid min-h-full place-items-center bg-dull-secondary px-6 py-24 sm:py-32 lg:px-8"
   >
     <div class="text-center">
       <h1
@@ -14,7 +14,7 @@
       </p>
       <div class="mt-10 flex items-center justify-center gap-x-6">
         <button
-          class="flex items-center text-normal text-xl p-2 bg-primary px-4 rounded-md text-pop-secondary/50"
+          class="flex items-center text-normal text-xl p-2 bg-dull-secondary px-4 rounded-md text-pop-secondary/50"
           @click="logoutUser"
         >
           Login with the correct credentials

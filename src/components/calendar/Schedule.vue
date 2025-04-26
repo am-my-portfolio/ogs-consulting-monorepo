@@ -77,7 +77,7 @@
         </div>
         <button
           type="button"
-          class="mt-8 w-full rounded-md bg-pop-secondary px-3 py-2 text-sm font-semibold hover:font-bold text-primary shadow hover:bg-pop-secondary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          class="mt-8 w-full rounded-md bg-pop-secondary px-3 py-2 text-sm font-semibold hover:font-bold text-dull-secondary shadow hover:bg-pop-secondary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Add event
         </button>

@@ -1,7 +1,7 @@
 <template>
   <Menu as="div" class="relative">
     <MenuButton
-      class="hidden sm:inline-flex justify-center gap-x-3 rounded-md p-4 text-sm bg-primary hover:bg-pop-secondary text-pop-secondary hover:text-primary"
+      class="hidden sm:inline-flex justify-center gap-x-3 rounded-md p-4 text-sm bg-dull-secondary hover:bg-pop-secondary text-pop-secondary hover:text-dull-secondary"
     >
       <img
         class="inline-block h-6 w-6 rounded-full"
@@ -32,12 +32,12 @@
       leave-to-class="transform opacity-0 scale-95"
     >
       <MenuItems
-        class="absolute right-0 z-10 mt-5 sm:mt-2 w-56 rounded-md origin-top-right divide-y divide-pop-secondary bg-secondary shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="absolute right-0 z-10 mt-5 sm:mt-2 w-56 rounded-md origin-top-right divide-y divide-pop-secondary bg-dull-secondary shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
       >
         <MenuItem v-for="item in user_navigation" :key="item.name">
           <a
             :href="`/${item.name.toLowerCase()}`"
-            class="block w-full p-3 rounded-md bg-primary hover:bg-pop-secondary text-pop-secondary hover:text-primary text-sm"
+            class="block w-full p-3 rounded-md bg-dull-secondary hover:bg-pop-secondary text-pop-secondary hover:text-dull-secondary text-sm"
           >
             <div class="flow-root">
               <p class="float-left">
@@ -54,7 +54,7 @@
 
         <MenuItem>
           <span
-            class="block w-full p-3 rounded-md cursor-pointer bg-primary hover:bg-pop-secondary text-pop-secondary hover:text-primary text-sm"
+            class="block w-full p-3 rounded-md cursor-pointer bg-dull-secondary hover:bg-pop-secondary text-pop-secondary hover:text-dull-secondary text-sm"
           >
             <ThemeToggle />
           </span>
@@ -63,7 +63,7 @@
         <MenuItem>
           <button
             @click="handleLogout"
-            class="block w-full p-3 rounded-md bg-primary hover:bg-pop-secondary text-pop-secondary hover:text-primary text-sm"
+            class="block w-full p-3 rounded-md bg-dull-secondary hover:bg-pop-secondary text-pop-secondary hover:text-dull-secondary text-sm"
           >
             <div class="flow-root">
               <p class="float-left">
@@ -86,8 +86,8 @@ import { computed } from "vue";
 import { useDark } from "@vueuse/core";
 import { useAuth0 } from "@auth0/auth0-vue";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
-import { user_navigation } from "@/helpers/navigation";
-import ThemeToggle from "@/components/ThemeToggle.vue";
+import { ThemeToggle } from "@am-ogs/vue-ui";
+import { user_navigation } from "@/helpers";
 
 const isDark = useDark(); // DO NOT DELETE THIS
 const auth0 = useAuth0();

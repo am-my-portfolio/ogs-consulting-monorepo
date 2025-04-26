@@ -77,7 +77,7 @@
         </div>
         <button
           type="button"
-          class="mt-8 w-full rounded-md bg-pop-secondary px-3 py-2 text-sm font-semibold hover:font-bold text-primary shadow hover:bg-pop-secondary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          class="mt-8 w-full rounded-md bg-pop-secondary px-3 py-2 text-sm font-semibold hover:font-bold text-dull-secondary shadow hover:bg-pop-secondary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Add event
         </button>
@@ -98,12 +98,12 @@
           />
           <div class="flex-auto">
             <h3 class="pr-10 font-semibold xl:pr-0">{{ meeting.name }}</h3>
-            <dl class="mt-2 flex flex-col text-secondary xl:flex-row">
+            <dl class="mt-2 flex flex-col text-dull-secondary xl:flex-row">
               <div class="flex items-start space-x-3">
                 <dt class="mt-0.5">
                   <span class="sr-only">Date</span>
                   <CalendarIcon
-                    class="h-5 w-5 text-secondary"
+                    class="h-5 w-5 text-dull-secondary"
                     aria-hidden="true"
                   />
                 </dt>
@@ -114,12 +114,12 @@
                 </dd>
               </div>
               <div
-                class="mt-2 flex items-start space-x-3 xl:ml-3.5 xl:mt-0 xl:border-l xl:border-secondary xl:border-opacity-50 xl:pl-3.5"
+                class="mt-2 flex items-start space-x-3 xl:ml-3.5 xl:mt-0 xl:border-l xl:border-dull-secondary xl:border-opacity-50 xl:pl-3.5"
               >
                 <dt class="mt-0.5">
                   <span class="sr-only">Location</span>
                   <MapPinIcon
-                    class="h-5 w-5 text-secondary"
+                    class="h-5 w-5 text-dull-secondary"
                     aria-hidden="true"
                   />
                 </dt>
@@ -133,7 +133,7 @@
           >
             <div>
               <MenuButton
-                class="-m-2 flex items-center rounded-full p-2 text-secondary hover:text-gray-600"
+                class="-m-2 flex items-center rounded-full p-2 text-dull-secondary hover:text-gray-600"
               >
                 <span class="sr-only">Open options</span>
                 <EllipsisHorizontalIcon class="h-5 w-5" aria-hidden="true" />
