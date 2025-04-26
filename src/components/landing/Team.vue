@@ -19,7 +19,6 @@
             :key="person.email"
             class="p-2 divide-y divide-dull-secondary rounded-md bg-pop-secondary shadow"
           >
-            <!-- this is adding weird scrolling -->
             <ProfileCard
               :user="person"
               role_key="sam.co/roles"
@@ -34,8 +33,7 @@
 
 <script setup lang="ts">
 import { useAuth0 } from "@auth0/auth0-vue";
-import { RowLayout } from "@am-ogs/vue-ui";
-import ProfileCard from "../identity/ProfileCard.vue";
+import { RowLayout, ProfileCard } from "@am-ogs/vue-ui";
 
 const { isAuthenticated } = useAuth0();
 const team = [
