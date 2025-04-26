@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@am-ogs/vue-ui':
-        specifier: 0.0.13
-        version: 0.0.13(tailwindcss@3.4.17)(typescript@5.8.3)
+        specifier: 0.0.16
+        version: 0.0.16(tailwindcss@3.4.17)(typescript@5.8.3)
       '@auth0/auth0-vue':
         specifier: ^2.3.3
         version: 2.4.0(typescript@5.8.3)(vue-router@4.5.1(vue@3.5.13(typescript@5.8.3)))
@@ -172,8 +172,8 @@ packages:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
 
-  '@am-ogs/vue-ui@0.0.13':
-    resolution: {integrity: sha512-Ck0HwonxrqHP942ZeKfKduy036WOzyFQa3l04k9+wM6nifESYITohDqlSI44PQzspw2BmZGGYw6/sSTcqHo+Dw==}
+  '@am-ogs/vue-ui@0.0.16':
+    resolution: {integrity: sha512-xmq5JjsBcxe//xf/QsZu5VFgDU5YpgxHxD7XxROkguUl9pF6iJ/IDhJzg1FRfj/KJsIU+dBVHQBtkG2YcgjO6Q==}
     peerDependencies:
       tailwindcss: ^4.1.4
 
@@ -2738,7 +2738,7 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
-  '@am-ogs/vue-ui@0.0.13(tailwindcss@3.4.17)(typescript@5.8.3)':
+  '@am-ogs/vue-ui@0.0.16(tailwindcss@3.4.17)(typescript@5.8.3)':
     dependencies:
       tailwindcss: 3.4.17
       vue: 3.5.13(typescript@5.8.3)

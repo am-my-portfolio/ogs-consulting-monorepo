@@ -1,11 +1,11 @@
 <template>
-  <BaseButton text="Log in" @click="handleLogin" />
+  <LoginButton text="Log in" :handler="handleLogin" />
 </template>
 
 <script setup lang="ts">
 import { kebabCase } from "lodash";
 import { useAuth0 } from "@auth0/auth0-vue";
-import { BaseButton } from "@am-ogs/vue-ui";
+import { LoginButton } from "@am-ogs/vue-ui";
 import { primary_navigation } from "@/helpers";
 
 const { loginWithRedirect } = useAuth0();

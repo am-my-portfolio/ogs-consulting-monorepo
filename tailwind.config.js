@@ -38,8 +38,8 @@ module.exports = {
             secondary: twColors.teal["700"],
           },
           btn: {
-            primary: twColors.red["600"],
-            hover: twColors.teal["700"],
+            primary: twColors.teal["700"],
+            hover: twColors.red["600"],
             disabled: twColors.gray["400"],
             txt: twColors.white,
           },
@@ -54,8 +54,8 @@ module.exports = {
             secondary: twColors.cyan["300"],
           },
           btn: {
-            primary: twColors.red["600"],
-            hover: twColors.cyan["500"],
+            primary: twColors.cyan["700"],
+            hover: twColors.red["600"],
             disabled: twColors.gray["400"],
             txt: twColors.white,
           },
