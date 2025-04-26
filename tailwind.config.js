@@ -41,7 +41,7 @@ module.exports = {
             primary: twColors.teal["700"],
             hover: twColors.red["600"],
             disabled: twColors.gray["400"],
-            txt: twColors.gray["900"],
+            txt: twColors.white,
           },
         },
         dark: {
