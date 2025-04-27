@@ -2,7 +2,7 @@
   <div class="mt-12 scroll-mt-12">
     <ColumnLayout>
       <template #title>
-        Explore the new personal assistant, workflows, and AI Agents
+        Explore the new Personal Assistant, Automations, and AI Agents built for the Property Management
       </template>
 
       <template #subTitle>
@@ -10,7 +10,7 @@
       </template>
 
       <template #description>
-        Our AI tools can help you run your business more efficiently and with
+        Our AI tools help property management teams run their business with greater efficiently and more
         peace of mind
       </template>
 

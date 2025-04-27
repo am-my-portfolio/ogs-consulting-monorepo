@@ -12,7 +12,7 @@
         processes of a solopreneur or small business, allowing them to focus on
         what they do best - running their business. Instead of using a single AI
         agent, The Briefcase uses a team of AI agents to handle different
-        aspects of the business, from sales to marketing to scheduling.
+        aspects of the business, from marketing to leasing to scheduling.
       </template>
 
       <template #content>
