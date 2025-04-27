@@ -10,8 +10,8 @@
       </template>
 
       <template #description>
-        Our AI tools help property management teams run their business with greater efficiently and more
-        peace of mind
+        Our AI tools help property management teams run their business with greater efficiency
+        and more peace of mind
       </template>
 
       <template #leftContent>
