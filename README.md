@@ -75,21 +75,6 @@ You can deploy directly via [Cloudflare Pages](https://pages.cloudflare.com/) by
 - [ ] Deep analytics dashboard
 
 
-
----
-
-## Contributing
-
-Contributions are welcome!  
-Please open an issue first to discuss major changes.
-
----
-
-## License
-
-Distributed under the **MIT License**.  
-See [`LICENSE`](./LICENSE) for more information.
-
 ---
 
 ## Connect
