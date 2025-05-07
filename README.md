@@ -31,7 +31,7 @@ A **SaaS Interruptor** for solo operators and small property management shops.
 - **Frontend**: *(Vue.js, TailwindCss, Reusable Components, Hosting: Cloudflare)*
 - **Backend**: *(Node.js, Nest.js, Architecture (N-Tier, Mult-Tenant, Microservice), Deployment: Render)*
 - **CIAM**: Auth0, JWT, OAuth2, RBAC
-- **AI**: *LangChain.js, RAG, MCP*
+- **AI**: *LangChain.js, N8N, MCP*
 
 
 ---
