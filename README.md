@@ -49,16 +49,16 @@ A **SaaS Interruptor** for solo operators and small property management shops.
 ```bash
 git clone https://github.com/am-my-portfolio/my-briefcase.git
 cd my-briefcase
-npm install
+pnpm install
 ```
 
 ### Running Locally
 
 ```bash
-npm run dev
+pnpm start
 ```
 
-Visit `http://localhost:3000` (or whatever port you configure) to see it running locally.
+Visit `http://localhost:4000` (or whatever port you configure) to see it running locally.
 
 ### Deployment
 
