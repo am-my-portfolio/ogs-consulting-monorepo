@@ -21,8 +21,7 @@ A **SaaS Interruptor** for solo operators and small property management shops.
 
 > We rethink property management by reducing the need for large teams and expensive software stacks. 
 
-### 🚀 Project Website
-[My Briefcase](https://my-briefcase.pages.dev/)
+### 🚀 Project Website: [My Briefcase](https://my-briefcase.pages.dev/)
 
 ---
 
