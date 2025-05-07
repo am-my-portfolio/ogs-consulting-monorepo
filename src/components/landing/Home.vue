@@ -3,8 +3,7 @@
     <ColumnLayout>
       <template #title>
         AI-powered Automation for Property Management, Unlocking Efficiency, Scalability, and Margin Expansion across
-        the
-        Rental Lifecycle.
+        the Rental Lifecycle.
       </template>
 
       <template #subTitle>

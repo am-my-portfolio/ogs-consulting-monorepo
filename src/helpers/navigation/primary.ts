@@ -3,7 +3,7 @@ import { Item, AllRoles, NavType } from "@/helpers";
 export const primary_navigation: Item[] = [
   {
     name: "Chat",
-    description: "Manage users, check their roles and connections",
+    description: "Chat with the AI",
     icon: "fa-solid fa-comment-dots",
     current: false,
     roles: [AllRoles.SUPER_ADMIN],

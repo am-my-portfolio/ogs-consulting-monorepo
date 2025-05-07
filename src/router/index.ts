@@ -11,12 +11,18 @@ import {
 const NotAllowed = () => import("@/views/common/NotAllowed.vue");
 const NotFoundPage = () => import("@/views/common/NotFound.vue");
 const Landing = () => import("@/views/common/LandingPage.vue");
+const PrivacyPolicy = () => import("@/views/common/PrivacyPolicy.vue");
 
 const static_routes = [
   {
     path: "/",
     name: "LandingPage",
     component: Landing,
+  },
+  {
+    path: "/privacy-policy",
+    name: "PrivacyPolicy",
+    component: PrivacyPolicy,
   },
   {
     path: "/not-allowed",
