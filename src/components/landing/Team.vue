@@ -1,10 +1,10 @@
 <template>
   <div class="mt-12 scroll-mt-12">
     <RowLayout>
-      <template #titleCentered> Meet Our Team </template>
+      <template #titleCentered> Meet Our Team of AI Agents </template>
 
       <template #description>
-        With expertise ranging from Leasing, Property Management and
+        With expertise ranging from Lead generation, Leasing, Property Management and
         Maintenance, our team will provide the 5-star service to any Property
         Owner.
       </template>

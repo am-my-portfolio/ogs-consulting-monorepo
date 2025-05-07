@@ -66,7 +66,7 @@ const { isLoading, isAuthenticated } = useAuth0();
 const socials = [
   {
     name: "website",
-    href: "https://www.google.com",
+    href: "https://my-briefcase.pages.dev",
     icon: "fa-solid fa-globe",
   },
   {
@@ -76,17 +76,17 @@ const socials = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/company/ogs-consulting/",
+    href: "https://www.linkedin.com/company/one-gal-shop",
     icon: "fa-brands fa-linkedin",
   },
   {
-    name: "X",
-    href: "https://x.com/XXXXX",
-    icon: "fa-brands fa-twitter",
+    name: "YouTube",
+    href: "#",
+    icon: "fa-brands fa-youtube",
   },
   {
     name: "Instagram",
-    href: "https://instagram.com/XXXXX",
+    href: "#",
     icon: "fa-brands fa-instagram",
   },
 ];

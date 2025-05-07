@@ -2,16 +2,17 @@
   <div class="mt-12 scroll-mt-12">
     <ColumnLayout>
       <template #title>
-        Explore the new Personal Assistant, Automations, and AI Agents built for the Property Management
+        AI-powered Automation for Property Management, Unlocking Efficiency, Scalability, and Margin Expansion across
+        the
+        Rental Lifecycle.
       </template>
 
       <template #subTitle>
-        <ReelHeroFa :items="random_icons" class="flex space-x-6" />
+        <ReelHeroIc :items="random_icons" />
       </template>
 
       <template #description>
-        Our AI tools help property management teams run their business with greater efficiency
-        and more peace of mind
+        Reimagining property management with AI - Automated, Impactful, and Relationship-first.
       </template>
 
       <template #leftContent>
@@ -20,7 +21,7 @@
         </a>
         <div class="mt-5">
           <p class="text-pop-primary mb-2">
-            Trusted by 10+ individuals and SMEs worldwide
+            Trusted by 10+ individuals and SMEs in Colorado
           </p>
         </div>
       </template>
@@ -33,42 +34,47 @@
 </template>
 
 <script setup lang="ts">
-import { BaseButton, ReelHeroFa, ColumnLayout } from "@am-ogs/vue-ui";
+import { BaseButton, ReelHeroFa, ReelHeroIc, ColumnLayout } from "@am-ogs/vue-ui";
 
 const random_icons = [
   {
     name: "1",
-    icon: "fa-brands fa-galactic-senate",
+    icon: "mdi:sign-real-estate",
     hidden: false,
   },
   {
     name: "1",
-    icon: "fa-brands fa-fulcrum",
+    icon: "carbon:ai",
     hidden: false,
   },
   {
     name: "1",
-    icon: "fa-brands fa-swift",
+    icon: "carbon:workflow-automation",
     hidden: false,
   },
   {
     name: "1",
-    icon: "fa-brands fa-studiovinari",
+    icon: "simple-icons:n8n",
     hidden: false,
   },
   {
     name: "1",
-    icon: "fa-brands fa-yammer",
+    icon: "mynaui:api",
     hidden: false,
   },
   {
     name: "1",
-    icon: "fa-brands fa-napster",
+    icon: "eos-icons:performance",
     hidden: false,
   },
   {
     name: "1",
-    icon: "fa-brands fa-suse",
+    icon: "mdi:bed-clock",
+    hidden: false,
+  },
+  {
+    name: "1",
+    icon: "svg-spinners:clock",
     hidden: false,
   },
 ];
