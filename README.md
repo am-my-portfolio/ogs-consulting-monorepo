@@ -1,6 +1,5 @@
-<img width="1409" alt="Screenshot 2025-04-27 at 11 02 26 AM" src="https://github.com/user-attachments/assets/4f2dbdd1-4ca7-4c6e-9605-585bfc8952e3" />
 
-
+![Screenshot 2025-05-07 at 9 16 51 AM](https://github.com/user-attachments/assets/396401bf-f986-4cce-8467-594010093ecf)
 
 
 # My Briefcase
