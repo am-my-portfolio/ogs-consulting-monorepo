@@ -1,33 +1,50 @@
 <!doctype html>
 <html lang="en" class="h-full">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>My Briefcase</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" href="/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" /> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace" rel="stylesheet" /> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted" rel="stylesheet" /> -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gowun+Dodum"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat"
-      rel="stylesheet"
-    />
-  </head>
+  <title>My Briefcase</title>
 
-  <body>
-    <div id="app" class="h-full bg-dull-primary font-montserrat"></div>
-    <script type="module" src="./src/main.ts"></script>
-  </body>
+  <link rel="icon" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" /> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace" rel="stylesheet" /> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted" rel="stylesheet" /> -->
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet" />
+
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1878466066236723',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v22.0'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+</head>
+
+<body>
+  <div id="app" class="h-full bg-dull-primary font-montserrat"></div>
+  <script type="module" src="./src/main.ts"></script>
+</body>
+
 </html>

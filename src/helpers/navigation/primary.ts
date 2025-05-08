@@ -129,7 +129,7 @@ export const primary_navigation: Item[] = [
       },
       {
         tab: "Tab5",
-        name: "Payment",
+        name: "Social Media",
         description: "",
         current: false,
         icon: "",
