@@ -1,5 +1,5 @@
 # Auth0 as Identity Provider
-This application uses Auth0 as Identity provider. 
+This application uses Auth0 as Identity provider. Below is a TLDR'ish version of the advantages and setup of Auth0 in a Vuejs application. For details, consult Auth0 documentation and tutorials.
 
 ## ✅ **Advantages of Using Auth0 for Auth, RBAC, and Multi-Tenancy**
 
