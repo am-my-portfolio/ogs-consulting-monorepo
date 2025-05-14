@@ -4,9 +4,9 @@
       <template #titleCentered> Meet Our Team of AI Agents </template>
 
       <template #description>
-        With expertise ranging from Lead generation, Leasing, Property Management and
-        Maintenance, our team will provide the 5-star service to any Property
-        Owner.
+        With expertise ranging from Lead generation, Leasing, Property
+        Management and Maintenance, our team will provide the 5-star service to
+        any Property Owner.
       </template>
 
       <template #content>

@@ -2,8 +2,8 @@
   <div class="mt-12 scroll-mt-12">
     <ColumnLayout>
       <template #title>
-        AI-powered Automation for Property Management, Unlocking Efficiency, Scalability, and Margin Expansion across
-        the Rental Lifecycle.
+        AI-powered Automation for Property Management, Unlocking Efficiency,
+        Scalability, and Margin Expansion across the Rental Lifecycle.
       </template>
 
       <template #subTitle>
@@ -11,7 +11,8 @@
       </template>
 
       <template #description>
-        Reimagining property management with AI - Automated, Impactful, and Relationship-first.
+        Reimagining property management with AI - Automated, Impactful, and
+        Relationship-first.
       </template>
 
       <template #leftContent>
@@ -33,7 +34,12 @@
 </template>
 
 <script setup lang="ts">
-import { BaseButton, ReelHeroFa, ReelHeroIc, ColumnLayout } from "@am-ogs/vue-ui";
+import {
+  BaseButton,
+  ReelHeroFa,
+  ReelHeroIc,
+  ColumnLayout,
+} from "@am-ogs/vue-ui";
 
 const random_icons = [
   {

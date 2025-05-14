@@ -1,11 +1,8 @@
-
 ![Screenshot 2025-05-07 at 9 16 51 AM](https://github.com/user-attachments/assets/396401bf-f986-4cce-8467-594010093ecf)
-
 
 # My Briefcase
 
 [![Website](https://img.shields.io/badge/Website-Live-informational?style=flat&logo=appveyor)](https://my-briefcase.pages.dev/)
-
 
 A **SaaS Interruptor** for solo operators and small property management shops.
 
@@ -19,7 +16,7 @@ A **SaaS Interruptor** for solo operators and small property management shops.
 - Leasing automation
 - Rent collection workflows
 
-> We rethink property management by reducing the need for large teams and expensive software stacks. 
+> We rethink property management by reducing the need for large teams and expensive software stacks.
 
 ### 🚀 Project Website: [My Briefcase](https://my-briefcase.pages.dev/)
 
@@ -27,11 +24,10 @@ A **SaaS Interruptor** for solo operators and small property management shops.
 
 ## Tech Stack
 
-- **Frontend**: *(Vue.js, TailwindCss, Reusable Components, Hosting: Cloudflare)*
-- **Backend**: *(Node.js, Nest.js, Architecture (N-Tier, Mult-Tenant, Microservice), Deployment: Render)*
+- **Frontend**: _(Vue.js, TailwindCss, Reusable Components, Hosting: Cloudflare)_
+- **Backend**: _(Node.js, Nest.js, Architecture (N-Tier, Mult-Tenant, Microservice), Deployment: Render)_
 - **CIAM**: Auth0, JWT, OAuth2, RBAC
-- **AI**: *LangChain.js, N8N, MCP*
-
+- **AI**: _LangChain.js, N8N, MCP_
 
 ---
 
@@ -71,7 +67,6 @@ You can deploy directly via [Cloudflare Pages](https://pages.cloudflare.com/) by
 - [ ] Automated maintenance coordination
 - [ ] Multi-language support
 - [ ] Deep analytics dashboard
-
 
 ---
 

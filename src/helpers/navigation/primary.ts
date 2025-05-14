@@ -90,7 +90,7 @@ export const primary_navigation: Item[] = [
   {
     name: "Integrations",
     description:
-      "Integrate Calendar, Email, Storage (Dropbox, Google Drive), Bank",
+      "Integrate Socials, Calendar, Email, Storage (Dropbox, Google Drive), Bank",
     icon: "fa fa-plug",
     current: false,
     roles: [AllRoles.SUPER_ADMIN],
