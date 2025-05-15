@@ -37,9 +37,9 @@ export const secondary_navigation = [
   },
   {
     type: NavType.SECONDARY,
-    name: "Subscription History",
+    name: "Workorder History",
     description: "Manage users, check their roles and connections",
-    icon: "fa-solid fa-money-bill-trend-up",
+    icon: "fa-solid fa-screwdriver-wrench",
     current: false,
     roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR, AllRoles.CONSUMER],
     items: [
@@ -78,9 +78,9 @@ export const secondary_navigation = [
     ],
   },
   {
-    name: "Reported Users",
+    name: "Pending Tasks",
     description: "Manage navigators, check their expertise and client list",
-    icon: "fa-solid fa-user-slash", // user-xmark, user-minus, user-lock, user-slash
+    icon: "fa-solid fa-tasks", // user-xmark, user-minus, user-lock, user-slash
     current: false,
     roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR],
     items: [

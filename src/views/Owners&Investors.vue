@@ -51,8 +51,8 @@
           ></i>
           <input
             id="search-field"
-            class="block h-full w-full pl-10 text-pop-secondary placeholder:text-pop-secondary focus:ring-0 sm:text-sm bg-dull-secondary border-2 border-dull-secondary rounded-md"
-            placeholder="search team ..."
+            class="block h-full w-full pl-10 text-pop-secondary placeholder:text-pop-secondary focus:ring-0 sm:text-sm bg-dull-secondary/30 border-2 border-dull-secondary rounded-md"
+            placeholder="search vendors ..."
             type="search"
             name="search"
           />
@@ -71,7 +71,7 @@
             :description="tab.description"
             :is="
               defineAsyncComponent(
-                () => import(`@/components/assistant/${tab.tab}.vue`),
+                () => import(`@/components/owners/${tab.name}.vue`),
               )
             "
           />
@@ -86,7 +86,7 @@ import { defineAsyncComponent, ref } from "vue";
 import { PageLayout } from "@am-ogs/vue-ui";
 import { primary_navigation } from "@/helpers/navigation";
 
-const page = primary_navigation.find((n) => n.name === "Assistant");
+const page = primary_navigation.find((n) => n.name === "Owners & Investors");
 const tabs = page.items;
 const tab = page.items.find((t) => t.current === true);
 const current_tab = ref(tab.name);
