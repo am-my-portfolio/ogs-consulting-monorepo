@@ -2,71 +2,66 @@
   <div class="mt-10">
     <ul
       role="list"
-      class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-pop-secondary px-4 py-4 rounded-md"
+      class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 p-2 rounded-md"
     >
       <li
         v-for="person in people"
         :key="person.email"
-        class="col-span-1 flex flex-col divide-y divide-secondary rounded-md bg-dull-primary/90 text-center shadow"
+        class="col-span-1 flex flex-col divide-y divide-dull-secondary rounded-md bg-dull-primary/90 border-8 border-pop-secondary text-center shadow"
       >
-        <div class="flex flex-1 flex-col p-8">
-          <img
-            class="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
-            :src="person.imageUrl"
-            alt=""
-          />
-          <h3 class="mt-5 text-sm font-medium text-pop-secondary">
-            {{ person.name }}
-          </h3>
-          <dl class="mt-1 flex flex-grow flex-col justify-between">
-            <dt class="sr-only">Persona</dt>
-            <dd class="text-sm text-secondary">
-              {{ person.persona }}
-            </dd>
-            <dt class="sr-only">Role</dt>
-            <dd class="mt-1">
-              <span
-                class="inline-flex items-center rounded-full bg-pop-primary px-2 py-1 text-xs font-medium text-dull-secondary ring-1 ring-inset ring-pop-secondary/50"
-                >{{ person.role }}</span
-              >
-            </dd>
-          </dl>
-        </div>
-        <div>
-          <div class="-mt-px flex divide-x divide-secondary">
-            <div class="flex w-0 flex-1">
-              <a
-                :href="`mailto:${person.email}`"
-                class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-pop-secondary"
-              >
-                <i
-                  class="fa-solid fa-envelope text-pop-primary text-xl"
-                  aria-hidden="true"
-                ></i>
+        <ItemsGridLayout>
+          <template #image>
+            <img class="h-32 w-32 rounded-full" :src="person.imageUrl" alt="" />
+          </template>
 
-                Email
-              </a>
-            </div>
-            <div class="-ml-px flex w-0 flex-1">
-              <a
-                :href="`tel:${person.telephone}`"
-                class="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-pop-secondary"
-              >
-                <i
-                  class="fa-solid fa-phone text-pop-primary text-lg"
-                  aria-hidden="true"
-                ></i>
-                Call
-              </a>
-            </div>
-          </div>
-        </div>
+          <template #h1>
+            {{ person.name }}
+          </template>
+
+          <template #one> Persona </template>
+          <template #two>
+            {{ person.persona }}
+          </template>
+
+          <template #three> Role </template>
+          <template #four>
+            {{ person.role }}
+          </template>
+
+          <template #five>
+            <a
+              :href="`mailto:${person.email}`"
+              class="inline-flex flex-1 items-center justify-center gap-x-3"
+            >
+              <i
+                class="fa-solid fa-envelope text-pop-primary text-xl"
+                aria-hidden="true"
+              ></i>
+              <span>Email</span>
+            </a>
+          </template>
+
+          <template #six>
+            <a
+              :href="`tel:${person.telephone}`"
+              class="inline-flex flex-1 items-center justify-center gap-x-3"
+            >
+              <i
+                class="fa-solid fa-phone text-pop-primary text-lg"
+                aria-hidden="true"
+              ></i>
+              Call
+            </a>
+          </template>
+        </ItemsGridLayout>
       </li>
     </ul>
   </div>
 </template>
 
 <script setup lang="ts">
+import ItemsGridLayout from "../experimental/ItemsGridLayout.vue";
+
 const people = [
   {
     name: "Jane Cooper",

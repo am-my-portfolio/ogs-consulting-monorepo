@@ -39,29 +39,6 @@
     </template>
     <!-- End Tabs -->
 
-    <!-- Search  -->
-    <template #search>
-      <div class="mt-10 divide-y divide-dull-secondary">
-        <!-- Search  -->
-        <form class="relative flex flex-1 m-1 h-12" action="#" method="GET">
-          <label for="search-field" class="sr-only">Search</label>
-          <i
-            class="fa-solid fa-magnifying-glass text-pop-secondary pointer-events-none absolute inset-y-4 left-2 text-lg"
-            aria-hidden="true"
-          ></i>
-          <input
-            id="search-field"
-            class="block h-full w-full pl-10 text-pop-secondary placeholder:text-pop-secondary focus:ring-0 sm:text-sm bg-dull-secondary border-2 border-dull-secondary rounded-md"
-            placeholder="search team ..."
-            type="search"
-            name="search"
-          />
-        </form>
-        <!-- End Search -->
-      </div>
-    </template>
-    <!-- End Search  -->
-
     <template #pageContent>
       <div v-for="tab in tabs">
         <KeepAlive v-if="current_tab === tab.name">

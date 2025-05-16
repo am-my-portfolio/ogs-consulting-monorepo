@@ -30,11 +30,11 @@ module.exports = {
       {
         light: {
           dull: {
-            primary: twColors.slate["100"],
-            secondary: twColors.slate["700"],
+            primary: twColors.white,
+            secondary: twColors.stone["900"],
           },
           pop: {
-            primary: twColors.red["600"],
+            primary: twColors.red["500"],
             secondary: twColors.teal["700"],
           },
           btn: {

@@ -71,7 +71,7 @@
             :description="tab.description"
             :is="
               defineAsyncComponent(
-                () => import(`@/components/assistant/${tab.tab}.vue`),
+                () => import(`@/components/properties/${tab.name}.vue`),
               )
             "
           />
