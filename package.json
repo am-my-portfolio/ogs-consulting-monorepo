@@ -1,0 +1,52 @@
+{
+  "name": "silolabs",
+  "author": "",
+  "description": "",
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": "23.9.0",
+    "pnpm": "10.0.0"
+  },
+  "packageManager": "pnpm@10.0.0",
+  "keywords": [],
+  "license": "ISC",
+  "workspaces": [
+    "apps/*",
+    "libs/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "fresh:start": "rm -rf node_modules ./packages/**/*/node_modules ./packages/**/*/dist ./packages/**/*/build pnpm-lock.yaml && pnpm i",
+    "clean": "pnpm run -r clean",
+    "build": "pnpm run -r build",
+    "start": "pnpm run --parallel start",
+    "dev": "pnpm run -r --parallel dev",
+    "prod": "pnpm run --parallel prod",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "prepare": "husky",
+    "compose:local": "docker compose -f docker-compose.local.yaml up -d --build",
+    "compose:mac": "docker network create silo-net && docker compose up",
+    "compose:prod": "sudo docker network create silo-net && sudo docker compose up"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "husky": "^9.1.7"
+  },
+  "pnpm": {
+    "overrides": {
+      "@langchain/core": "0.3.0"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
