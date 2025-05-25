@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6", // Specifies the ECMAScript target version
+    "lib": ["es2024"], // Specifies the library files to be included in the compilation.
+    "sourceMap": true, // Generates source maps for debugging
+    "strict": true, // Enables all strict type-checking options (best practice)
+    "strictPropertyInitialization": false,
+    "declaration": true, // Generates corresponding .d.ts file
+    "declarationMap": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true, // Skips type checking of declaration files
+    "esModuleInterop": true, // Enables compatibility with CommonJS modules, allowing default imports from modules with no default export.
+    "jsx": "react",
+    "noEmit": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "incremental": true, // Enables incremental compilation, build only the changed code
+    "allowJs": true, // Allows JavaScript files to be compiled alongside TypeScript files.
+    "resolveJsonModule": true, // Allows importing JSON files as modules
+    "forceConsistentCasingInFileNames": true, // Ensures that file names are treated with consistent casing, which is important for cross-platform compatibility.,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true
+    // "rootDir": "src", // Root directory of input files
+    // "outDir": "./build", // Output directory for compiled files
+    // "module": "NodeNext", // Sets the module system to use (commonjs, nodenext, esnext)
+    // "noUnusedParameters": false, // Do not allow unused parameters in functions.
+    // "noUnusedLocals": false, // Similar to noUnusedParameters, but for local variables.
+    // "noUncheckedIndexedAccess": true, // it ensures that indexed access types are checked for undefined values,
+    // "noImplicitOverride": true, // This option requires that any method in a subclass that overrides a method in a superclass must explicitly use the override keyword.
+    // "noPropertyAccessFromIndexSignature": true, // This setting enforces that properties accessed via dot notation must be explicitly defined in the type.
+    // "allowUnreachableCode": false, // When set to false, this option raises errors for code that is unreachable, meaning it cannot be executed.
+    // "noFallthroughCasesInSwitch": true, // This option reports errors for switch statement cases that fall through without a break, return, or throw statement.
+    // "noErrorTruncation": true, // When enabled, this option prevents TypeScript from truncating error messages, providing full details about the error.
+  },
+  "exclude": ["node_modules", "build", "dist"]
+}

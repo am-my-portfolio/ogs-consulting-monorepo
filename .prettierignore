@@ -1,0 +1,7 @@
+coverage
+public
+node_modules
+dist
+build
+*.yml
+*.yaml
