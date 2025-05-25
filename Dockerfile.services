@@ -1,0 +1,32 @@
+FROM node:23-slim AS base
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+RUN pnpm install -g @nestjs/cli
+RUN apt-get update && apt-get install -y procps
+
+ARG PACKAGE_NAME
+ARG PORT
+
+WORKDIR /monorepo
+COPY . .
+# we are good, it wont copy all the crap, due to .dockerignore file
+
+# ********* stage build *********** #
+FROM base AS build
+RUN echo 'stage build: ' $PACKAGE_NAME : $PORT
+
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN pnpm --filter=${PACKAGE_NAME} run -r build
+RUN pnpm --filter=${PACKAGE_NAME} deploy /prod/${PACKAGE_NAME}
+
+# ********* stage production *********** #
+FROM base AS production
+RUN echo 'stage production: ' $PACKAGE_NAME : $PORT
+
+WORKDIR /prod/${PACKAGE_NAME}
+COPY --from=build /prod/${PACKAGE_NAME} .
+
+EXPOSE ${PORT}
+CMD [ "pnpm", "start" ]

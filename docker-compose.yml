@@ -3,6 +3,7 @@ volumes:
   postgres_storage:
   ollama_storage:
   qdrant_storage:
+  app-nm:
 
 networks:
   demo:
@@ -49,6 +50,7 @@ x-init-ollama: &init-ollama
 services:
   nginx:
     container_name: nginx
+    hostname: nginx
     build:
       context: ./nginx
       dockerfile: Dockerfile    
@@ -64,9 +66,32 @@ services:
       - ./nginx/ssl:/etc/nginx/ssl
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
+
+  client: 
+    container_name: client
+    hostname: client
+    build:
+      context: .
+      dockerfile: Dockerfile.clients
+      target: build
+      args:
+        - PORT=4000
+        - PACKAGE_NAME=client
+    command: pnpm --filter client dev 
+    networks: ['demo']
+    env_file:
+      - ./packages/client/.env         
+    ports:
+      - "4000:4000"    
+    volumes:
+      - ./packages/client:/monorepo/packages/client
+      - ./packages/client/node_modules:/monorepo/packages/client/node_modules
+      - app-nm:/monorepo/packages/client/node_modules    # ensures that the node_modules directory inside the container is synced with the host machine  
+
       
   postgres:
     image: postgres:16-alpine
+    container_name: postgres
     hostname: postgres
     networks: ['demo']
     restart: unless-stopped
@@ -84,8 +109,8 @@ services:
 
   n8n-import:
     <<: *service-n8n
-    hostname: n8n-import
     container_name: n8n-import
+    hostname: n8n-import
     entrypoint: /bin/sh
     command:
       - "-c"
@@ -98,8 +123,8 @@ services:
 
   n8n:
     <<: *service-n8n
-    hostname: n8n
     container_name: n8n
+    hostname: n8n
     restart: unless-stopped
     ports:
       - 5678:5678
@@ -115,8 +140,8 @@ services:
 
   qdrant:
     image: qdrant/qdrant
-    hostname: qdrant
     container_name: qdrant
+    hostname: qdrant
     networks: ['demo']
     restart: unless-stopped
     ports:

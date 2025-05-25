@@ -1,4 +1,5 @@
 Dockerfile*
+LICENSE
 docker-compose*.yaml
 .dockerignore
 .gitignore
@@ -10,7 +11,6 @@ docker-compose*.yaml
 *.log
 *.coverage
 .env
-.env.local
 
 coverage
 node_modules
@@ -19,3 +19,6 @@ build
 scripts
 ollama
 nginx
+n8n 
+certbot
+assets

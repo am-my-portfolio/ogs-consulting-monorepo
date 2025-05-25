@@ -1,5 +1,5 @@
 {
-  "name": "@am/my-briefcase",
+  "name": "client",
   "version": "0.0.1",
   "type": "module",
   "engines": {
@@ -9,8 +9,10 @@
   "packageManager": "pnpm@10.0.0",
   "scripts": {
     "fresh:start": "rm -rf node_modules package-lock.json pnpm-lock.yaml && pnpm i",
-    "start": "vite --port 4000",
+    "clean": "rimraf ./dist",
     "build": "vite build",
+    "start": "vite --port 4000",
+    "dev": "vite --port 4000",
     "preview": "vite preview",
     "format": "npx prettier --check .",
     "format:fix": "npx prettier --write .",
