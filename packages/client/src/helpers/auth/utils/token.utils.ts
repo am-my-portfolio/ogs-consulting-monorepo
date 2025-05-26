@@ -1,9 +1,9 @@
-import { jwtDecode, JwtPayload } from "jwt-decode";
-import { useAuth0 } from "@auth0/auth0-vue";
-import { Permissions, AllRoles } from "@/helpers";
+import { jwtDecode, JwtPayload } from 'jwt-decode';
+import { useAuth0 } from '@auth0/auth0-vue';
+import { Permissions, AllRoles } from '@/helpers';
 
-const auth_namespace = "sam.co";
-const su_domain = "sam.co";
+const auth_namespace = 'sam.co';
+const su_domain = 'sam.co';
 
 export interface IDecodedAccessToken extends JwtPayload {
   roles: AllRoles[];
@@ -47,7 +47,7 @@ export const getRoles = () => {
 
 export const isSecurityTeamMember = () => {
   const { user_profile } = getUserProfile();
-  const condition = user_profile?.email.split("@")[1] === su_domain;
+  const condition = user_profile?.email.split('@')[1] === su_domain;
   return condition;
 };
 
@@ -61,7 +61,7 @@ export const getIdToken = () => {
   // console.debug('[getIdToken]');
 
   const { idTokenClaims } = useAuth0();
-  const id_token = idTokenClaims?.value?.__raw ?? "";
+  const id_token = idTokenClaims?.value?.__raw ?? '';
 
   return id_token;
 };
@@ -73,8 +73,8 @@ export const getUserProfile = () => {
   const user = auth0.user.value;
 
   if (user && Object.keys(user).length > 0) {
-    const decoded_id_token_str = user ? JSON.stringify(user, null, 2) : "";
-    const user_profile = JSON.parse(decoded_id_token_str || "{}"); // interface IUserInfo
+    const decoded_id_token_str = user ? JSON.stringify(user, null, 2) : '';
+    const user_profile = JSON.parse(decoded_id_token_str || '{}'); // interface IUserInfo
     // console.debug('[getUserProfile]', { user_profile });
     return { user_profile, decoded_id_token_str };
   } else {

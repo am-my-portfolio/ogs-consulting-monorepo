@@ -105,11 +105,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { base_url } from "@/helpers/constants";
-import { UseOpenAi } from "@/composables/useOpenAi";
-import { UseAnthropic } from "@/composables/useAnthropic";
-import { PageDivisionLayout } from "@am-ogs/vue-ui";
+import { ref } from 'vue';
+import { base_url } from '@/helpers/constants';
+import { UseOpenAi } from '@/composables/useOpenAi';
+import { UseAnthropic } from '@/composables/useAnthropic';
+import { PageDivisionLayout } from '@am-ogs/vue-ui';
 
 const { useChatStream } = UseAnthropic();
 
@@ -122,7 +122,7 @@ const question = ref(undefined);
 const conversation = ref([]);
 const scroll_to = ref();
 const chatSSE = async () => {
-  const provider = "rag"; // openai | ollama | rag
+  const provider = 'rag'; // openai | ollama | rag
   const eventSource = new EventSource(
     `${base_url}/${provider}/completion/${question.value}`,
   );
@@ -135,8 +135,8 @@ const chatSSE = async () => {
   conversation.value.push(new_entry.value);
 
   eventSource.onmessage = (event) => {
-    console.log("onmessage:", event.data);
-    new_entry.value.answer = `${new_entry.value.answer ?? ""} ${event.data}`;
+    console.log('onmessage:', event.data);
+    new_entry.value.answer = `${new_entry.value.answer ?? ''} ${event.data}`;
   };
 
   eventSource.onerror = (error) => {
@@ -156,10 +156,10 @@ const chatDirect = async () => {
   const stream = await useChatStream(new_entry.value.question);
   for await (const chunk of stream) {
     console.log(chunk.content);
-    new_entry.value.answer = `${new_entry.value.answer ?? ""} ${chunk.content}`;
+    new_entry.value.answer = `${new_entry.value.answer ?? ''} ${chunk.content}`;
   }
 
-  scroll_to.value?.scrollIntoView({ behavior: "smooth" });
+  scroll_to.value?.scrollIntoView({ behavior: 'smooth' });
 };
 
 const file_input = ref<HTMLInputElement | null>(null);

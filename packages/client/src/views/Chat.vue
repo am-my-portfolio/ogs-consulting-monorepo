@@ -59,11 +59,11 @@
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent, ref } from "vue";
-import { PageLayout } from "@am-ogs/vue-ui";
-import { primary_navigation } from "@/helpers/navigation";
+import { defineAsyncComponent, ref } from 'vue';
+import { PageLayout } from '@am-ogs/vue-ui';
+import { primary_navigation } from '@/helpers/navigation';
 
-const page = primary_navigation.find((n) => n.name === "Chat");
+const page = primary_navigation.find((n) => n.name === 'Chat');
 const tabs = page.items;
 const tab = tabs.find((t) => t.current === true);
 const current_tab = ref(tab.name);

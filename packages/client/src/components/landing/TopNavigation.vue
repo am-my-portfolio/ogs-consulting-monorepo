@@ -35,13 +35,13 @@
 </template>
 
 <script setup lang="ts">
-import { ThemeToggle } from "@am-ogs/vue-ui";
-import { Events, landing_page_navigation } from "@/helpers";
-import LoginButton from "@/components/identity/LoginButton.vue";
+import { ThemeToggle } from '@am-ogs/vue-ui';
+import { Events, landing_page_navigation } from '@/helpers';
+import LoginButton from '@/components/identity/LoginButton.vue';
 
 const emit = defineEmits([Events.SCROLL_TO]);
 const emitAction = (value: string) => {
-  console.log("emiting", value);
+  console.log('emiting', value);
   emit(Events.SCROLL_TO, value);
 };
 </script>

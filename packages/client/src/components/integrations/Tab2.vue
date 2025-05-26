@@ -55,8 +55,8 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from "@iconify/vue"; // https://iconify.design/docs/icon-components/vue/
-import { PageDivisionLayout } from "@am-ogs/vue-ui";
+import { Icon } from '@iconify/vue'; // https://iconify.design/docs/icon-components/vue/
+import { PageDivisionLayout } from '@am-ogs/vue-ui';
 
 defineProps<{
   title: string;
@@ -65,25 +65,25 @@ defineProps<{
 
 const integrations = [
   {
-    name: "Gmail",
-    initials: "G",
+    name: 'Gmail',
+    initials: 'G',
     // icon: "fa-brands fa-google text-red-600",
     // icon:"simple-icons:googlecalendar",
     // icon: "logos:google-gmail",
-    icon: "mdi:gmail",
-    href: "#",
-    type: "Inbox",
-    bgColor: "bg-pop-secondary/40",
+    icon: 'mdi:gmail',
+    href: '#',
+    type: 'Inbox',
+    bgColor: 'bg-pop-secondary/40',
   },
   {
-    name: "Outlook",
-    initials: "O",
+    name: 'Outlook',
+    initials: 'O',
     // icon: "fa-brands fa-microsoft text-blue-600",
     // icon: "vscode-icons:file-type-outlook",
-    icon: "file-icons:microsoft-outlook",
-    href: "#",
-    type: "Calendar",
-    bgColor: "bg-pop-secondary/60",
+    icon: 'file-icons:microsoft-outlook',
+    href: '#',
+    type: 'Calendar',
+    bgColor: 'bg-pop-secondary/60',
   },
 ];
 </script>

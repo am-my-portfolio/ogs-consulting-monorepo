@@ -1,5 +1,5 @@
-import type { NavigationGuard } from "vue-router";
-import { AllRoles, userHasAllRoles, userHasAnyRoles } from "@/helpers";
+import type { NavigationGuard } from 'vue-router';
+import { AllRoles, userHasAllRoles, userHasAnyRoles } from '@/helpers';
 
 export const applyRoleRouteGuard: NavigationGuard = (to, from, next) => {
   let guard_protected_routes = true;

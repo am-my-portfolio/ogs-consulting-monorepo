@@ -1,20 +1,20 @@
-import { ChatOpenAI } from "@langchain/openai";
-import { HumanMessage, SystemMessage } from "@langchain/core/messages";
+import { ChatOpenAI } from '@langchain/openai';
+import { HumanMessage, SystemMessage } from '@langchain/core/messages';
 
-import { useExternalApi } from "@/composables/useExternalApi";
-import { base_url } from "@/helpers/constants";
-import CONFIG from "@/helpers/config";
+import { useExternalApi } from '@/composables/useExternalApi';
+import { base_url } from '@/helpers/constants';
+import CONFIG from '@/helpers/config';
 
 export const UseOpenAi = () => {
   const model = new ChatOpenAI({
-    model: "gpt-4o-mini",
+    model: 'gpt-4o-mini',
     apiKey: CONFIG.API_KEY_OPENAI,
   });
 
   const useChatInvoke = async (prompt: string) => {
     const messages = [
-      new SystemMessage("Translate the following from English into Italian"),
-      new HumanMessage("hi!"),
+      new SystemMessage('Translate the following from English into Italian'),
+      new HumanMessage('hi!'),
     ];
 
     await model.invoke(messages);
@@ -22,7 +22,7 @@ export const UseOpenAi = () => {
 
   const useChatStream = async (prompt: string) => {
     const messages = [
-      new SystemMessage("Translate the following from English into Italian"),
+      new SystemMessage('Translate the following from English into Italian'),
       new HumanMessage(prompt),
     ];
     console.log({ model, messages });
@@ -32,9 +32,9 @@ export const UseOpenAi = () => {
   const useRag = async (prompt: string) => {
     const config = {
       url: `${base_url}/rag/completion/${prompt}`,
-      method: "POST",
+      method: 'POST',
       headers: {
-        "content-type": "application/json",
+        'content-type': 'application/json',
       },
     };
 

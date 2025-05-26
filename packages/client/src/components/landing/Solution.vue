@@ -4,12 +4,12 @@
       <template #titleRight> The Solution </template>
 
       <template #subTitleRight>
-        The Briefcase: Empowering Solopreneurs and SMEs to Monetize their Data
+        The Briefcase: Empowering Small Property Management Teams to generate value 24/7
       </template>
 
       <template #description>
         The Briefcase brings a suite of AI agents to automate the business
-        processes of a solopreneur or small business, allowing them to focus on
+        processes of a small Property Management team, allowing them to focus on
         what they do best - running their business. Instead of using a single AI
         agent, The Briefcase uses a team of AI agents to handle different
         aspects of the business, from marketing to leasing to scheduling.
@@ -33,35 +33,35 @@
 </template>
 
 <script setup lang="ts">
-import SolutionCard from "./SolutionCard.vue";
-import { RowLayout } from "@am-ogs/vue-ui";
+import SolutionCard from './SolutionCard.vue';
+import { RowLayout } from '@am-ogs/vue-ui';
 
 const items = [
   {
-    title: "Leasing Agent",
+    title: 'Leasing Agent',
     description:
-      "An AI Leasing Agent is a virtual assistant that automates leasing tasks like answering tenant inquiries, scheduling tours, and processing rental applications, offering 24/7 support.",
-    icon: "fa-solid fa-piggy-bank",
+      'An AI Leasing Agent is a virtual assistant that automates leasing tasks like answering tenant inquiries, scheduling tours, and processing rental applications, offering 24/7 support.',
+    icon: 'fa-solid fa-piggy-bank',
   },
   {
-    title: "Scheduling Agent",
+    title: 'Scheduling Agent',
     description: `An AI Scheduling Agent automates tasks like tenant communication, scheduling showings, 
     and managing maintenance requests. This allows property managers to focus on more strategic tasks and improves overall efficiency.`,
-    icon: "fa-solid fa-building-columns",
+    icon: 'fa-solid fa-building-columns',
   },
   {
-    title: "Marketing Agent",
+    title: 'Marketing Agent',
     description: `An AI Marketing Agent that increases engagement rates and conversions through dynamic content 
       based on customer behavior and preferences, utilizing customer data to personalize interactions,.
      `,
-    icon: "fa-solid fa-cubes",
+    icon: 'fa-solid fa-cubes',
   },
   {
-    title: "Maintenance Agent",
+    title: 'Maintenance Agent',
     description: `An AI Maintenance Agent that streamlines and automates tenant inquiry handling, 
     work order management, and vendor communication. It also assist with tasks like damage assessment 
     and automated responses to tenant inquiries.`,
-    icon: "fa-solid fa-clipboard-list",
+    icon: 'fa-solid fa-clipboard-list',
   },
 ];
 </script>

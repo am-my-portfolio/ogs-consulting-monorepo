@@ -1,4 +1,4 @@
-import { kebabCase } from "lodash";
+import { kebabCase } from 'lodash';
 import {
   AllRoles,
   ICreateUser,
@@ -6,10 +6,10 @@ import {
   IAuth0Organization,
   IAuth0OrganizationResponse,
   IAuth0Connections,
-} from "@/helpers";
-import CONFIG from "@/helpers/config";
-import { getRoleId } from "@/helpers/utils";
-import { useExternalApi } from "@/composables/useExternalApi";
+} from '@/helpers';
+import CONFIG from '@/helpers/config';
+import { getRoleId } from '@/helpers/utils';
+import { useExternalApi } from '@/composables/useExternalApi';
 
 const {
   AUTH0_DOMAIN,
@@ -20,12 +20,12 @@ const {
 
 export class MgntRequests {
   static getTokenForManagementApi = async () => {
-    console.debug("[getTokenForManagementApi]");
+    console.debug('[getTokenForManagementApi]');
 
     // TODO: cache the token (store in pinia)
 
     const body = {
-      grant_type: "client_credentials",
+      grant_type: 'client_credentials',
       client_id: AUTH0_CLIENT_ID_MGNT_API,
       client_secret: AUTH0_CLIENT_SECRET_MGNT_API,
       audience: `https://${AUTH0_DOMAIN}/api/v2/`,
@@ -33,9 +33,9 @@ export class MgntRequests {
 
     const config = {
       url: `https://${AUTH0_DOMAIN}/oauth/token`,
-      method: "POST",
+      method: 'POST',
       headers: {
-        "content-type": "application/json",
+        'content-type': 'application/json',
       },
       data: body,
     };
@@ -66,7 +66,7 @@ export class UserRequests {
       access_token,
     );
     if (!auth0_user) {
-      throw new Error("Failed to create user in auth0");
+      throw new Error('Failed to create user in auth0');
     }
 
     await OrganizationRequests.addMembersToOrganization(
@@ -128,16 +128,16 @@ export class UserRequests {
 
     const config = {
       url: `https://${AUTH0_DOMAIN}/api/v2/users`,
-      method: "POST",
+      method: 'POST',
       headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
         Authorization: `Bearer ${access_token}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       data: {
         ...user,
         email_verified: true, // IMPORTANT: for not getting the email from the management api m2m app
-        connection: "email",
+        connection: 'email',
       },
     };
 
@@ -159,7 +159,7 @@ export class UserRequests {
     // type: Auth0OrgInvitationRequestDto
     const invitation_request = {
       inviter: {
-        name: "LAZER.io",
+        name: 'LAZER.io',
       },
       invitee: {
         email,
@@ -171,11 +171,11 @@ export class UserRequests {
 
     const config = {
       url: `https://${AUTH0_DOMAIN}/api/v2/organizations/${auth0_org_id}/invitations`,
-      method: "POST",
+      method: 'POST',
       headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
         Authorization: `Bearer ${access_token}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       data: invitation_request,
     };
@@ -192,12 +192,12 @@ export class UserRequests {
     access_token: string,
     user_type: AllRoles,
   ) => {
-    const url = "";
+    const url = '';
     const config = {
       url,
-      method: "GET",
+      method: 'GET',
       headers: {
-        "content-type": "application/json",
+        'content-type': 'application/json',
         Authorization: `Bearer ${access_token}`,
       },
     };
@@ -217,9 +217,9 @@ export class UserRequests {
   ) => {
     const config = {
       url: `https://${AUTH0_DOMAIN}/auth0/users/${user_id}/email/${email}`,
-      method: "GET",
+      method: 'GET',
       headers: {
-        "content-type": "application/json",
+        'content-type': 'application/json',
         Authorization: `Bearer ${access_token}`,
       },
     };
@@ -243,11 +243,11 @@ export class OrganizationRequests {
     const unique_slug = kebabCase(display_name);
     const enabled_connections: IAuth0Connections[] = [
       {
-        connection_id: "con_RblpPrQYyowDKRsL", // gmail sso
+        connection_id: 'con_RblpPrQYyowDKRsL', // gmail sso
         assign_membership_on_login: false,
       },
       {
-        connection_id: "con_2IeqWr47MmhL9HaP", // email passwordless
+        connection_id: 'con_2IeqWr47MmhL9HaP', // email passwordless
         assign_membership_on_login: false,
       },
     ];
@@ -258,10 +258,10 @@ export class OrganizationRequests {
       branding: {
         logo_url: logo_url
           ? logo_url
-          : "https://acmebusiness.com/wp-content/uploads/2020/07/ACME-Logo-CMYK-pdf.jpg",
+          : 'https://acmebusiness.com/wp-content/uploads/2020/07/ACME-Logo-CMYK-pdf.jpg',
         colors: {
-          primary: "#dc2626",
-          page_background: "#fff7ed",
+          primary: '#dc2626',
+          page_background: '#fff7ed',
         },
       },
     };
@@ -270,7 +270,7 @@ export class OrganizationRequests {
       access_token,
     );
     if (error) {
-      throw new Error("Failed to create organization in auth0");
+      throw new Error('Failed to create organization in auth0');
     }
 
     // orchestrateUserCreation with org_id value
@@ -291,15 +291,15 @@ export class OrganizationRequests {
     body: IAuth0Organization,
     access_token?: string,
   ) => {
-    console.debug("[createAuth0Organization]");
+    console.debug('[createAuth0Organization]');
 
     const config = {
       url: `https://${AUTH0_DOMAIN}/api/v2/organizations`,
-      method: "POST",
+      method: 'POST',
       headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
         Authorization: `Bearer ${access_token}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       data: body,
     };
@@ -318,7 +318,7 @@ export class OrganizationRequests {
     auth0_member_id: string,
     access_token?: string,
   ) => {
-    console.debug("[addMembersToOrganization]");
+    console.debug('[addMembersToOrganization]');
 
     if (access_token === undefined) {
       access_token = await MgntRequests.getTokenForManagementApi();
@@ -330,11 +330,11 @@ export class OrganizationRequests {
 
     const config = {
       url: `https://${AUTH0_DOMAIN}/api/v2/organizations/${auth0_org_id}/members`,
-      method: "POST",
+      method: 'POST',
       headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
         Authorization: `Bearer ${access_token}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       data: body,
     };
@@ -349,7 +349,7 @@ export class OrganizationRequests {
     auth0_role_id: string,
     access_token?: string,
   ) => {
-    console.debug("[assignRolesToOrganizationMember]");
+    console.debug('[assignRolesToOrganizationMember]');
 
     if (access_token === undefined) {
       access_token = await MgntRequests.getTokenForManagementApi();
@@ -361,11 +361,11 @@ export class OrganizationRequests {
 
     const config = {
       url: `https://${AUTH0_DOMAIN}/api/v2/organizations/${auth0_org_id}/members/${user_id}/roles`,
-      method: "POST",
+      method: 'POST',
       headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
         Authorization: `Bearer ${access_token}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       data: body,
     };

@@ -82,11 +82,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { useAuth0 } from "@auth0/auth0-vue";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
-import { ThemeToggle } from "@am-ogs/vue-ui";
-import { user_navigation } from "@/helpers";
+import { computed } from 'vue';
+import { useAuth0 } from '@auth0/auth0-vue';
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
+import { ThemeToggle } from '@am-ogs/vue-ui';
+import { user_navigation } from '@/helpers';
 
 const auth0 = useAuth0();
 const { logout } = auth0;

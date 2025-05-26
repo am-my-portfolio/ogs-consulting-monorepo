@@ -1,37 +1,37 @@
-import { kebabCase } from "lodash";
-import { createRouter, createWebHistory } from "vue-router";
-import { authGuard } from "@auth0/auth0-vue";
+import { kebabCase } from 'lodash';
+import { createRouter, createWebHistory } from 'vue-router';
+import { authGuard } from '@auth0/auth0-vue';
 import {
   primary_navigation,
   secondary_navigation,
   user_navigation,
   applyRoleRouteGuard,
-} from "@/helpers";
+} from '@/helpers';
 
-const NotAllowed = () => import("@/views/common/NotAllowed.vue");
-const NotFoundPage = () => import("@/views/common/NotFound.vue");
-const Landing = () => import("@/views/common/LandingPage.vue");
-const PrivacyPolicy = () => import("@/views/common/PrivacyPolicy.vue");
+const NotAllowed = () => import('@/views/common/NotAllowed.vue');
+const NotFoundPage = () => import('@/views/common/NotFound.vue');
+const Landing = () => import('@/views/common/LandingPage.vue');
+const PrivacyPolicy = () => import('@/views/common/PrivacyPolicy.vue');
 
 const static_routes = [
   {
-    path: "/",
-    name: "LandingPage",
+    path: '/',
+    name: 'LandingPage',
     component: Landing,
   },
   {
-    path: "/privacy-policy",
-    name: "PrivacyPolicy",
+    path: '/privacy-policy',
+    name: 'PrivacyPolicy',
     component: PrivacyPolicy,
   },
   {
-    path: "/not-allowed",
-    name: "NotAllowed",
+    path: '/not-allowed',
+    name: 'NotAllowed',
     component: NotAllowed,
   },
   {
-    path: "/:catchAll(.*)",
-    name: "NotFound",
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
     component: NotFoundPage,
   },
 ];
@@ -44,11 +44,11 @@ for (const [index, route] of [
   const routeJson = {
     path: `/${kebabCase(route.name)}`,
     name: route.name,
-    component: () => import(`@/views/${route.name.replace(/ /g, "")}.vue`),
+    component: () => import(`@/views/${route.name.replace(/ /g, '')}.vue`),
     meta: {
       requiresAuth: true,
       roles: route.roles,
-      redirect: "/not-allowed",
+      redirect: '/not-allowed',
     },
     beforeEnter: [authGuard, applyRoleRouteGuard],
   };
@@ -59,7 +59,7 @@ for (const route of user_navigation) {
   const routeJson = {
     path: `/${route.name.toLowerCase()}`,
     name: route.name,
-    component: () => import(`@/views/${route.name.replace(/ /g, "")}.vue`),
+    component: () => import(`@/views/${route.name.replace(/ /g, '')}.vue`),
     beforeEnter: [authGuard],
   };
   dynamic_routes.push(routeJson);

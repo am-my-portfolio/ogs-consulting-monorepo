@@ -1,6 +1,6 @@
-import type { NavigationGuard } from "vue-router";
+import type { NavigationGuard } from 'vue-router';
 
-import { getPermissions, Permissions } from "@/helpers";
+import { getPermissions, Permissions } from '@/helpers';
 
 export const applyPermissionRouteGuard: NavigationGuard = (to, from, next) => {
   let guard_protected_routes = true;

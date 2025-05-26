@@ -25,10 +25,10 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
-import { useRouter } from "vue-router";
-import { useAuth0 } from "@auth0/auth0-vue";
-import { AllRoles, userHasAllRoles, userHasAnyRoles } from "@/helpers";
+import { onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+import { useAuth0 } from '@auth0/auth0-vue';
+import { AllRoles, userHasAllRoles, userHasAnyRoles } from '@/helpers';
 
 const { isAuthenticated, logout } = useAuth0();
 
@@ -38,7 +38,7 @@ onMounted(() => {
     !userHasAllRoles([AllRoles.ADMIN, AllRoles.VENDOR]) &&
     userHasAnyRoles([AllRoles.CONSUMER]);
   if (condition) {
-    router.push("/profile");
+    router.push('/profile');
   }
 });
 

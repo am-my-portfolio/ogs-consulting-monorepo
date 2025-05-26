@@ -63,56 +63,56 @@
 </template>
 
 <script setup lang="ts">
-import ItemsGridLayout from "../experimental/ItemsGridLayout.vue";
+import ItemsGridLayout from '../experimental/ItemsGridLayout.vue';
 
 const properties = [
   {
-    address: "Mesa Verde Ranch",
-    property_type: "Ranch",
+    address: 'Mesa Verde Ranch',
+    property_type: 'Ranch',
     year_built: 1957,
     baths: 1.5,
     bedrooms: 2,
-    imageUrl: "/properties/1.jpg",
+    imageUrl: '/properties/1.jpg',
   },
   {
-    address: "1144 Holly Dr",
-    property_type: "Condo",
+    address: '1144 Holly Dr',
+    property_type: 'Condo',
     year_built: 2001,
     baths: 2,
     bedrooms: 3,
-    imageUrl: "/properties/2.jpg",
+    imageUrl: '/properties/2.jpg',
   },
   {
-    address: "14th Broadway",
-    property_type: "Mansion",
-    year_built: "1999",
+    address: '14th Broadway',
+    property_type: 'Mansion',
+    year_built: '1999',
     baths: 3,
     bedrooms: 4,
-    imageUrl: "/properties/3.jpg",
+    imageUrl: '/properties/3.jpg',
   },
   {
-    address: "1233 Random Valley Circle",
-    property_type: "Villa",
+    address: '1233 Random Valley Circle',
+    property_type: 'Villa',
     year_built: 1859,
     baths: 2,
     bedrooms: 3,
-    imageUrl: "/properties/4.jpg",
+    imageUrl: '/properties/4.jpg',
   },
   {
-    address: "13456 Sky Drive Condos",
-    property_type: "Condo",
+    address: '13456 Sky Drive Condos',
+    property_type: 'Condo',
     year_built: 2024,
     baths: 1.5,
     bedrooms: 2,
-    imageUrl: "/properties/5.jpg",
+    imageUrl: '/properties/5.jpg',
   },
   {
-    address: "Villa Toscana",
-    property_type: "Villa",
+    address: 'Villa Toscana',
+    property_type: 'Villa',
     year_built: 1916,
     baths: 6,
     bedrooms: 7,
-    imageUrl: "/properties/6.jpg",
+    imageUrl: '/properties/6.jpg',
   },
 ];
 </script>

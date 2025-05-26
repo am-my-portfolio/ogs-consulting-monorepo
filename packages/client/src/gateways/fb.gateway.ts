@@ -1,25 +1,32 @@
-import { useExternalApi } from "@/composables/useExternalApi";
+import { useExternalApi } from '@/composables/useExternalApi';
+
+declare global {
+  interface Window {
+    fbAsyncInit: () => void;
+    FB: any;
+  }
+}
 
 export const loginWithFacebook = (): void => {
   window.FB.login(
     (response: any) => {
       if (response.authResponse) {
-        console.log("Welcome! Fetching your information.... ");
-        window.FB.api("/me", { fields: "name,email" }, (response: any) => {
+        console.log('Welcome! Fetching your information.... ');
+        window.FB.api('/me', { fields: 'name,email' }, (response: any) => {
           console.log(`Good to see you, ${response.name}.`);
           console.log(response);
         });
       } else {
-        console.log("User cancelled login or did not fully authorize.");
+        console.log('User cancelled login or did not fully authorize.');
       }
     },
     {
-      scope: "email, public_profile, pages_manage_posts, pages_read_engagement",
+      scope: 'email, public_profile, pages_manage_posts, pages_read_engagement',
       // only email, public_profile scopes can be used for testing before app is reviewed
       // but I am keeping the app in `development` mode, so I can request additional scopes here
       // but only the users added in the App Roles in the FB App console can test the app
       extras: {
-        config_id: "1237220047819037",
+        config_id: '1237220047819037',
       },
     },
   );
@@ -42,10 +49,10 @@ export const getFBLoginStatus = (
     // }
 
     my_integrations.value[2].is_connected =
-      response.status === "connected" ? true : false;
+      response.status === 'connected' ? true : false;
     fb_access_token.value = response?.authResponse?.accessToken;
     fb_user_id.value = response?.authResponse?.userID;
-    console.log(fb_access_token.value);
+    // console.log(fb_access_token.value);
   });
 };
 
@@ -62,14 +69,14 @@ export const getAndSetPageAccessToken = async (
   // TODO: create a fb.gateway.ts in the http folder and move this method there
   const config = {
     url: `https://graph.facebook.com/${fb_user_id.value}/accounts?access_token=${fb_access_token.value}`,
-    method: "GET",
+    method: 'GET',
     headers: {
-      "content-type": "application/json",
+      'content-type': 'application/json',
     },
   };
 
   const { data, error } = await useExternalApi({ config });
-  console.log(data, error);
+  // console.log(data, error);
   // {
   //     "access_token": "EAAasdHaZAxTMBO44Wri6MEB1X6WU4z9geaG3SWsWDxRgd4QCShbkf9XgG0cMyfiPMgOxC2EGp1nroXiKibzvE5epFTZCNUNNqrgOGDqPREiFCJXVFSMQxlhF5Q4DtaZCWBXme4YnpWzIhvD8bOZC350M2GDw6Ju7RsXchzL83rZCsD8oRoIwdLhuUVdp31hSXovmmZBYzrCd30dZBiliHyhfEOFRNO2aoniXCr0pNnn4wZDZD",
   //     "category": "Real Estate",
@@ -93,7 +100,7 @@ export const getAndSetPageAccessToken = async (
 
   fb_page_id.value = data?.data[0]?.id;
   fb_page_access_token.value = data?.data[0]?.access_token;
-  console.log(fb_page_access_token.value);
+  // console.log(fb_page_access_token.value);
 
   // Option 2;
   // window.FB.api(`/${fb_page_id.value}`, { fields: 'access_token' }, (response) => {
@@ -129,21 +136,19 @@ export const publishPost = async (fb_page_access_token, fb_page_id) => {
   if (fb_page_access_token.value) {
     window.FB.api(
       `/${fb_page_id.value}/feed`,
-      "POST",
+      'POST',
       {
-        message: "This is a test post from Vue 3!",
-        link: "https://example.com",
+        message: 'This is a test post from Vue 3!',
+        link: 'https://example.com',
         access_token: fb_page_access_token.value,
       },
       (response) => {
         if (response && !response.error) {
-          console.log("Post published successfully!");
+          console.log('Post published successfully!');
         } else {
-          console.error("Error publishing post:", response.error);
+          console.error('Error publishing post:', response.error);
         }
       },
     );
   }
 };
-
-

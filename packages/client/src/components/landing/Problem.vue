@@ -50,22 +50,22 @@
 </template>
 
 <script setup lang="ts">
-import { RowLayout, ColumnLayout } from "@am-ogs/vue-ui";
+import { RowLayout, ColumnLayout } from '@am-ogs/vue-ui';
 
 const reasons = [
   {
     summary:
-      "19 million U.S. tenants are served by local, small business Property Management shops",
-    icon: "fa-solid fa-house",
+      '19 million U.S. tenants are served by local, small business Property Management shops',
+    icon: 'fa-solid fa-house',
   },
   {
     summary:
-      "42% of tenants want to work with the same Property Manager year after year",
-    icon: "fa-solid fa-bookmark",
+      '42% of tenants want to work with the same Property Manager year after year',
+    icon: 'fa-solid fa-bookmark',
   },
   {
-    summary: "Property Managers can save upto 47% using AI assitants",
-    icon: "fa-solid fa-coins",
+    summary: 'Property Managers can save upto 47% using AI assitants',
+    icon: 'fa-solid fa-coins',
   },
 ];
 </script>

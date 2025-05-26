@@ -50,54 +50,54 @@
 </template>
 
 <script setup lang="ts">
-import { useAuth0 } from "@auth0/auth0-vue";
-import { Header, SiteLayout, SideMenu, FooterOne } from "@am-ogs/vue-ui";
+import { useAuth0 } from '@auth0/auth0-vue';
+import { Header, SiteLayout, SideMenu, FooterOne } from '@am-ogs/vue-ui';
 import {
   primary_navigation,
   secondary_navigation,
   landing_page_navigation,
-} from "@/helpers";
-import Toast from "primevue/toast";
-import ProfileButton from "@/components/identity/ProfileButton.vue";
-import TopNavigation from "@/components/landing/TopNavigation.vue";
+} from '@/helpers';
+import Toast from 'primevue/toast';
+import ProfileButton from '@/components/identity/ProfileButton.vue';
+import TopNavigation from '@/components/landing/TopNavigation.vue';
 
 const { isLoading, isAuthenticated } = useAuth0();
 
 const socials = [
   {
-    name: "website",
-    href: "https://my-briefcase.pages.dev",
-    icon: "fa-solid fa-globe",
+    name: 'website',
+    href: 'https://my-briefcase.pages.dev',
+    icon: 'fa-solid fa-globe',
   },
   {
-    name: "GitHub",
-    href: "https://github.com/????",
-    icon: "fa-brands fa-github",
+    name: 'GitHub',
+    href: 'https://github.com/????',
+    icon: 'fa-brands fa-github',
   },
   {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/company/one-gal-shop",
-    icon: "fa-brands fa-linkedin",
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/one-gal-shop',
+    icon: 'fa-brands fa-linkedin',
   },
   {
-    name: "YouTube",
-    href: "#",
-    icon: "fa-brands fa-youtube",
+    name: 'YouTube',
+    href: '#',
+    icon: 'fa-brands fa-youtube',
   },
   {
-    name: "Instagram",
-    href: "#",
-    icon: "fa-brands fa-instagram",
+    name: 'Instagram',
+    href: '#',
+    icon: 'fa-brands fa-instagram',
   },
 ];
 
 const handleScroll = async (value) => {
-  console.log("scrolling to", value);
+  console.log('scrolling to', value);
 
   for (const item of landing_page_navigation) {
     if (item.action === value) {
       item.ref.value = document.getElementById(item.action);
-      item.ref.value?.scrollIntoView({ behavior: "smooth" });
+      item.ref.value?.scrollIntoView({ behavior: 'smooth' });
     }
   }
 };

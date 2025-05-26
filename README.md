@@ -8,8 +8,7 @@ Curated by <https://github.com/n8n-io>, it combines the self-hosted n8n
 platform with a curated list of compatible AI products and components to
 quickly get started with building self-hosted AI workflows.
 
-> [!TIP]
-> [Read the announcement](https://blog.n8n.io/self-hosted-ai/)
+> [!TIP] > [Read the announcement](https://blog.n8n.io/self-hosted-ai/)
 
 ### What’s included
 
@@ -22,7 +21,7 @@ and run the latest local LLMs
 ✅ [**Qdrant**](https://qdrant.tech/) - Open-source, high performance vector
 store with an comprehensive API
 
-✅ [**PostgreSQL**](https://www.postgresql.org/) -  Workhorse of the Data
+✅ [**PostgreSQL**](https://www.postgresql.org/) - Workhorse of the Data
 Engineering world, handles large amounts of data safely.
 
 ### What you can build
@@ -92,8 +91,7 @@ If you're running OLLAMA locally on your Mac (not in Docker), you need to modify
 in the n8n service configuration. Update the x-n8n section in your Docker Compose file as follows:
 
 ```yaml
-x-n8n: &service-n8n
-  # ... other configurations ...
+x-n8n: &service-n8n # ... other configurations ...
   environment:
     # ... other environment variables ...
     - OLLAMA_HOST=host.docker.internal:11434
@@ -145,21 +143,21 @@ language model and Qdrant as your vector store.
 
 ## Upgrading
 
-* ### For Nvidia GPU setups:
+- ### For Nvidia GPU setups:
 
 ```bash
 docker compose --profile gpu-nvidia pull
 docker compose create && docker compose --profile gpu-nvidia up
 ```
 
-* ### For Mac / Apple Silicon users
+- ### For Mac / Apple Silicon users
 
 ```
 docker compose pull
 docker compose create && docker compose up
 ```
 
-* ### For Non-GPU setups:
+- ### For Non-GPU setups:
 
 ```bash
 docker compose --profile cpu pull

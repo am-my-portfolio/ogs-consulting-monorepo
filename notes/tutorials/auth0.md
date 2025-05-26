@@ -62,16 +62,16 @@ This application uses Auth0 as Identity provider. Below is a TLDR'ish version of
    - Example:
 
      ```js
-     import { createAuth0 } from "@auth0/auth0-vue";
+     import { createAuth0 } from '@auth0/auth0-vue';
 
      app.use(
        createAuth0({
-         domain: "YOUR_DOMAIN",
-         clientId: "YOUR_CLIENT_ID",
+         domain: 'YOUR_DOMAIN',
+         clientId: 'YOUR_CLIENT_ID',
          authorizationParams: {
            redirect_uri: window.location.origin,
-           audience: "YOUR_API_IDENTIFIER", // Optional
-           scope: "openid profile email",
+           audience: 'YOUR_API_IDENTIFIER', // Optional
+           scope: 'openid profile email',
          },
        }),
      );

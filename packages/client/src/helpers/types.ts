@@ -1,8 +1,8 @@
-import { AllRoles } from "./auth";
+import { AllRoles } from './auth';
 
 export enum NavType {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
 }
 
 export interface Item {

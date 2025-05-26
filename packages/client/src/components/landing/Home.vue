@@ -11,8 +11,14 @@
       </template>
 
       <template #description>
-        Reimagining property management with AI - Automated, Impactful, and
-        Relationship-first.
+        <div>Reimagining Property Management with AI :- </div>
+        <p>
+          <i class="fa fa-square-check text-pop-primary mr-2" />Automated
+          <i class="fa fa-square-check text-pop-primary mr-2" />Impactful
+          <i
+            class="fa fa-square-check text-pop-primary mr-2"
+          />Relationship-first
+        </p>
       </template>
 
       <template #leftContent>
@@ -21,7 +27,7 @@
         </a>
         <div class="mt-5">
           <p class="text-pop-primary mb-2">
-            Trusted by 10+ individuals and SMEs in Colorado
+            Trusted by 10+ Property Managers in Colorado
           </p>
         </div>
       </template>
@@ -39,47 +45,47 @@ import {
   ReelHeroFa,
   ReelHeroIc,
   ColumnLayout,
-} from "@am-ogs/vue-ui";
+} from '@am-ogs/vue-ui';
 
 const random_icons = [
   {
-    name: "1",
-    icon: "mdi:sign-real-estate",
+    name: '1',
+    icon: 'mdi:sign-real-estate',
     hidden: false,
   },
   {
-    name: "1",
-    icon: "carbon:ai",
+    name: '1',
+    icon: 'carbon:ai',
     hidden: false,
   },
   {
-    name: "1",
-    icon: "carbon:workflow-automation",
+    name: '1',
+    icon: 'carbon:workflow-automation',
     hidden: false,
   },
   {
-    name: "1",
-    icon: "simple-icons:n8n",
+    name: '1',
+    icon: 'simple-icons:n8n',
     hidden: false,
   },
   {
-    name: "1",
-    icon: "mynaui:api",
+    name: '1',
+    icon: 'mynaui:api',
     hidden: false,
   },
   {
-    name: "1",
-    icon: "eos-icons:performance",
+    name: '1',
+    icon: 'eos-icons:performance',
     hidden: false,
   },
   {
-    name: "1",
-    icon: "mdi:bed-clock",
+    name: '1',
+    icon: 'mdi:bed-clock',
     hidden: false,
   },
   {
-    name: "1",
-    icon: "svg-spinners:clock",
+    name: '1',
+    icon: 'svg-spinners:clock',
     hidden: false,
   },
 ];

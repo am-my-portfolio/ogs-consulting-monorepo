@@ -39,7 +39,7 @@
             <p class="text-dull-secondary">WCIF friendly</p>
             <p class="text-dull-secondary">
               <span class="text-pop-primary">Roles: </span
-              >{{ user["lazer.io/roles"] }}
+              >{{ user['lazer.io/roles'] }}
             </p>
           </div>
 
@@ -66,8 +66,8 @@
 </template>
 
 <script setup lang="ts">
-import { useAuth0 } from "@auth0/auth0-vue";
-import { PageDivisionLayout } from "@am-ogs/vue-ui";
+import { useAuth0 } from '@auth0/auth0-vue';
+import { PageDivisionLayout } from '@am-ogs/vue-ui';
 
 const { user, isLoading } = useAuth0();
 </script>

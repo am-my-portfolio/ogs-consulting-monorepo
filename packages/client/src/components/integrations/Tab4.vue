@@ -54,8 +54,8 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from "@iconify/vue"; // https://iconify.design/docs/icon-components/vue/
-import { PageDivisionLayout } from "@am-ogs/vue-ui";
+import { Icon } from '@iconify/vue'; // https://iconify.design/docs/icon-components/vue/
+import { PageDivisionLayout } from '@am-ogs/vue-ui';
 
 defineProps<{
   title: string;
@@ -64,28 +64,28 @@ defineProps<{
 
 const integrations = [
   {
-    name: "Redfin",
-    initials: "R",
-    icon: "arcticons:redfin",
-    href: "#",
-    type: "Property Listing",
-    bgColor: "bg-pop-secondary/40",
+    name: 'Redfin',
+    initials: 'R',
+    icon: 'arcticons:redfin',
+    href: '#',
+    type: 'Property Listing',
+    bgColor: 'bg-pop-secondary/40',
   },
   {
-    name: "Realtor",
-    initials: "R",
-    icon: "arcticons:realtor",
-    href: "#",
-    type: "Property Listing",
-    bgColor: "bg-pop-secondary/40",
+    name: 'Realtor',
+    initials: 'R',
+    icon: 'arcticons:realtor',
+    href: '#',
+    type: 'Property Listing',
+    bgColor: 'bg-pop-secondary/40',
   },
   {
-    name: "Zillow",
-    initials: "Z",
-    icon: "arcticons:zillow",
-    href: "#",
-    type: "Property Listing",
-    bgColor: "bg-pop-secondary/60",
+    name: 'Zillow',
+    initials: 'Z',
+    icon: 'arcticons:zillow',
+    href: '#',
+    type: 'Property Listing',
+    bgColor: 'bg-pop-secondary/60',
   },
 ];
 </script>

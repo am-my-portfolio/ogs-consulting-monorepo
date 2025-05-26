@@ -82,11 +82,11 @@
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent, ref } from "vue";
-import { PageLayout } from "@am-ogs/vue-ui";
-import { primary_navigation } from "@/helpers/navigation";
+import { defineAsyncComponent, ref } from 'vue';
+import { PageLayout } from '@am-ogs/vue-ui';
+import { primary_navigation } from '@/helpers/navigation';
 
-const page = primary_navigation.find((n) => n.name === "Owners & Investors");
+const page = primary_navigation.find((n) => n.name === 'Owners & Investors');
 const tabs = page.items;
 const tab = page.items.find((t) => t.current === true);
 const current_tab = ref(tab.name);

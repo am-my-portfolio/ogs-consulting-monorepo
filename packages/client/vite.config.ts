@@ -1,25 +1,25 @@
-import { defineConfig } from "vite";
-import path from "path";
-import vue from "@vitejs/plugin-vue";
-import basicSsl from "@vitejs/plugin-basic-ssl";
-import svgLoader from "vite-svg-loader";
+import { defineConfig } from 'vite';
+import path from 'path';
+import vue from '@vitejs/plugin-vue';
+import basicSsl from '@vitejs/plugin-basic-ssl';
+import svgLoader from 'vite-svg-loader';
 
 export default defineConfig({
   plugins: [vue(), svgLoader(), basicSsl()],
-  base: "./",
+  base: './',
   build: {
     chunkSizeWarningLimit: 1000,
     minify: true,
-    sourcemap: "inline",
+    sourcemap: 'inline',
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
-    extensions: [".ts", ".js", ".vue", ".png", ".json"],
+    extensions: ['.ts', '.js', '.vue', '.png', '.json'],
   },
   server: {
-    host: "0.0.0.0",
+    host: '0.0.0.0',
     port: 3000,
     proxy: {},
     watch: {

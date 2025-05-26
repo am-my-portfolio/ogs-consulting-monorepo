@@ -6,5 +6,5 @@
 </template>
 
 <script setup lang="ts">
-import { PageDivisionLayout } from "@am-ogs/vue-ui";
+import { PageDivisionLayout } from '@am-ogs/vue-ui';
 </script>

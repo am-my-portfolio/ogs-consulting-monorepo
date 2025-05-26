@@ -1,3 +1,8 @@
+# N8N + Facebook
+
+- https://www.youtube.com/watch?v=ljEuuMfbjCc
+- https://www.youtube.com/watch?v=bcDTjuXrKf4
+
 - got to use Facebook Login for Business
 - https://developers.facebook.com/docs/pages-api/overview
 - got to use the Business App type
@@ -45,6 +50,5 @@ Draft:
 
   - copy the token
   - in n8n, create a credential `Facebook for Business Page` and save the token in it
-
 
   https://docs.n8n.io/integrations/builtin/credentials/facebookapp/#configure-the-facebook-trigger

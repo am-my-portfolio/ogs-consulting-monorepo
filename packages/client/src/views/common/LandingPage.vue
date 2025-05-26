@@ -18,9 +18,9 @@
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent } from "vue";
-import { useAuth0 } from "@auth0/auth0-vue";
-import { landing_page_navigation } from "@/helpers";
+import { defineAsyncComponent } from 'vue';
+import { useAuth0 } from '@auth0/auth0-vue';
+import { landing_page_navigation } from '@/helpers';
 
 const { isAuthenticated } = useAuth0();
 </script>

@@ -1,20 +1,20 @@
-import "@/main.css";
-import FontAwesomeIcon from "@/helpers/fontawesome.library";
-import { createApp } from "vue";
-import { createPinia } from "pinia";
+import '@/main.css';
+import FontAwesomeIcon from '@/helpers/fontawesome.library';
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 
-import PrimeVue from "primevue/config";
-import ToastService from "primevue/toastservice";
-import Aura from "@primeuix/themes/aura";
+import PrimeVue from 'primevue/config';
+import ToastService from 'primevue/toastservice';
+import Aura from '@primeuix/themes/aura';
 
-import App from "./App.vue";
-import router from "./router";
-import auth0 from "@/plugins/auth0.plugin";
+import App from './App.vue';
+import router from './router';
+import auth0 from '@/plugins/auth0.plugin';
 
 const app = createApp(App);
 const pinia = createPinia();
 
-app.component("font-awesome-icon", FontAwesomeIcon);
+app.component('font-awesome-icon', FontAwesomeIcon);
 app
   .use(router)
   .use(pinia)
@@ -25,4 +25,4 @@ app
     },
   })
   .use(ToastService);
-app.mount("#app");
+app.mount('#app');

@@ -150,5 +150,5 @@
 </template>
 
 <script setup lang="ts">
-import { PageLayout } from "@am-ogs/vue-ui";
+import { PageLayout } from '@am-ogs/vue-ui';
 </script>

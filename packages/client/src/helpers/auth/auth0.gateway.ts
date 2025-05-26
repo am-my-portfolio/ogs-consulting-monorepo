@@ -1,12 +1,12 @@
-import CONFIG from "@/helpers/config";
+import CONFIG from '@/helpers/config';
 import {
   getRoleId,
   ICreateUser,
   RoleIds,
   AllRoles,
   ISendPortalInviteRequest,
-} from "@/helpers";
-import { useExternalApi } from "@/composables/useExternalApi";
+} from '@/helpers';
+import { useExternalApi } from '@/composables/useExternalApi';
 
 const {
   AUTH0_DOMAIN,
@@ -17,12 +17,12 @@ const {
 
 export class MgntRequests {
   static getTokenForManagementApi = async () => {
-    console.debug("[getTokenForManagementApi]");
+    console.debug('[getTokenForManagementApi]');
 
     // TODO: cache the token (store in pinia)
 
     const body = {
-      grant_type: "client_credentials",
+      grant_type: 'client_credentials',
       client_id: AUTH0_CLIENT_ID_MGNT_API,
       client_secret: AUTH0_CLIENT_SECRET_MGNT_API,
       audience: `https://${AUTH0_DOMAIN}/api/v2/`,
@@ -30,9 +30,9 @@ export class MgntRequests {
 
     const config = {
       url: `https://${AUTH0_DOMAIN}/oauth/token`,
-      method: "POST",
+      method: 'POST',
       headers: {
-        "content-type": "application/json",
+        'content-type': 'application/json',
       },
       data: body,
     };
@@ -44,7 +44,7 @@ export class MgntRequests {
 
 export class UserRequests {
   static orchestrateUserCreation = async (user: ICreateUser) => {
-    console.debug("[orchestrateUserCreation]");
+    console.debug('[orchestrateUserCreation]');
 
     const { user_role } = user;
     // const client_id = AUTH0_CLIENT_ID;
@@ -56,7 +56,7 @@ export class UserRequests {
       access_token,
     );
     if (!auth0_user) {
-      throw new Error("Failed to create user in auth0");
+      throw new Error('Failed to create user in auth0');
     }
 
     await UserRequests.assignRolesToUser(
@@ -95,13 +95,13 @@ export class UserRequests {
 
     const config = {
       url: `https://${AUTH0_DOMAIN}/api/v2/users`,
-      method: "POST",
+      method: 'POST',
       headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
         Authorization: `Bearer ${access_token}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-      data: { ...user, connection: "email", email_verified: false },
+      data: { ...user, connection: 'email', email_verified: false },
     };
 
     const { data, error } = await useExternalApi({ config });
@@ -126,11 +126,11 @@ export class UserRequests {
 
     const config = {
       url: `https://${AUTH0_DOMAIN}/api/v2/users/${user_id}/roles`,
-      method: "POST",
+      method: 'POST',
       headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
         Authorization: `Bearer ${access_token}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       data: { roles },
     };
@@ -149,12 +149,12 @@ export class UserRequests {
     access_token?: string,
   ) => {
     const { email, client_id } = body;
-    const auth0_org_id = "";
+    const auth0_org_id = '';
 
     // type: Auth0OrgInvitationRequestDto
     const invitation_request = {
       inviter: {
-        name: "My Marketplace App",
+        name: 'My Marketplace App',
       },
       invitee: {
         email,
@@ -166,11 +166,11 @@ export class UserRequests {
 
     const config = {
       url: `https://${AUTH0_DOMAIN}/api/v2/organizations/${auth0_org_id}/invitations`,
-      method: "POST",
+      method: 'POST',
       headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
         Authorization: `Bearer ${access_token}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       data: invitation_request,
     };
@@ -187,12 +187,12 @@ export class UserRequests {
     access_token: string,
     user_type: AllRoles,
   ) => {
-    const url = "";
+    const url = '';
     const config = {
       url,
-      method: "GET",
+      method: 'GET',
       headers: {
-        "content-type": "application/json",
+        'content-type': 'application/json',
         Authorization: `Bearer ${access_token}`,
       },
     };
@@ -212,9 +212,9 @@ export class UserRequests {
   ) => {
     const config = {
       url: `https://${AUTH0_DOMAIN}/auth0/users/${user_id}/email/${email}`,
-      method: "GET",
+      method: 'GET',
       headers: {
-        "content-type": "application/json",
+        'content-type': 'application/json',
         Authorization: `Bearer ${access_token}`,
       },
     };
