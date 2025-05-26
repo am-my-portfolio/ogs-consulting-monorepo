@@ -108,10 +108,10 @@
 import { ref } from 'vue';
 import { base_url } from '@/helpers/constants';
 import { UseOpenAi } from '@/composables/useOpenAi';
-import { UseAnthropic } from '@/composables/useAnthropic';
+// import { UseAnthropic } from '@/composables/useAnthropic';
 import { PageDivisionLayout } from '@am-ogs/vue-ui';
 
-const { useChatStream } = UseAnthropic();
+// const { useChatStream } = UseAnthropic();
 
 defineProps<{
   title: string;
@@ -153,7 +153,7 @@ const chatDirect = async () => {
   question.value = undefined;
   conversation.value.push(new_entry.value);
 
-  const stream = await useChatStream(new_entry.value.question);
+  const stream = []; //await useChatStream(new_entry.value.question);
   for await (const chunk of stream) {
     console.log(chunk.content);
     new_entry.value.answer = `${new_entry.value.answer ?? ''} ${chunk.content}`;
