@@ -1,5 +1,7 @@
 import { AllRoles } from './auth';
 
+export const CUSTOMER_NAME = 'My Briefcase';
+
 export enum NavType {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',

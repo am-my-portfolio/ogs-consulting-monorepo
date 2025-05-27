@@ -71,7 +71,7 @@ const socials = [
   },
   {
     name: 'GitHub',
-    href: 'https://github.com/????',
+    href: 'https://github.com/am-my-portfolio/my-briefcase',
     icon: 'fa-brands fa-github',
   },
   {
@@ -81,7 +81,7 @@ const socials = [
   },
   {
     name: 'YouTube',
-    href: '#',
+    href: 'https://www.youtube.com/@am-ogs',
     icon: 'fa-brands fa-youtube',
   },
   {

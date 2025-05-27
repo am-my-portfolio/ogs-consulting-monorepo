@@ -3,6 +3,15 @@ import { Item, AllRoles, NavType } from '@/helpers';
 export const secondary_navigation = [
   {
     type: NavType.SECONDARY,
+    name: 'Settings',
+    description: 'Manage n8n credentials and workflows',
+    icon: 'fa-solid fa-gears',
+    current: false,
+    roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR, AllRoles.CONSUMER],
+    items: [],
+  },
+  {
+    type: NavType.SECONDARY,
     name: 'Support Hub',
     description: 'Manage users, check their roles and connections',
     icon: 'fa-solid fa-headphones-simple',

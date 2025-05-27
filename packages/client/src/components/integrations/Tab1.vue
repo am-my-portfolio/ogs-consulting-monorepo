@@ -65,16 +65,10 @@
 import { onMounted, ref, toRaw } from 'vue';
 import { Icon } from '@iconify/vue';
 import { PageDivisionLayout } from '@am-ogs/vue-ui';
-import {
-  createFacebookCredentials,
-  createWorkflow,
-  getAndSetPageAccessToken,
-  getFBLoginStatus,
-  getWorkflow,
-  loginWithFacebook,
-  publishPost,
-} from '@/gateways';
 import { gmail_draft } from '@/helpers/n8n/workflows/gmail-draft';
+import { useFacebookStore } from '@/stores/facebook';
+
+const fb_store = useFacebookStore();
 
 defineProps<{
   title: string;
@@ -113,19 +107,14 @@ const my_integrations = ref([
   },
 ]);
 
-const fb_access_token = ref();
-const fb_user_id = ref();
-const fb_page_id = ref();
-const fb_page_access_token = ref();
-
 onMounted(async () => {
-  await getFBLoginStatus(my_integrations, fb_access_token, fb_user_id);
-  await getAndSetPageAccessToken(
-    fb_access_token,
-    fb_page_access_token,
-    fb_page_id,
-    fb_user_id,
-  );
+  if (fb_store.fb_connection_status) {
+    my_integrations.value[2].is_connected = true;
+  } else {
+    await fb_store.getFBLoginStatus();
+    await fb_store.getAndSetPageAccessToken();
+    my_integrations.value[2].is_connected = fb_store.fb_connection_status;
+  }
   // await publishPost(fb_page_access_token, fb_page_id)
 
   // TODO: instead of publishing post from here,
@@ -138,7 +127,7 @@ onMounted(async () => {
 const handleIntegration = (value: string) => {
   console.log(value);
   if (value === 'Facebook' && !my_integrations.value[2].is_connected) {
-    loginWithFacebook();
+    fb_store.loginWithFacebook();
   }
 };
 </script>

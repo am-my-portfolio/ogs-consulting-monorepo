@@ -4,7 +4,8 @@
       <template #titleRight> The Solution </template>
 
       <template #subTitleRight>
-        The Briefcase: Empowering Small Property Management Teams to generate value 24/7
+        The Briefcase: Empowering Small Property Management Teams to generate
+        value 24/7
       </template>
 
       <template #description>

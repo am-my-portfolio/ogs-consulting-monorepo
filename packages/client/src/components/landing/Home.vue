@@ -11,7 +11,7 @@
       </template>
 
       <template #description>
-        <div>Reimagining Property Management with AI :- </div>
+        <div>Reimagining Property Management with AI :-</div>
         <p>
           <i class="fa fa-square-check text-pop-primary mr-2" />Automated
           <i class="fa fa-square-check text-pop-primary mr-2" />Impactful
