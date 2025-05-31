@@ -96,8 +96,8 @@ const user = computed(() => {
 });
 
 const handleLogout = () => {
-  // clear all the pinia stores here
-  sessionStorage.clear();
+  // clear all the stores here ?
+  // localStorage.clear();
   logout({
     logoutParams: {
       returnTo: window.location.origin,

@@ -2,12 +2,19 @@ import { defineStore } from 'pinia';
 import { useStorage } from '@vueuse/core';
 import { useExternalApi } from '@/composables/useExternalApi';
 
+declare global {
+  interface Window {
+    fbAsyncInit: () => void;
+    FB: any;
+  }
+}
+
 // https://www.vuemastery.com/blog/refresh-proof-your-pinia-stores/
 // TODO: Need to use secure storage
 export const useFacebookStore = defineStore('facebook', {
   state: () => {
-    if (sessionStorage.getItem('facebook')) {
-      return JSON.parse(sessionStorage.getItem('facebook'));
+    if (localStorage.getItem('facebook')) {
+      return JSON.parse(localStorage.getItem('facebook'));
     } else {
       return {
         fb_connection_status: false,
@@ -52,32 +59,30 @@ export const useFacebookStore = defineStore('facebook', {
       // console.log(data, error);
       this.setFacebookPageId(data?.data[0]?.id);
       this.setFacebookPageAccessToken(data?.data[0]?.access_token);
-      // console.log(fb_page_access_token.value);
 
       // Option 2;
       // window.FB.api(`/${fb_page_id.value}`, { fields: 'access_token' }, (response) => {
       //   if (response && response.access_token) {
-      //     fb_page_access_token.value = response.access_token;
+      //     this.setFacebookPageAccessToken(response.access_token);
       //   } else {
       //     console.log('Failed to get page access token');
       //   }
       // });
     },
-
     // THIS WORKS!!! both options !!!
-    async publishPost(fb_page_access_token, fb_page_id) {
+    async publishPost() {
       // https://developers.facebook.com/docs/pages-api/getting-started
 
       // Option 1: using axios
       // const config = {
-      //   url: `https://graph.facebook.com/v22.0/${fb_page_id.value}/feed`,
+      //   url: `https://graph.facebook.com/v22.0/${this.fb_page_id}/feed`,
       //   method: "POST",
       //   headers: {
       //     "content-type": "application/json",
       //   },
       //   data: {
       //     "message": "your_message_text",
-      //     "access_token": fb_page_access_token.value
+      //     "access_token": this.fb_page_access_token
       //   }
       // };
 
@@ -85,14 +90,14 @@ export const useFacebookStore = defineStore('facebook', {
       // console.log(data, error)
 
       // Option 2: using FB.api
-      if (fb_page_access_token.value) {
+      if (this.fb_page_access_token) {
         window.FB.api(
-          `/${fb_page_id.value}/feed`,
+          `/${this.fb_page_id}/feed`,
           'POST',
           {
             message: 'This is a test post from Vue 3!',
             link: 'https://example.com',
-            access_token: fb_page_access_token.value,
+            access_token: this.fb_page_access_token,
           },
           (response) => {
             if (response && !response.error) {
@@ -104,8 +109,7 @@ export const useFacebookStore = defineStore('facebook', {
         );
       }
     },
-
-    loginWithFacebook() {
+    connectFacebook() {
       window.FB.login(
         (response: any) => {
           if (response.authResponse) {
@@ -130,7 +134,6 @@ export const useFacebookStore = defineStore('facebook', {
         },
       );
     },
-
     setFacebookConnectionStatus(value) {
       this.fb_connection_status = value;
     },

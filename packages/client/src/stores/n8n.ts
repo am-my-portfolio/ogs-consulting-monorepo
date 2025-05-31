@@ -3,8 +3,8 @@ import { useExternalApi } from '@/composables/useExternalApi';
 
 export const useN8NStore = defineStore('n8n', {
   state: () => {
-    if (sessionStorage.getItem('n8n')) {
-      return JSON.parse(sessionStorage.getItem('n8n'));
+    if (localStorage.getItem('n8n')) {
+      return JSON.parse(localStorage.getItem('n8n'));
     } else {
       return {
         fb_credential_created: false,
@@ -32,6 +32,31 @@ export const useN8NStore = defineStore('n8n', {
           type: 'facebookGraphApi',
           data: {
             accessToken: fb_page_access_token,
+          },
+        },
+      };
+
+      console.log(config);
+      const { data, error } = await useExternalApi({ config });
+      console.log(data, error);
+      if (data?.id) {
+        this.setFBCredential(true);
+      }
+    },
+
+    async createGoogleCredentials(customer, google_credential) {
+      const config = {
+        url: `http://localhost/api/v1/credentials`,
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'X-N8N-API-KEY': import.meta.env.VITE_N8N_API_KEY,
+        },
+        data: {
+          name: `[Google Account] Customer: ${customer}`,
+          type: 'googleOAuth2Api',
+          data: {
+            accessToken: google_credential,
           },
         },
       };

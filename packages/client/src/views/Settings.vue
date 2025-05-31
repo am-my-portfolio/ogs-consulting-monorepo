@@ -74,14 +74,17 @@
 </template>
 
 <script setup lang="ts">
+import { computed, ref } from 'vue';
 import { PageLayout, PageDivisionLayout } from '@am-ogs/vue-ui';
 import { useFacebookStore } from '@/stores/facebook';
 import { useN8NStore } from '@/stores/n8n';
 import { CUSTOMER_NAME, secondary_navigation } from '@/helpers';
-import { computed, ref } from 'vue';
+import { gmail_draft } from '@/helpers/n8n/workflows/gmail-draft';
+import { useGoogleStore } from '@/stores/google';
 
 const page = secondary_navigation.find((n) => n.name === 'Settings');
 
+const google_store = useGoogleStore();
 const fb_store = useFacebookStore();
 const n8n_store = useN8NStore();
 
@@ -94,7 +97,8 @@ const profileSettings = computed(() => [
     action_status: n8n_store.fb_credential_created,
     method: () => {
       console.log(n8n_store.fb_credential_created);
-      if (n8n_store.fb_credential_created === false) {
+      console.log(fb_store.fb_page_access_token)
+      if (n8n_store.fb_credential_created === false && fb_store.fb_page_access_token) {
         n8n_store.createFacebookCredentials(
           CUSTOMER_NAME,
           fb_store.fb_page_access_token,
@@ -104,34 +108,17 @@ const profileSettings = computed(() => [
     secondaryAction: '',
   },
   {
-    label: 'Gmail Credentials',
+    label: 'Google Credentials',
     value: '',
     imageUrl: '',
     action: 'Create',
-    action_status: n8n_store.fb_credential_created,
+    action_status: n8n_store.gmail_credential_created,
     method: () => {
-      console.log(n8n_store.fb_credential_created);
-      if (n8n_store.fb_credential_created === false) {
-        n8n_store.createFacebookCredentials(
+      console.log(n8n_store.gmail_credential_created);
+      if (n8n_store.gmail_credential_created === false) {
+        n8n_store.createGoogleCredentials(
           CUSTOMER_NAME,
-          fb_store.fb_page_access_token,
-        );
-      }
-    },
-    secondaryAction: '',
-  },
-  {
-    label: 'Google Calendar Credentials',
-    value: '',
-    imageUrl: '',
-    action: 'Create',
-    action_status: n8n_store.fb_credential_created,
-    method: () => {
-      console.log(n8n_store.fb_credential_created);
-      if (n8n_store.fb_credential_created === false) {
-        n8n_store.createFacebookCredentials(
-          CUSTOMER_NAME,
-          fb_store.fb_page_access_token,
+          google_store.google_credential,
         );
       }
     },

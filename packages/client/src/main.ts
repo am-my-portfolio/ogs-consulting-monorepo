@@ -3,6 +3,7 @@ import FontAwesomeIcon from '@/helpers/fontawesome.library';
 import { createApp, watch } from 'vue';
 import { createPinia } from 'pinia';
 
+import vue3GoogleLogin from 'vue3-google-login';
 import PrimeVue from 'primevue/config';
 import ToastService from 'primevue/toastservice';
 import Aura from '@primeuix/themes/aura';
@@ -10,24 +11,19 @@ import Aura from '@primeuix/themes/aura';
 import App from './App.vue';
 import router from './router';
 import auth0 from '@/plugins/auth0.plugin';
-import { stat } from 'fs';
 
 const app = createApp(App);
 const pinia = createPinia();
 
-declare global {
-  interface Window {
-    fbAsyncInit: () => void;
-    FB: any;
-  }
-}
-
 watch(
   pinia.state,
   (state) => {
-    if (state.n8n) sessionStorage.setItem('n8n', JSON.stringify(state.n8n));
-    if (state.facebook)
-      sessionStorage.setItem('facebook', JSON.stringify(state.facebook));
+    if (state.n8n) localStorage.setItem('n8n', JSON.stringify(state.n8n));
+    if (state.google)
+      localStorage.setItem('google', JSON.stringify(state.google));
+    if (state.facebook) {
+      localStorage.setItem('facebook', JSON.stringify(state.facebook));
+    }
   },
   { deep: true },
 );
@@ -41,6 +37,9 @@ app
     theme: {
       preset: Aura,
     },
+  })
+  .use(vue3GoogleLogin, {
+    clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID,
   })
   .use(ToastService);
 app.mount('#app');

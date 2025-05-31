@@ -146,7 +146,7 @@ const init_client = () => {
   gapi.load('client:auth2', () => {
     gapi.client
       .init({
-        clientId: 'YOUR_GOOGLE_CLIENT_ID',
+        clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID,
         scope: 'https://www.googleapis.com/auth/calendar.readonly',
         discoveryDocs: [
           'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest',

@@ -2,47 +2,6 @@ import { Item, AllRoles, NavType } from '@/helpers';
 
 export const primary_navigation: Item[] = [
   {
-    name: 'Chat',
-    description: 'Chat with the AI',
-    icon: 'fa-solid fa-comment-dots',
-    current: false,
-    roles: [AllRoles.SUPER_ADMIN],
-    items: [
-      {
-        tab: 'Tab1',
-        name: 'Overview',
-        description: '',
-        current: true,
-        icon: '',
-        items: [],
-      },
-      {
-        tab: 'Tab2',
-        name: 'Q & A',
-        description: '',
-        current: false,
-        icon: '',
-        items: [],
-      },
-      {
-        tab: 'Tab3',
-        name: 'Summarize',
-        description: '',
-        current: false,
-        icon: '',
-        items: [],
-      },
-      {
-        tab: 'Tab4',
-        name: 'Draft',
-        description: '',
-        current: false,
-        icon: '',
-        items: [],
-      },
-    ],
-  },
-  {
     name: 'Integrations',
     description:
       'Integrate Socials, Calendar, Email, Storage (Dropbox, Google Drive), Bank',
@@ -267,6 +226,23 @@ export const primary_navigation: Item[] = [
     icon: 'fa-solid fa-money-bill-trend-up', // fa-circle-dollar-to-slot regular fa-money-bill-1, solid: money-check-dollar, dollar-sign, hand-holdinig-dollar
     current: false,
     roles: [AllRoles.SUPER_ADMIN, AllRoles.VENDOR, AllRoles.CONSUMER],
+    items: [
+      {
+        tab: 'Tab1',
+        name: 'Overview',
+        description: '',
+        current: true,
+        icon: '',
+        items: [],
+      },
+    ],
+  },
+    {
+    name: 'Chat',
+    description: 'Chat with the AI',
+    icon: 'fa-solid fa-comment-dots',
+    current: false,
+    roles: [AllRoles.SUPER_ADMIN],
     items: [
       {
         tab: 'Tab1',
