@@ -31,7 +31,7 @@
       </template>
 
       <template #rightContent>
-        <img src="/logo.png" alt="logo" class="w-full rounded-full" />
+        <img src="/logo.png" alt="logo"/>
       </template>
     </ColumnLayout>
   </div>
