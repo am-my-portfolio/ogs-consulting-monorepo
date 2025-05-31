@@ -11,13 +11,11 @@
       </template>
 
       <template #description>
-        <div>Reimagining Property Management with AI :-</div>
+        <div> Reimagining Property Management with AI :- </div>
         <p>
           <i class="fa fa-square-check text-pop-primary mr-2" />Automated
           <i class="fa fa-square-check text-pop-primary mr-2" />Impactful
-          <i
-            class="fa fa-square-check text-pop-primary mr-2"
-          />Relationship-first
+          <i class="fa fa-square-check text-pop-primary mr-2" />Relationship-first
         </p>
       </template>
 
@@ -40,11 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  BaseButton,
-  ReelHeroIc,
-  ColumnLayout,
-} from '@am-ogs/vue-ui';
+import { BaseButton, ReelHeroIc, ColumnLayout } from '@am-ogs/vue-ui';
 
 const random_icons = [
   {

@@ -237,7 +237,7 @@ export const primary_navigation: Item[] = [
       },
     ],
   },
-    {
+  {
     name: 'Chat',
     description: 'Chat with the AI',
     icon: 'fa-solid fa-comment-dots',

@@ -8,7 +8,6 @@
   },
   "packageManager": "pnpm@10.0.0",
   "scripts": {
-    "fresh:start": "rm -rf node_modules package-lock.json pnpm-lock.yaml && pnpm i",
     "clean": "rimraf ./dist",
     "build": "vite build",
     "start": "vite --port 4000",
@@ -25,7 +24,7 @@
     }
   },
   "dependencies": {
-    "@am-ogs/vue-ui": "0.0.19",
+    "@am-ogs/vue-ui": "0.0.22",
     "@auth0/auth0-vue": "^2.4.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",

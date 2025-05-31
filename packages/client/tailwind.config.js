@@ -8,7 +8,7 @@ module.exports = {
   content: [
     './index.html',
     './src/**/*.{vue,js,ts,jsx,tsx}',
-    'node_modules/@am-ogs/vue-ui/**/*.js', // <<-- this is important
+    './node_modules/@am-ogs/vue-ui/dist/vue-ui.es.js', // <<-- this is important
   ],
   darkMode: 'class',
   theme: {

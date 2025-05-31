@@ -97,8 +97,11 @@ const profileSettings = computed(() => [
     action_status: n8n_store.fb_credential_created,
     method: () => {
       console.log(n8n_store.fb_credential_created);
-      console.log(fb_store.fb_page_access_token)
-      if (n8n_store.fb_credential_created === false && fb_store.fb_page_access_token) {
+      console.log(fb_store.fb_page_access_token);
+      if (
+        n8n_store.fb_credential_created === false &&
+        fb_store.fb_page_access_token
+      ) {
         n8n_store.createFacebookCredentials(
           CUSTOMER_NAME,
           fb_store.fb_page_access_token,

@@ -17,7 +17,7 @@
     "packages/*"
   ],
   "scripts": {
-    "fresh:start": "rm -rf node_modules ./packages/**/*/node_modules ./packages/**/*/dist ./packages/**/*/build pnpm-lock.yaml && pnpm i",
+    "fresh:start": "rm -rf node_modules **/*/node_modules ./packages/**/*/dist ./packages/**/*/build pnpm-lock.yaml",
     "clean": "pnpm run -r clean",
     "build": "pnpm run -r build",
     "start": "pnpm run --parallel start",

@@ -60,7 +60,7 @@
 </template>
 
 <script setup lang="ts">
-import ItemsGridLayout from '../experimental/ItemsGridLayout.vue';
+import { ItemsGridLayout } from '@am-ogs/vue-ui';
 
 const people = [
   {
