@@ -25,7 +25,7 @@
     }
   },
   "dependencies": {
-    "@am-ogs/vue-ui": "0.0.18",
+    "@am-ogs/vue-ui": "0.0.19",
     "@auth0/auth0-vue": "^2.4.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",

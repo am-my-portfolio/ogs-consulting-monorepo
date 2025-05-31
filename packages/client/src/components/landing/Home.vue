@@ -42,7 +42,6 @@
 <script setup lang="ts">
 import {
   BaseButton,
-  ReelHeroFa,
   ReelHeroIc,
   ColumnLayout,
 } from '@am-ogs/vue-ui';
