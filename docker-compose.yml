@@ -67,26 +67,26 @@ services:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
 
-  client: 
-    container_name: client
-    hostname: client
+  pm-hub: 
+    container_name: pm-hub
+    hostname: pm-hub
     build:
       context: .
       dockerfile: Dockerfile.clients
       target: build
       args:
         - PORT=4000
-        - PACKAGE_NAME=client
-    command: pnpm --filter client dev 
+        - PACKAGE_NAME=pm-hub
+    command: pnpm --filter pm-hub dev 
     networks: ['demo']
     env_file:
-      - ./packages/client/.env         
+      - ./packages/pm-hub/.env         
     ports:
       - "4000:4000"    
     volumes:
-      - ./packages/client:/monorepo/packages/client
-      - ./packages/client/node_modules:/monorepo/packages/client/node_modules
-      - app-nm:/monorepo/packages/client/node_modules    # ensures that the node_modules directory inside the container is synced with the host machine  
+      - ./packages/pm-hub:/monorepo/packages/pm-hub
+      - ./packages/pm-hub/node_modules:/monorepo/packages/pm-hub/node_modules
+      - app-nm:/monorepo/packages/pm-hub/node_modules    # ensures that the node_modules directory inside the container is synced with the host machine  
 
       
   postgres:

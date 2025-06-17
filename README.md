@@ -234,3 +234,11 @@ can:
   pro, the community and our team are ready to support with any challenges.
 - **Propose Ideas**: Have an idea for a feature or improvement? Let us know!
   We’re always eager to hear what you’d like to see next.
+
+
+
+
+# Updating N8N and restrting
+- docker compose down
+- docker compose pull
+- docker compose create && docker compose --profile cpu up -d

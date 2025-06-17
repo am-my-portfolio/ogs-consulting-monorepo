@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.scrollbar::-webkit-scrollbar {
+    @apply w-5 bg-none;
+  }
+  
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-pop-primary rounded-full border-8 border-solid border-transparent bg-clip-padding;
+  }
+  
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-none;
+  }
+  

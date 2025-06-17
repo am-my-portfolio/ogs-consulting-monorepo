@@ -1,0 +1,307 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "acd0ebb5-96fa-4464-a930-7b1f758d6642",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "position": [
+        -480,
+        240
+      ],
+      "webhookId": "8f427031-1110-4ea3-aef7-5d06ba7d5bce",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=🎯 Role of the Assistant\nYou are a virtual assistant specializing in appointment management for Dr. Hakim. Your goal is to schedule consultations accurately, ensuring real availability while providing a smooth experience for patients.\n\n🕒 Office Hours\nMonday - Friday: 9:00 AM - 8:00 PM\nSaturday: 9:00 AM - 1:00 PM\nSunday: ❌ Closed\nConsultation Duration: 1 hour\nBreak Between Patients: 15 minutes\n\n📅 Booking Process\n\n1️⃣ Request Patient Information (Mandatory):\nFull Name\nPhone Number\nDesired Date and Time\n2️⃣ Availability Check:\nIf the requested time is outside office hours → offer only available slots.\nIf the requested time is available, ask for confirmation and book it.\nIf the requested time is unavailable, apologize and suggest the actual available slots on the requested day (between 9:00 AM and 8:00 PM, respecting breaks).\n\n##Example:\nIf a patient requests an appointment at 10:00 AM, check Google Calendar to confirm availability between 9:00 AM and 8:00 PM, considering the consultation duration (1 hour) and the 15-minute breaks.\n\n🚨 Do not confirm the appointment immediately—you must receive the patient's confirmation first.\n\n3️⃣ Confirmation & Updates:\nConfirm availability with the patient before finalizing.\nUpdate Google Calendar & Google Sheets after every booking.\nGoogle Calendar Event Title: \"Patient Name - Phone Number\".\nFor modifications or cancellations, free the slot and update the schedule.\n\n##Tools:\nUse \"Cheek Avilability\" to check available slots.\nUse \"Creat event\" to book the appointment.\nUse \"Add Data\" to record patient information.\n\n💬 Communication\n✅ Respond clearly, professionally, and in a friendly manner.\n✅ Always confirm the final date and time with the patient.\n✅ Ensure Google Calendar and Google Sheets are updated after every booking.\n\n📅 Today's date: {{ $now }}."
+        }
+      },
+      "id": "a7a59baf-88ed-47ca-9a9b-f65d8414b849",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        -100,
+        240
+      ],
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('When chat message received').item.json.sessionId }}"
+      },
+      "id": "cf344faa-a6eb-41d0-ae6a-43914e4549e6",
+      "name": "Window Buffer Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "position": [
+        -60,
+        460
+      ],
+      "typeVersion": 1.3
+    },
+    {
+      "parameters": {
+        "content": "**AI Agent 👇**\nThe Prompt is already there, You just need to setup the prompt user message with your text message.",
+        "height": 141,
+        "width": 194,
+        "color": 7
+      },
+      "id": "efe01970-f04d-48bf-bd98-7f27cfaa9a74",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -100,
+        80
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "**Chat Model ☝️**\nAdd your Open Ai API Key ",
+        "height": 80,
+        "width": 150,
+        "color": 7
+      },
+      "id": "21601bed-4a43-45bc-aaaa-866fd7cb7ea8",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -300,
+        600
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "**Google Calendar ☝️**\nConnect to Google Calendar",
+        "height": 80,
+        "width": 190,
+        "color": 7
+      },
+      "id": "646f8633-1832-4e3d-abd1-176a7230ed8a",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        120,
+        600
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "**Google Sheets ☝️**\nConnect to Google Sheets",
+        "height": 80,
+        "width": 190,
+        "color": 7
+      },
+      "id": "92e412a0-1349-408b-bfc5-6da46a55b378",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        380,
+        600
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "**Memory ☝️**\nAdd the Session ID ",
+        "height": 80,
+        "width": 150,
+        "color": 7
+      },
+      "id": "c0c99a94-5421-4536-a1e7-5aa9260500c9",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -80,
+        600
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "afshan.aman@gmail.com",
+          "mode": "list",
+          "cachedResultName": "afshan.aman@gmail.com"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {}
+      },
+      "id": "109d39bc-3576-42b7-bae9-3b3ff6b6241a",
+      "name": "Check Availability",
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "position": [
+        120,
+        460
+      ],
+      "typeVersion": 1.3,
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "RVehizz34M0DAlAa",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "afshan.aman@gmail.com",
+          "mode": "list",
+          "cachedResultName": "afshan.aman@gmail.com"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {}
+      },
+      "id": "6bae0ccf-02b1-48de-b733-be3c1001d33e",
+      "name": "Creat event",
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "position": [
+        240,
+        460
+      ],
+      "typeVersion": 1.3,
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "RVehizz34M0DAlAa",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1PUKUuI0OMW-DVTy8YOSRvyDb-nkgAqNDAzXW2KNefe0",
+          "mode": "list",
+          "cachedResultName": "n8n - my briefcase",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1PUKUuI0OMW-DVTy8YOSRvyDb-nkgAqNDAzXW2KNefe0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1PUKUuI0OMW-DVTy8YOSRvyDb-nkgAqNDAzXW2KNefe0/edit#gid=0"
+        },
+        "options": {}
+      },
+      "id": "76d127eb-8771-4325-8fae-0c9ebb920aea",
+      "name": "Add data",
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "position": [
+        420,
+        460
+      ],
+      "typeVersion": 4.5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "JYux83Kzl9gsGbxK",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "llama3.2:latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        460
+      ],
+      "id": "8a6cd310-b832-42e1-bd72-9fac17e89889",
+      "name": "Ollama Chat Model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "xHuYe0MDGOs9IpBW",
+          "name": "Local Ollama service"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Availability": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Creat event": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add data": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  }
+}

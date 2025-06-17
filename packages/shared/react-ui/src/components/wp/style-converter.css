@@ -1,0 +1,29 @@
+/* .has-medium-font-size {
+  @apply my-2 py-2 text-lg text-dull-secondary;
+}
+
+.wp-block-heading {
+  @apply my-2 py-2 text-pop-secondary bg-dull-primary;
+} */
+
+.wp-block-button,
+.wp-block-cover,
+.wp-block-heading,
+.wp-block-post-featured-image,
+.sharedaddy,
+figure {
+  @apply hidden;
+}
+
+/* h2 {
+  @apply text-3xl;
+}
+
+h6 {
+  @apply text-2xl;
+}
+*/
+
+p {
+  @apply my-4 text-lg text-dull-secondary;
+}

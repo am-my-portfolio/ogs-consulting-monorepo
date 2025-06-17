@@ -43,6 +43,8 @@ Draft:
   ![facebook-1](public/tutorial/facebook-1.png)
 
   - select the app we just created above, in the 'Meta App' dropdown
+    - https://developers.facebook.com/apps/1878466066236723/business-login/settings/?business_id=712934757804509
+    - https://business.facebook.com/latest/settings/apps?business_id=712934757804509&selected_asset_id=9303472846425845&selected_asset_type=app
   - select that page from the 'User or Page' dropdown
   - add some permissions
 

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": "./",
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "Node18",
+    "moduleResolution": "nodenext",
+    "isolatedModules": true,
+    "strict": true,
+    "jsx": "preserve",
+    "noEmit": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "@/*": ["src/*", "dist/*"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "declaration": true
+  },
+  "exclude": ["node_modules"],
+  "include": ["env.d.ts", "src/**/*"]
+}
