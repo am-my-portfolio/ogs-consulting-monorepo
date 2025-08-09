@@ -1,4 +1,4 @@
-import { GroupLayoutProps } from '../layout/GroupLayout.tsx';
+import { GroupLayoutProps } from '../layout/GroupLayout.js';
 
 const ProjectCard = ({ project }: { project: GroupLayoutProps }) => {
   return (

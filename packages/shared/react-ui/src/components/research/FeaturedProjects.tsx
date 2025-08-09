@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Carousel } from '@mantine/carousel';
 import { GroupLayoutProps } from '@/components/layout/GroupLayout';
-import ProjectCard from './ProjectCard.tsx';
+import ProjectCard from './ProjectCard.js';
 
 export interface CarouselLayoutProps {
   projects: GroupLayoutProps[];

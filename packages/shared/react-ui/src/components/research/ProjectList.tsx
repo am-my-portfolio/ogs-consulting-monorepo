@@ -1,5 +1,5 @@
 import React from 'react';
-import GroupLayout, { GroupLayoutProps } from '../layout/GroupLayout.tsx';
+import GroupLayout, { GroupLayoutProps } from '../layout/GroupLayout.js';
 
 const projects: GroupLayoutProps[] = [
   {

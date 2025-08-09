@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { GET_PAGE } from '@/helpers/graphql/queries/page';
 import RowLayout from '@/components/layout/RowLayout';
 import SanitizeHTML from '@/components/base/SanitizedHtml';
-import LoadingSpinner from '../base/LoadingSpinner.tsx';
+import LoadingSpinner from '../base/LoadingSpinner';
 
 export interface PageDetailsProps {
   uri: string;

@@ -1,1 +1,310 @@
-{"createdAt":"2025-06-06T04:01:14.179Z","updatedAt":"2025-06-13T00:06:48.099Z","id":"BCo1WZVEhLI68Ew9","name":"Agent Army: Commander Agent","active":false,"isArchived":false,"nodes":[{"parameters":{"options":{}},"type":"@n8n/n8n-nodes-langchain.chatTrigger","typeVersion":1.1,"position":[-260,1100],"id":"43990f1f-3f7b-4147-9e0e-daeac28a3c8c","name":"When chat message received","webhookId":"3c163fba-efe1-49bc-a34c-ee2aea6f59d7"},{"parameters":{"options":{"systemMessage":"=You are a truthful and helpful personal assistant. Your role is to efficiently delegate tasks to specialized Agents based on user queries. You should not perform any tasks yourself. Your job is to determine the best agents to use and order them to perform the task.\n\nAvailable Tools:\n1. Gmail Agent: All tasks related to emails (sending, reading, creating drafts, deleting, labeling)\n2. Google Calendar Agent: All tasks related to scheduling (creating events, re-scheduling, sharing Google Events Page)\n3. Research Agent: Conducting research and web based search. Dont use this Agent for emails or google calendar related inquiries.\n\n\nToday's Date and current time is: {{ $now }}\nIf you dont know something, dont lie, just clearly state that you dont know. And ask for clarifying information."}},"type":"@n8n/n8n-nodes-langchain.agent","typeVersion":1.9,"position":[172,600],"id":"8048c2ba-2150-4d6f-84d2-d9d336e473d0","name":"Commander Agent"},{"parameters":{"description":"This tools handles gmail stuff","workflowId":{"__rl":true,"value":"uKnSdcpKdppQL8JP","mode":"list","cachedResultName":"Agent Army: Gmail Agent"},"workflowInputs":{"mappingMode":"defineBelow","value":{},"matchingColumns":[],"schema":[],"attemptToConvertTypes":false,"convertFieldsToString":false}},"type":"@n8n/n8n-nodes-langchain.toolWorkflow","typeVersion":2.2,"position":[340,1020],"id":"2eb1e532-2bb0-482c-a624-03da6bc4f700","name":"Gmail Agent"},{"parameters":{"workflowId":{"__rl":true,"value":"1eDlsYJ8cs1omHjI","mode":"list","cachedResultName":"Agent Army: Google Calendar Agent"},"workflowInputs":{"mappingMode":"defineBelow","value":{},"matchingColumns":[],"schema":[],"attemptToConvertTypes":false,"convertFieldsToString":false}},"type":"@n8n/n8n-nodes-langchain.toolWorkflow","typeVersion":2.2,"position":[480,1000],"id":"570c82a6-1f2c-4d53-b306-e9cded38f6e4","name":"Google Cal Agent"},{"parameters":{},"type":"@n8n/n8n-nodes-langchain.memoryBufferWindow","typeVersion":1.3,"position":[220,900],"id":"b55673e6-eab0-4a86-a6be-9c3dde67a6d1","name":"Simple Memory"},{"parameters":{"model":"llama3.2:latest","options":{}},"type":"@n8n/n8n-nodes-langchain.lmChatOllama","typeVersion":1,"position":[80,960],"id":"c33a58db-ea17-4a23-aeff-4377c3f551fe","name":"Ollama Chat Model","credentials":{"ollamaApi":{"id":"xHuYe0MDGOs9IpBW","name":"Local Ollama service"}}},{"parameters":{"workflowId":{"__rl":true,"value":"tRjEZ8wESOxeX92K","mode":"list","cachedResultName":"Agent Army: Research Agent"},"workflowInputs":{"mappingMode":"defineBelow","value":{},"matchingColumns":[],"schema":[],"attemptToConvertTypes":false,"convertFieldsToString":false}},"type":"@n8n/n8n-nodes-langchain.toolWorkflow","typeVersion":2.2,"position":[600,960],"id":"c685eb24-0bb4-4124-9523-232c48077e10","name":"Research Agent"},{"parameters":{"description":"Call this tool to get list of apartments ","workflowId":{"__rl":true,"value":"Pjwljivia1C6JNNz","mode":"list","cachedResultName":"Agent Army: Apartment Finder"},"workflowInputs":{"mappingMode":"defineBelow","value":{},"matchingColumns":[],"schema":[],"attemptToConvertTypes":false,"convertFieldsToString":false}},"type":"@n8n/n8n-nodes-langchain.toolWorkflow","typeVersion":2.2,"position":[740,900],"id":"01aab175-187a-4d8e-99a5-98d280057fcd","name":"Apartment Finder"},{"parameters":{"trigger":["message"],"channelId":{"__rl":true,"mode":"list","value":""},"options":{}},"type":"n8n-nodes-base.slackTrigger","typeVersion":1,"position":[-580,600],"id":"b5817fab-5fb1-4b6b-a5f5-094ce2824c3a","name":"Slack Trigger","webhookId":"6ff98c27-cc3f-4172-aac8-eb51f47ccd67"},{"parameters":{"pollTimes":{"item":[{"mode":"everyMinute"}]},"filters":{}},"type":"n8n-nodes-base.gmailTrigger","typeVersion":1.2,"position":[-480,780],"id":"d13c47b9-73fd-41f0-941c-8b7063b02396","name":"Gmail Trigger","credentials":{"gmailOAuth2":{"id":"86IFxw2xHjFCcMIH","name":"Gmail account"}}},{"parameters":{"updates":["message"],"additionalFields":{}},"type":"n8n-nodes-base.telegramTrigger","typeVersion":1.2,"position":[-240,140],"id":"c7d8a2d5-2b9e-403e-9736-e112ff2c7f8a","name":"Telegram Trigger","webhookId":"13ad69cc-0843-483e-98c7-5eb1ca08e5a7"},{"parameters":{"options":{}},"type":"n8n-nodes-base.facebookTrigger","typeVersion":1,"position":[-380,940],"id":"e48f873e-3065-4a10-a1ab-f3c1695342c5","name":"Facebook Trigger","webhookId":"56474cea-d46f-48be-a178-23c503502a15"},{"parameters":{"updates":["com.twilio.messaging.inbound-message.received"]},"type":"n8n-nodes-base.twilioTrigger","typeVersion":1,"position":[-480,420],"id":"1011184d-dd50-4427-8696-5ed76ce765f2","name":"Twilio Trigger","webhookId":"65cee77f-5e7c-4800-9119-817a2a56ce0b","credentials":{"twilioApi":{"id":"KYl9jMCjhBFFTNjE","name":"Twilio account"}}},{"parameters":{"updates":["com.twilio.voice.insights.call-summary.complete"]},"type":"n8n-nodes-base.twilioTrigger","typeVersion":1,"position":[-360,260],"id":"d1e847cc-6b64-4f09-b2ac-925eb4548507","name":"Twilio Trigger1","webhookId":"e427c0d9-4b58-478e-bfbe-cbbe3b4b3f6d","credentials":{"twilioApi":{"id":"KYl9jMCjhBFFTNjE","name":"Twilio account"}}},{"parameters":{"updates":["messages"],"options":{}},"type":"n8n-nodes-base.whatsAppTrigger","typeVersion":1,"position":[-100,40],"id":"90d6b0e2-bc76-440c-8779-f7bee6daff23","name":"WhatsApp Trigger","webhookId":"b5e49852-7535-4bc9-b20f-6ec79009bea1"}],"connections":{"When chat message received":{"main":[[{"node":"Commander Agent","type":"main","index":0}]]},"Gmail Agent":{"ai_tool":[[{"node":"Commander Agent","type":"ai_tool","index":0}]]},"Google Cal Agent":{"ai_tool":[[{"node":"Commander Agent","type":"ai_tool","index":0}]]},"Simple Memory":{"ai_memory":[[{"node":"Commander Agent","type":"ai_memory","index":0}]]},"Ollama Chat Model":{"ai_languageModel":[[{"node":"Commander Agent","type":"ai_languageModel","index":0}]]},"Research Agent":{"ai_tool":[[{"node":"Commander Agent","type":"ai_tool","index":0}]]},"Apartment Finder":{"ai_tool":[[{"node":"Commander Agent","type":"ai_tool","index":0}]]},"Gmail Trigger":{"main":[[{"node":"Commander Agent","type":"main","index":0}]]},"Slack Trigger":{"main":[[{"node":"Commander Agent","type":"main","index":0}]]},"Telegram Trigger":{"main":[[{"node":"Commander Agent","type":"main","index":0}]]},"Facebook Trigger":{"main":[[{"node":"Commander Agent","type":"main","index":0}]]},"Twilio Trigger":{"main":[[{"node":"Commander Agent","type":"main","index":0}]]},"Twilio Trigger1":{"main":[[{"node":"Commander Agent","type":"main","index":0}]]},"WhatsApp Trigger":{"main":[[{"node":"Commander Agent","type":"main","index":0}]]}},"settings":{"executionOrder":"v1"},"staticData":null,"meta":{"templateCredsSetupCompleted":true},"pinData":{},"versionId":"7bdc11e4-6dc5-4ee7-a3d5-a9ce9bd0a2b7","triggerCount":0,"tags":[]}
+{
+  "createdAt": "2025-06-06T04:01:14.179Z",
+  "updatedAt": "2025-06-22T18:01:19.297Z",
+  "id": "BCo1WZVEhLI68Ew9",
+  "name": "Agent Army: Commander Agent",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": { "options": {} },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [-260, 1100],
+      "id": "43990f1f-3f7b-4147-9e0e-daeac28a3c8c",
+      "name": "When chat message received",
+      "webhookId": "3c163fba-efe1-49bc-a34c-ee2aea6f59d7"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=You are a truthful and helpful personal assistant. Your role is to efficiently delegate tasks to specialized Agents based on user queries. You should not perform any tasks yourself. Your job is to determine the best agents to use and order them to perform the task.\n\nAvailable Tools:\n1. Gmail Agent: All tasks related to emails (sending, reading, creating drafts, deleting, labeling)\n2. Google Calendar Agent: All tasks related to scheduling (creating events, re-scheduling, sharing Google Events Page)\n3. Research Agent: Conducting research and web based search. Dont use this Agent for emails or google calendar related inquiries.\n\n\nToday's Date and current time is: {{ $now }}\nIf you dont know something, dont lie, just clearly state that you dont know. And ask for clarifying information."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [172, 600],
+      "id": "8048c2ba-2150-4d6f-84d2-d9d336e473d0",
+      "name": "Commander Agent"
+    },
+    {
+      "parameters": {
+        "description": "This tools handles gmail stuff",
+        "workflowId": {
+          "__rl": true,
+          "value": "uKnSdcpKdppQL8JP",
+          "mode": "list",
+          "cachedResultName": "Agent Army: Gmail Agent"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [340, 1020],
+      "id": "2eb1e532-2bb0-482c-a624-03da6bc4f700",
+      "name": "Gmail Agent"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "1eDlsYJ8cs1omHjI",
+          "mode": "list",
+          "cachedResultName": "Agent Army: Google Calendar Agent"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [480, 1000],
+      "id": "570c82a6-1f2c-4d53-b306-e9cded38f6e4",
+      "name": "Google Cal Agent"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [200, 1000],
+      "id": "b55673e6-eab0-4a86-a6be-9c3dde67a6d1",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": { "model": "llama3.2:latest", "options": {} },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [40, 960],
+      "id": "c33a58db-ea17-4a23-aeff-4377c3f551fe",
+      "name": "Ollama Chat Model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "xHuYe0MDGOs9IpBW",
+          "name": "Local Ollama service"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "tRjEZ8wESOxeX92K",
+          "mode": "list",
+          "cachedResultName": "Agent Army: Research Agent"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [600, 960],
+      "id": "c685eb24-0bb4-4124-9523-232c48077e10",
+      "name": "Research Agent"
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to get list of apartments ",
+        "workflowId": {
+          "__rl": true,
+          "value": "Pjwljivia1C6JNNz",
+          "mode": "list",
+          "cachedResultName": "Agent Army: Apartment Finder"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [740, 900],
+      "id": "01aab175-187a-4d8e-99a5-98d280057fcd",
+      "name": "Apartment Finder"
+    },
+    {
+      "parameters": {
+        "pollTimes": { "item": [{ "mode": "everyMinute" }] },
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [-480, 780],
+      "id": "d13c47b9-73fd-41f0-941c-8b7063b02396",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": { "id": "86IFxw2xHjFCcMIH", "name": "Gmail account" }
+      }
+    },
+    {
+      "parameters": { "updates": ["message"], "additionalFields": {} },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [-240, 140],
+      "id": "c7d8a2d5-2b9e-403e-9736-e112ff2c7f8a",
+      "name": "Telegram Trigger",
+      "webhookId": "13ad69cc-0843-483e-98c7-5eb1ca08e5a7",
+      "credentials": {
+        "telegramApi": { "id": "bvCT4xGrIGttpXVU", "name": "Telegram account" }
+      }
+    },
+    {
+      "parameters": { "appId": "123455", "options": {} },
+      "type": "n8n-nodes-base.facebookTrigger",
+      "typeVersion": 1,
+      "position": [-380, 940],
+      "id": "e48f873e-3065-4a10-a1ab-f3c1695342c5",
+      "name": "Facebook Trigger",
+      "webhookId": "56474cea-d46f-48be-a178-23c503502a15",
+      "credentials": {
+        "facebookGraphAppApi": {
+          "id": "mLggLMfdWy1u7HDg",
+          "name": "Facebook Graph (App) account"
+        }
+      }
+    },
+    {
+      "parameters": { "updates": ["messages"], "options": {} },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [-100, 40],
+      "id": "90d6b0e2-bc76-440c-8779-f7bee6daff23",
+      "name": "WhatsApp Trigger",
+      "webhookId": "b5e49852-7535-4bc9-b20f-6ec79009bea1",
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "t73w0JDHyiULoeWl",
+          "name": "WhatsApp OAuth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "trigger": ["any_event"],
+        "channelId": { "__rl": true, "value": "C092AC34F2A", "mode": "id" },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slackTrigger",
+      "typeVersion": 1,
+      "position": [-540, 600],
+      "id": "212de829-9bda-4e74-aa0d-6ef7526c42c4",
+      "name": "Slack Trigger",
+      "webhookId": "81c3d731-c9a9-41d4-8bcf-1dc67d4f08c3",
+      "credentials": {
+        "slackApi": { "id": "N2CLLTE7btH4sIC7", "name": "Slack account" }
+      }
+    },
+    {
+      "parameters": {
+        "updates": ["com.twilio.voice.insights.call-summary.complete"]
+      },
+      "type": "n8n-nodes-base.twilioTrigger",
+      "typeVersion": 1,
+      "position": [-360, 260],
+      "id": "d1e847cc-6b64-4f09-b2ac-925eb4548507",
+      "name": "Twilio Call Trigger",
+      "webhookId": "e427c0d9-4b58-478e-bfbe-cbbe3b4b3f6d",
+      "credentials": {
+        "twilioApi": { "id": "KYl9jMCjhBFFTNjE", "name": "Twilio account" }
+      }
+    },
+    {
+      "parameters": {
+        "updates": ["com.twilio.messaging.inbound-message.received"]
+      },
+      "type": "n8n-nodes-base.twilioTrigger",
+      "typeVersion": 1,
+      "position": [-480, 420],
+      "id": "1011184d-dd50-4427-8696-5ed76ce765f2",
+      "name": "Twilio SMS Trigger",
+      "webhookId": "65cee77f-5e7c-4800-9119-817a2a56ce0b",
+      "credentials": {
+        "twilioApi": { "id": "KYl9jMCjhBFFTNjE", "name": "Twilio account" }
+      }
+    }
+  ],
+  "connections": {
+    "When chat message received": {
+      "main": [[{ "node": "Commander Agent", "type": "main", "index": 0 }]]
+    },
+    "Gmail Agent": {
+      "ai_tool": [
+        [{ "node": "Commander Agent", "type": "ai_tool", "index": 0 }]
+      ]
+    },
+    "Google Cal Agent": {
+      "ai_tool": [
+        [{ "node": "Commander Agent", "type": "ai_tool", "index": 0 }]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [{ "node": "Commander Agent", "type": "ai_memory", "index": 0 }]
+      ]
+    },
+    "Ollama Chat Model": {
+      "ai_languageModel": [
+        [{ "node": "Commander Agent", "type": "ai_languageModel", "index": 0 }]
+      ]
+    },
+    "Research Agent": {
+      "ai_tool": [
+        [{ "node": "Commander Agent", "type": "ai_tool", "index": 0 }]
+      ]
+    },
+    "Apartment Finder": {
+      "ai_tool": [
+        [{ "node": "Commander Agent", "type": "ai_tool", "index": 0 }]
+      ]
+    },
+    "Gmail Trigger": {
+      "main": [[{ "node": "Commander Agent", "type": "main", "index": 0 }]]
+    },
+    "Telegram Trigger": {
+      "main": [[{ "node": "Commander Agent", "type": "main", "index": 0 }]]
+    },
+    "Facebook Trigger": {
+      "main": [[{ "node": "Commander Agent", "type": "main", "index": 0 }]]
+    },
+    "WhatsApp Trigger": {
+      "main": [[{ "node": "Commander Agent", "type": "main", "index": 0 }]]
+    },
+    "Slack Trigger": {
+      "main": [[{ "node": "Commander Agent", "type": "main", "index": 0 }]]
+    },
+    "Twilio Call Trigger": {
+      "main": [[{ "node": "Commander Agent", "type": "main", "index": 0 }]]
+    },
+    "Twilio SMS Trigger": {
+      "main": [[{ "node": "Commander Agent", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "staticData": null,
+  "meta": { "templateCredsSetupCompleted": true },
+  "pinData": {},
+  "versionId": "ba606e6e-d9a4-463e-bd10-29f329766f7b",
+  "triggerCount": 0,
+  "tags": []
+}

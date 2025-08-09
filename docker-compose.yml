@@ -67,27 +67,26 @@ services:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
 
-  pm-hub: 
-    container_name: pm-hub
-    hostname: pm-hub
+  my-briefcase: 
+    container_name: my-briefcase
+    hostname: my-briefcase
     build:
       context: .
       dockerfile: Dockerfile.clients
       target: build
       args:
         - PORT=4000
-        - PACKAGE_NAME=pm-hub
-    command: pnpm --filter pm-hub dev 
+        - PACKAGE_NAME=my-briefcase
+    command: pnpm --filter my-briefcase dev 
     networks: ['demo']
     env_file:
-      - ./packages/pm-hub/.env         
+      - ./packages/clients/my-briefcase/.env         
     ports:
       - "4000:4000"    
     volumes:
-      - ./packages/pm-hub:/monorepo/packages/pm-hub
-      - ./packages/pm-hub/node_modules:/monorepo/packages/pm-hub/node_modules
-      - app-nm:/monorepo/packages/pm-hub/node_modules    # ensures that the node_modules directory inside the container is synced with the host machine  
-
+      - ./packages/clients/my-briefcase:/monorepo/packages/my-briefcase
+      - ./packages/clients/my-briefcase/node_modules:/monorepo/packages/my-briefcase/node_modules
+      - app-nm:/monorepo/packages/clients/my-briefcase/node_modules    # ensures that the node_modules directory inside the container is synced with the host machine  
       
   postgres:
     image: postgres:16-alpine
@@ -132,11 +131,11 @@ services:
       - n8n_storage:/home/node/.n8n
       - ./n8n/demo-data:/demo-data
       - ./shared:/data/shared
-    depends_on:
-      postgres:
-        condition: service_healthy
-      n8n-import:
-        condition: service_completed_successfully
+    # depends_on:
+    #   postgres:
+    #     condition: service_healthy
+    #   n8n-import:
+    #     condition: service_completed_successfully
 
   qdrant:
     image: qdrant/qdrant

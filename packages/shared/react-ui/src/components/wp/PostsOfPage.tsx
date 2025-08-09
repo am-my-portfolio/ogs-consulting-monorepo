@@ -2,7 +2,7 @@ import './style-converter.css';
 import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '@/helpers/graphql/queries/posts';
 import PostCard from '@/components/card/PostCard';
-import LoadingSpinner from '../base/LoadingSpinner.tsx';
+import LoadingSpinner from '../base/LoadingSpinner';
 
 export interface PostsOfPageProps {
   category: string;
