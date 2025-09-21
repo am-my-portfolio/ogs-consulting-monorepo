@@ -1,5 +1,5 @@
 {
-  "name": "my-briefcase",
+  "name": "@am-ogs/my-briefcase",
   "version": "0.0.1",
   "type": "module",
   "engines": {
