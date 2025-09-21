@@ -1,5 +1,5 @@
-import { colorado_locker_locations } from './colorado_locker_locations.ts';
-import { national_locker_locations } from './national_locker_locations.ts';
+import { colorado_locker_locations } from './colorado_locker_locations.js';
+import { national_locker_locations } from './national_locker_locations.js';
 
 const all_locker_locations = [
   ...colorado_locker_locations,
