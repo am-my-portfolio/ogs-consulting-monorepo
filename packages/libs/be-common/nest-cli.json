@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "nest-common": {
+      "type": "library",
+      "root": "packages/@shared/nest-common",
+      "entryFile": "index",
+      "sourceRoot": "packages/@shared/nest-common/src",
+      "compilerOptions": {
+        "tsConfigPath": "packages/@shared/nest-common/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "name": "@am-ogs/be-common",
+  "version": "0.0.1",
+  "private": true,
+  "types": "dist/index",
+  "main": "dist/index",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": "23.9.0",
+    "pnpm": "10.0.0"
+  },
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build": "pnpm run clean && pnpm run compile",
+    "postinstall": "pnpm build",
+    "compile": "tsc -p tsconfig.build.json",
+    "format": "npx prettier --check ./src",
+    "format:fix": "npx prettier --write ./src",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "pack": "npm run build && npm pack --pack-destination ~",
+    "test": "echo no unit tests need",
+    "test:dev": "doppler run -- jest --runInBand --detectOpenHandles --coverage"
+  },
+  "dependencies": {
+    "@am-ogs/fs-common": "workspace:*",
+    "@am-ogs/types": "workspace:*",
+    "@nestjs/axios": "^4.0.0",
+    "@nestjs/common": "^11.1.0",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.1.0",
+    "@nestjs/jwt": "^11.0.0",
+    "@nestjs/passport": "^11.0.5",
+    "@nestjs/platform-express": "^11.1.0",
+    "@nestjs/sequelize": "^11.0.0",
+    "@nestjs/swagger": "^11.1.5",
+    "axios": "^1.9.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "csv-parser": "^3.2.0",
+    "express": "^5.1.0",
+    "jwks-rsa": "^3.2.0",
+    "lodash": "^4.17.21",
+    "multer": "1.4.5-lts.2",
+    "passport": "^0.7.0",
+    "passport-headerapikey": "^1.2.2",
+    "passport-jwt": "^4.0.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.7",
+    "@nestjs/mapped-types": "^2.1.0",
+    "@nestjs/schematics": "^11.0.5",
+    "@nestjs/testing": "^11.1.0",
+    "@types/express": "^5.0.1",
+    "@types/jest": "^29.5.14",
+    "@types/lodash": "^4.17.16",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.15.3",
+    "@types/passport": "^1.0.17",
+    "@types/passport-http": "^0.3.11",
+    "@types/passport-jwt": "^4.0.1",
+    "@types/swagger-ui-express": "^4.1.8",
+    "eslint": "^9.25.1",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "test",
+    "testEnvironment": "node",
+    "testRegex": ".*\\.(test|spec)\\.(js|ts)$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "/build/"
+    ]
+  }
+}

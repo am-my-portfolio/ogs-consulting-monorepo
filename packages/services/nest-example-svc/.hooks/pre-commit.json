@@ -1,0 +1,12 @@
+{
+  "steps": [
+    {
+      "name": "example-service formatter",
+      "command": "npm run format:fix"
+    },
+    {
+      "name": "example-service linter",
+      "command": "npm run lint:fix"
+    }
+  ]
+}

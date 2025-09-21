@@ -1,5 +1,5 @@
 {
-  "name": "@am/marketplace-hub",
+  "name": "@am-ogs/marketplace-hub",
   "description": "Multi-vendor Marketplace App. Built with Vue3, Tailwindcss (UI), Auth0 (User Management and RBAC), Stripe (Payment Processing), Plaid (Financial Account Access), Knock (Notifications)",
   "version": "0.0.1",
   "type": "module",

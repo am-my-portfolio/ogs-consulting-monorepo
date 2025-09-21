@@ -1,0 +1,3 @@
+setup:
+  project: pure-common-services
+  config: local_example_service

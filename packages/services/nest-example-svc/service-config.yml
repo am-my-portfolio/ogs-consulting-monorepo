@@ -1,0 +1,25 @@
+run:
+  name: example-service-${ENV}
+
+  provider:
+    project: ${PROJECT}
+    region: ${REGION}
+
+  config:
+    no-allow-unauthenticated: true
+    concurrency: 800
+    cpu: 1
+    description: Example Service Backend
+    execution-environment: gen2
+    image: us-central1-docker.pkg.dev/pure-infra/purepm-docker/example-service:latest
+    memory: 512Mi
+    min-instances: 0
+    max-instances: 10
+    port: 4011
+    set-secrets:
+      /secrets/.env: doppler-example-service-${ENV}-env:latest
+    service-account: example-service-${ENV}@${PROJECT}.iam.gserviceaccount.com
+    timeout: 3600
+    ingress: internal
+    vpc-connector: ${VPC_CONNECTOR}
+    vpc-egress: all-traffic

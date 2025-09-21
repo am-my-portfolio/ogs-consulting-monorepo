@@ -1,0 +1,107 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-console": "error",
+    "@typescript-eslint/no-non-null-assertion": "warn",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "array-simple"
+      }
+    ],
+    // https://stackoverflow.com/questions/62464592/how-can-i-enforce-filename-and-folder-name-convention-in-typescript-eslint
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/naming-convention.md#examples
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": [
+          "variable",
+          "parameter",
+          "typeProperty"
+        ],
+        "format": [
+          "snake_case"
+        ]
+      },
+      {
+        "selector": [
+          "variable"
+        ],
+        "format": [
+          "camelCase"
+        ],
+        "filter": {
+          "regex": \wService|Controller\b,
+          "match": true
+        }
+      },
+      {
+        "selector": ["parameterProperty"],
+        "modifiers": [
+          "private",
+          "readonly"
+        ],
+        "format": [
+          "camelCase"
+        ]
+      },
+      {
+        "selector": [
+          "variable"
+        ],
+        "modifiers": [
+          "exported",
+          "const"
+        ],
+        "format": [
+          "camelCase"
+        ]
+      },
+      {
+        "selector": "function",
+        "format": [
+          "camelCase"
+        ]
+      },
+      {
+        "selector": [
+          "enum",
+          "typeLike"
+        ],
+        "format": [
+          "PascalCase"
+        ]
+      },
+      {
+        "selector": "enumMember",
+        "format": [
+          "UPPER_CASE"
+        ]
+      },
+      {
+        "selector": "interface",
+        "format": [
+          "PascalCase"
+        ],
+        "prefix": [
+          "I"
+        ]
+      }
+    ]
+  },
+  "env": {
+    "node": true,
+    "commonjs": true
+  }
+}

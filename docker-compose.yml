@@ -67,26 +67,26 @@ services:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
 
-  my-briefcase: 
-    container_name: my-briefcase
-    hostname: my-briefcase
-    build:
-      context: .
-      dockerfile: Dockerfile.clients
-      target: build
-      args:
-        - PORT=4000
-        - PACKAGE_NAME=my-briefcase
-    command: pnpm --filter my-briefcase dev 
-    networks: ['demo']
-    env_file:
-      - ./packages/clients/my-briefcase/.env         
-    ports:
-      - "4000:4000"    
-    volumes:
-      - ./packages/clients/my-briefcase:/monorepo/packages/my-briefcase
-      - ./packages/clients/my-briefcase/node_modules:/monorepo/packages/my-briefcase/node_modules
-      - app-nm:/monorepo/packages/clients/my-briefcase/node_modules    # ensures that the node_modules directory inside the container is synced with the host machine  
+  # my-briefcase: 
+  #   container_name: my-briefcase
+  #   hostname: my-briefcase
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.clients
+  #     target: build
+  #     args:
+  #       - PORT=4000
+  #       - PACKAGE_NAME=my-briefcase
+  #   command: pnpm --filter my-briefcase dev 
+  #   networks: ['demo']
+  #   env_file:
+  #     - ./packages/case-studies/my-briefcase/.env         
+  #   ports:
+  #     - "4000:4000"    
+  #   volumes:
+  #     - ./packages/case-studies/my-briefcase:/monorepo/packages/my-briefcase
+  #     - ./packages/case-studies/my-briefcase/node_modules:/monorepo/packages/my-briefcase/node_modules
+  #     - app-nm:/monorepo/packages/clients/my-briefcase/node_modules    # ensures that the node_modules directory inside the container is synced with the host machine  
       
   postgres:
     image: postgres:16-alpine

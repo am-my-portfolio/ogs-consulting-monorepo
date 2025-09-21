@@ -1,7 +1,9 @@
 node_modules
 dist
 build
+notes
 coverage/
+n8n/demo-data
 
 .DS_Store
 .env

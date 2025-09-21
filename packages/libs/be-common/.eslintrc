@@ -1,0 +1,105 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "array-simple"
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": [
+          "variable",
+          "parameter",
+          "typeProperty"
+        ],
+        "format": [
+          "snake_case"
+        ]
+      },
+      {
+        "selector": [
+          "variable",
+          "parameter",
+          "typeProperty"
+        ],
+        "modifiers": ["unused"],
+        "format": [
+          "snake_case"
+        ],
+        "prefix": [
+          "_"
+        ]
+      },
+      {
+        "selector": [
+          "variable"
+        ],
+        "format": [
+          "camelCase"
+        ],
+        "filter": {
+          "regex": "\\wService|Controller\\b",
+          "match": true
+        }
+      },
+      {
+        "selector": ["parameterProperty"],
+        "modifiers": [
+          "private",
+          "readonly"
+        ],
+        "format": [
+          "camelCase"
+        ]
+      },
+      {
+        "selector": "function",
+        "format": [
+          "camelCase"
+        ]
+      },
+      {
+        "selector": [
+          "enum",
+          "typeLike"
+        ],
+        "format": [
+          "PascalCase"
+        ]
+      },
+      {
+        "selector": "enumMember",
+        "format": [
+          "UPPER_CASE"
+        ]
+      },
+      {
+        "selector": "interface",
+        "format": [
+          "PascalCase"
+        ],
+        "prefix": [
+          "I"
+        ]
+      }
+    ]
+  },
+  "env": {
+    "node": true,
+    "commonjs": true
+  }
+}
