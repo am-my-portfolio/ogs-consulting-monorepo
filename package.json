@@ -1,7 +1,7 @@
 {
   "name": "am-ogs",
   "author": "Afshan Martin<dev@ogsconsulting.biz>",
-  "description": "",
+  "description": "A workspace for all the work done by Afshan Martin as OGS Consulting",
   "type": "module",
   "version": "1.0.0",
   "engines": {
@@ -17,7 +17,7 @@
     "packages/*"
   ],
   "scripts": {
-    "fresh:start": "rm -rf node_modules **/*/node_modules ./packages/**/*/dist ./packages/**/*/build pnpm-lock.yaml",
+    "fresh:start": "rm -rf node_modules **/*/node_modules ./packages/**/*/dist ./packages/**/*/build pnpm-lock.yaml && pnpm i",
     "clean": "pnpm run -r clean",
     "build": "pnpm run -r build",
     "start": "pnpm run --parallel start",

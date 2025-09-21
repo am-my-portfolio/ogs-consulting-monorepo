@@ -24,7 +24,7 @@
     "url": "git+ssh://git@github.com/am-my-portfolio/react-components-library.git"
   },
   "scripts": {
-    "dev": "vite",
+    "start": "vite --port 8001",
     "build": "vite build",
     "clean": "rimraf ./dist",
     "postinstall": "pnpm build",
@@ -34,7 +34,9 @@
     "lint": "eslint \"**/*.js\" \"**/*.ts\" \"**/*.tsx\" \"**/*.jsx\"",
     "lint:fix": "eslint --fix \"**/*.js\" \"**/*.ts\" \"**/*.tsx\" \"**/*.jsx\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-router-dom": "7.9.1"
+  },
   "peerDependencies": {
     "@tailwindcss/vite": "^4.1.4",
     "react": "^19.0.0",

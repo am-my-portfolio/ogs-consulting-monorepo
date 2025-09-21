@@ -9,10 +9,9 @@
   },
   "packageManager": "pnpm@10.0.0",
   "scripts": {
-    "fresh:start": "rm -rf dist node_modules package-lock.json pnpm-lock.yaml && pnpm i",
     "predeploy": "rm -rf dist && pnpm run build",
-    "deploy": "gh-pages -d dist",
-    "start": "vite --port 4000",
+    "dev": "vite --port 8085",
+    "start": "vite --port 8085",
     "build": "vite build",
     "preview": "vite preview",
     "format": "npx prettier --check .",

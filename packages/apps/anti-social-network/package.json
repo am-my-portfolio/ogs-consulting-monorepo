@@ -4,10 +4,14 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
+    "dev": "vite --port 8081",
+    "start": "vite --port 8081",
     "build": "vite build",
-    "dev": "vite",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "npx prettier --check .",
+    "format:fix": "npx prettier --write .",
+    "lint": "eslint \"**/*.js\" \"**/*.ts\" \"**/*.vue\" \"**/*.mjs\"",
+    "lint:fix": "eslint --fix \"**/*.js\" \"**/*.ts\" \"**/*.vue\" \"**/*.mjs\""
   },
   "dependencies": {
     "@am-ogs/react-ui": "workspace:*",

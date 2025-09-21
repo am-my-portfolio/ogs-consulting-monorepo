@@ -9,8 +9,8 @@
   },
   "packageManager": "pnpm@10.0.0",
   "scripts": {
-    "fresh:start": "rm -rf node_modules package-lock.json && npm i",
-    "start": "vite --port 4002",
+    "dev": "vite --port 8084",
+    "start": "vite --port 8084",
     "build": "vite build",
     "preview": "vite preview",
     "format": "npx prettier --check .",
@@ -42,7 +42,8 @@
     "vue": "^3.4.36",
     "vue-chart-3": "^3.1.8",
     "vue-router": "^4.4.3",
-    "vue3-charts": "^1.1.33"
+    "vue3-charts": "^1.1.33",
+    "lodash": "4.17.21"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf node_modules",
     "prebuild": "rimraf dist",
-    "build": "nest build",
+    "build-wip": "nest build",
     "start": "doppler run -- nest start",
     "start:dev": "doppler run -- nest start --watch",
     "start:debug": "doppler run -- nest start --debug --watch",

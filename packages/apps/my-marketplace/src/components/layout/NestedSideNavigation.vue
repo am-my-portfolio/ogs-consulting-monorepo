@@ -16,7 +16,7 @@
                 :class="[
                   item.current
                     ? 'bg-primary text-pop-secondary'
-                    : 'text-pop-secondary hover:bg-secondary hover:text-white',
+                    : 'text-pop-secondary hover:bg-dull-secondary hover:text-white',
                   'group flex gap-x-3 rounded-md py-2 text-sm font-semibold leading-6',
                 ]"
               >

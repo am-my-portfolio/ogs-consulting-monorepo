@@ -8,10 +8,9 @@
   },
   "packageManager": "pnpm@10.0.0",
   "scripts": {
-    "clean": "rimraf ./dist",
+    "dev-wip": "vite --port 8083",
+    "start": "vite --port 8083",
     "build": "vite build",
-    "start": "vite --port 4000",
-    "dev": "vite --port 4000",
     "preview": "vite preview",
     "format": "npx prettier --check .",
     "format:fix": "npx prettier --write .",

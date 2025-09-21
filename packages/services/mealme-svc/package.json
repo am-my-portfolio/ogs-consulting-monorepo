@@ -8,10 +8,10 @@
   "scripts": {
     "clean": "rimraf node_modules",
     "prebuild": "rimraf dist",
-    "build": "nest build",
+    "build-wip": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "dev": "nest start --watch",
+    "dev-wip": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "serverless": "serverless deploy --stage local --aws-profile default",

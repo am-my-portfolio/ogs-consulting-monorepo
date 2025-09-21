@@ -31,7 +31,7 @@
       leave-to-class="transform opacity-0 scale-95"
     >
       <MenuItems
-        class="absolute right-0 z-10 mt-5 sm:mt-2 w-56 rounded-md origin-top-right divide-y divide-pop-secondary bg-secondary shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="absolute right-0 z-10 mt-5 sm:mt-2 w-56 rounded-md origin-top-right divide-y divide-pop-secondary bg-dull-secondary shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
       >
         <MenuItem v-for="item in user_navigation" :key="item.name">
           <a

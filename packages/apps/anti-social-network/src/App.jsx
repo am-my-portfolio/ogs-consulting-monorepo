@@ -1,4 +1,4 @@
-import { SiteLayout, Footer } from '@am-ogs/react-ui';
+import { SiteLayoutOne, FooterOne } from '@am-ogs/react-ui';
 import AppRoutes from '@/Routes';
 import TopNavigation from '@/components/landing/TopNavigation';
 
@@ -36,12 +36,12 @@ function App() {
   ];
 
   return (
-    <SiteLayout
+    <SiteLayoutOne
       isLoading={isLoading}
       isAuthenticated={isAuthenticated}
       topNavigation={<TopNavigation />}
       appRoutes={<AppRoutes />}
-      footer={<Footer
+      footer={<FooterOne
         colors={{
           text: 'text-pop-secondary',
           border: 'border-t-2 border-dull-secondary',
